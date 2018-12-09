@@ -13,6 +13,8 @@ module.exports = {
       },
     },
 
+    `gatsby-plugin-preact`,
+    
     `gatsby-plugin-sass`,
     `gatsby-plugin-purgecss`,
     `gatsby-plugin-offline`,
