@@ -14,8 +14,27 @@ module.exports = {
 
     `gatsby-plugin-sass`,
     `gatsby-plugin-purgecss`,
-    
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify`,
+    `gatsby-plugin-sitemap`,
 
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.example.com',
+        sitemap: 'https://www.example.com/sitemap.xml',
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+          },
+          production: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+            // policy: [{ userAgent: '*', allow: '/' }]
+          }
+        }
+        
+      }
+    },
 
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
