@@ -1,7 +1,17 @@
 
+$body-color: #2A2B2A;
+
 $theme-colors: (
   dark: #232323,
-  light: #d0d0d0
+  light: #d0d0d0,
+  primary: #28a745,
+  secondary: #FFDE07
 );
 
 
+
+$font-family-sans-serif: 'Nunito Sans', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:      'Nunito Sans', Georgia, "Times New Roman", Times, serif !default;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:   'Nunito Sans', Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base:        $font-family-sans-serif !default;

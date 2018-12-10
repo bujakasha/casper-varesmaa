@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-import Header from '../header'
+import '../../../fontawesome/library'
 import '../../../sass/main.scss';
-import './layout.css'
+import './layout.scss'
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -29,14 +29,13 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
+        <div className="layout_area"
         
         >
-        <div className="container bg-light py-5">
-        {children}
+          {children}
+      
+       
 
-        </div>
         </div>
       </>
     )}

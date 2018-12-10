@@ -1,6 +1,9 @@
+const pixrem = require('pixrem')
+const autoprefixer = require('autoprefixer')
+
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Casper Väresmaa',
     siteUrl: `https://www.example.com`,
   },
   plugins: [
@@ -13,9 +16,26 @@ module.exports = {
       },
     },
 
-    `gatsby-plugin-preact`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `static`,
+        path: `${__dirname}/static/`,
+      },
+    },
     
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        postCssPlugins: [
+          pixrem(),
+          autoprefixer({
+            browsers: ['last 2 versions'],
+          }),
+        ],
+        precision: 8,
+      },
+    },
     `gatsby-plugin-purgecss`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
@@ -47,10 +67,10 @@ module.exports = {
         name: 'gatsby-starter-default',
         short_name: 'starter',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#fffff',
+        theme_color: '#F7DC0E',
         display: 'minimal-ui',
-        icon: 'src/images/gatsby-icon.png', // This path is relative to the root of the site.
+        icon: 'static/favicon-2562.png', // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
