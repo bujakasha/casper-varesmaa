@@ -1,0 +1,25 @@
+.collapse_container{
+    max-width: 500px;
+}
+
+.collapse_header{
+    width: 100%;
+    border-bottom: solid 2px;
+    position: relative;
+}
+.collapse_body{
+    padding: 20px 10px;
+    padding-bottom: 0px;
+}
+
+.collapse_header h5{
+  padding-right: 30px;
+}
+.collapse_header button span{
+    position: absolute;
+    right:2px;
+    top: 40%;
+}
+.collapse_header button{
+    white-space: normal;
+}

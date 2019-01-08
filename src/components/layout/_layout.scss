@@ -1,0 +1,34 @@
+
+.layout_area{
+  width: 100%;
+  position: relative;
+  //padding: 20px;
+}
+
+.layout_area.noscroll{
+//overflow: hidden;
+//position: fixed;
+}
+
+
+@media only screen and (min-width : 722px) {
+  .layout_area_top{
+    padding-top: 50px;
+    }
+  
+  .layout_area{
+  //  padding: 50px;
+ // padding-top: 50px;
+  }
+
+}
+
+
+@media screen and (min-width : 992px)  {
+
+  .layout_area{
+   padding-left: 50px;
+   padding-right: 50px;
+  }
+
+}

@@ -1,0 +1,45 @@
+{
+
+
+  "header_section_otsikko":"Hei! olen",
+  "header_section_apu_otsikko":"Verkkokehitys, React.js sovellukset ja paljon muuta",
+  "header_section_apu_otsikko":"Fullstack javascript developer",
+  "header_section_apu_otsikko":"Verkkokehitys, Suunnittelu ja Valokuvaus",
+  "header_section_apu_otsikko":"Verkkokehittäjä, suunnittelija ja Valokuvaaja",
+  "header_section_apu_otsikko":"Fullstack javascript kehittäjä",
+  "header_section_apu_otsikko":"Verkkokehittäjä, suunnittelija ja paljon muuta",
+
+  "header_section_teksti":"Teen korkean suorituskyvyn verkkosivuja ja javascript sovelluksia Käytän moderneja teknologioita, joiden avulla kehittäminen on nopeaa ja ylläpitäminen vaivatonta. Ole yhteydessä jos haluat työskennellä kanssani.",
+  "header_section_teksti":"Teen tehokkaita verkkosivustoja ja progresiivisia verkkosovelluksia. Suunnittelen ja koodaan sivut hyödyntäen nykyaikaisia ​​tekniikoita, jotka mahdollistavat nopean kehityksen ja skaalattavuuden suurille yleisöille. Ole yhteydessä jos haluat työskennellä kanssani.",
+  "header_section_teksti":"Teen näyttäviä verkkosivuja ja tehokkaita verkkosovelluksia. Suunnittelen ja koodaan moderneilla tekniikoilla, jotka mahdollistavat nopean kehittämisen ja skaalautumisen suurille yleisöille. Ole yhteydessä jos haluat työskennellä kanssani.",
+
+  "about_otsikko_start":"Lyhyesti",
+  "about_otsikko_end":"kuka olen.",
+  "about_nyt_otsikko":"Tällä hetkellä",
+  "about_nyt_teksti":"Asun Helsingissä ja olen koulutukseltani merkonomi, yritystoiminnan kautta olen löytänyt intohimoni koodaamisesta ja verkkosivujen suunnittelusta. Tällä hetkellä etsin  uusia mielenkiintoisia projekteja ja työtehtäviä fullstack javascript kehittäjänä.",
+  "about_kehitys_otsikko":"Javascript kehittäjä",
+  "about_kehitys_teksti":"Käytän moderneja verkkoteknologioita kuten React, Node ja Webpack, joiden avulla teen verkkosivuja ja sovelluksia jotka skaalautuvat suurille käyttäjämäärille. Minulla on paljon osaamista tietokantaohjatuista verkkopalveluista, web kartoista ja hakukoneystävällisistä toteutuksista.",
+
+  "myt_stack_otsikko":"Fullstack javascript-kehittäjä",
+  "myt_stack_teksti":"Teen vaativatkin verkkosovellukset kustannustehokkaasti, hyödyntämällä avoimenlähdekoodin kirjastoja ja verkon edistyksellisimpiä palveluita.",
+ 
+  "my_works_otsikko":"Muutama referenssi",
+  "my_works_teksti":"Tässä muutama verkkosivu joiden parissa olen työskennellyt.",
+
+
+  "work_cta_otsikko":"Työskentele kanssani",
+  "work_cta_teksti":"Etsin tällä hetkellä töitä fullstack javascript kehittäjänä. Toimin joko osana tiimiä tai tehden itsenäisesti kokonaisia verkkosovelluksia. Tavoitat minut parhaiten sähköpostilla tai jättämällä soittopyynnön.",
+
+  "work_cta_verkkosivut_otsikko":"Tilaa verkkosivut kustannustehokkaasti",
+  "work_cta_verkkosivut_teksti":"Teen tyylikkäitä ja tehokkaita verkkosivuja yrityksille ja yksityishenkilöille. Tuotan yksilölliset verkkosivut kustannustehokkaasti, asiakkaan tarpeiden mukaan. Kaikki sivuni ovat helppoja päivittää ja suurille käyttäjämäärille skaalautuvia.",
+
+ 
+  "tilaa_section_otsikko_highlighted":"sekunnissa",
+  "tilaa_section_otsikko":"Sivu latautui",
+  "tilaa_section_teksti":"Tämän sivun ylläpito ei maksa mittään ja se on saatavilla salamanopeasti ympärimaailmaa.",
+
+
+
+  "":""
+
+}

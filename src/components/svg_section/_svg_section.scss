@@ -1,0 +1,29 @@
+
+.svg_section{
+    margin-top: 80px;
+}
+.svg_section .inner{
+      background-color: #FFDD00;
+  }
+
+  .svg_section .inner{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+@media only screen and (min-width : 722px) {
+  
+    .svg_section .inner{
+        padding-top: 100px;
+        padding-bottom: 120px;
+        margin-top: 0px;
+    }
+    
+    .svg_section .inner{
+      //position: absolute;
+      width: 100%;
+     // top:175px;
+    }
+ 
+}

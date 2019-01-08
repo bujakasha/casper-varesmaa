@@ -1,0 +1,60 @@
+
+.zoom-img{
+    height: 100% ;
+    width: 100%;
+    transform: scale(1.4);
+
+
+    -webkit-transition: all .6s;
+    -moz-transition: all .6s;
+    -o-transition: all .6s;
+    transition: all .6s;
+
+    
+}
+.zoom-container{
+    overflow: hidden;
+}
+
+
+.overlay.white-slide{
+    background-color: #ffffff; 
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+
+}
+.overlay.content{
+   background-color: transparent; 
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+
+}
+.zoom-img.loaded{
+    transform: scale(1);
+
+  /*  -webkit-transition-delay: .3s;
+    -moz-transition-delay: .3s;
+    -o-transition-delay: .3s;
+    transition-delay: .3s;
+    */
+
+}
+.zoom-container{
+    overflow: hidden ;
+}
+
+
+.loaded .overlay.white-slide{
+    height: 0px;
+    
+}
+
+
+@media only screen and (min-width : 722px) {
+
+ 
+}

@@ -1,0 +1,40 @@
+{
+
+
+
+  "Puhelin":"Puhelin",
+  "Email":"Email",
+  
+  "btn_ansioluettelo":"Näytä ansioluettelo",
+  "btn_yhteys":"Lähetä viesti",
+  "btn_yhteydenotto":"Lähetä soittopyyntö",
+  "btn_projekteja":"Näytä projekteja",
+
+  "btn_title_yhteydenotto":"Soittopyyntö",
+  "btn_title_ansioluettelo":"Ansiloluettelo",
+
+  "ota_yhteytta":"Ota yhteyttä",
+
+  
+  "lisää":"Lue lisää",
+  "Soittopyyntö":"Soittopyyntö",
+  "Ota yhteyttä":"Ota yhteyttä",
+  "Sähköposti":"Sähköposti",
+  "Sosiaaliset mediat":"Sosiaaliset mediat",
+
+ 
+
+  "Näytä enemmän":"Näytä enemmän",
+  "Näytä vähemmän":"Näytä vähemmän",
+  
+
+
+  "not_found_otsikko":"Sivua ei löytynyt",
+  "not_found_teksti":"Hakemaasi osoitetta ei ole olemassa.",
+  "not_found_teksti":"Päädyit osoitteeseen jota ei ole olemassa.",
+
+
+
+  "":""
+
+}

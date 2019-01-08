@@ -1,0 +1,66 @@
+
+.lomake{
+  //  max-width: 600px;
+}
+
+  #message_box{
+   // position: none;
+   overflow: auto;
+   position: fixed;
+    bottom:0;
+    left:0;
+    z-index: -1;
+    height: 0px;
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 1.93);
+    opacity: 0;
+    height: 100vh;
+    -webkit-transition: opacity .3s;
+    -moz-transition: opacity .3s;
+    -o-transition: opacity .3s;
+    transition: opacity .3s;
+}
+
+#message_box.open{
+    opacity: 1;
+    z-index: 99;
+    height: 100vh;
+}
+
+
+#message_box .container{
+    height: 0;
+    max-width: 600px;
+    margin-top: 20px;
+
+}
+
+
+#message_box.open .container .inner-box{
+    height: 80%;
+    bottom: 10%;
+    opacity: 1;
+}
+#message_box .container .inner-box{
+    opacity: 0;
+    height: 0;
+    position: relative;
+    max-width: 600px;
+    height: 0px;
+//    bottom: -100vh;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+   // background-color:  rgba(255, 255, 255, 0.893)
+}
+
+
+@media only screen and (min-width : 722px) {
+
+    #message_box .container{
+        margin-top: 80px;
+    
+    }
+ 
+}

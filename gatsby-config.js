@@ -8,6 +8,31 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+
+
+    {
+     
+      resolve: `gatsby-source-wordpress`,
+      options: {
+          /* WORDPRESS SETTINGS */
+          baseUrl: `casper-varesmaa.fi`,
+          protocol: `https`,
+          hostingWPCOM: false,
+        //  hostingWPCOM: false,
+        useACF: true,
+        includedRoutes: [
+          "/*/*/posts",
+          "/*/*/pages",
+         // "/*/*/media",
+          "/*/*/categories",
+       //   "/*/*/tags",
+      //    "/*/*/taxonomies",
+       //   "/*/*/users",
+        ]
+      }
+    },
+
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -15,7 +40,16 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-excel`,
 
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `data`,
+        path: `${__dirname}/src/data`,
+      },
+    },
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -51,13 +85,14 @@ module.exports = {
             policy: [{ userAgent: '*', disallow: ['/'] }]
           },
           production: {
-            policy: [{ userAgent: '*', disallow: ['/'] }]
+            policy: [{ userAgent: '*', allow: ['/'] }]
             // policy: [{ userAgent: '*', allow: '/' }]
           }
         }
         
       }
     },
+
 
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
@@ -73,6 +108,13 @@ module.exports = {
         icon: 'static/favicon-2562.png', // This path is relative to the root of the site.
       },
     },
+        {
+      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+      options: {
+          analyzerPort: 3000,
+          production: true,
+      },
+  },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',

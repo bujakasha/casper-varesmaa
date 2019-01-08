@@ -1,0 +1,37 @@
+{
+
+
+
+  "Puhelin":"Phone",
+  "Email":"Email",
+  
+  "btn_ansioluettelo":"Show my resume",
+  "btn_yhteys":"Send me a message",
+  "btn_yhteydenotto":"Send callback request",
+  "btn_projekteja":"Show projects",
+
+  "btn_title_yhteydenotto":"Callback request",
+  "btn_title_ansioluettelo":"Resume",
+
+  "ota_yhteytta":"Concat me",
+
+  
+  "Lue lisää":"Read more",
+  "Soittopyyntö":"Call back request",
+  "Ota yhteyttä":"Contact me",
+  "Sähköposti":"Email",
+  "Sosiaaliset mediat":"Social media",
+
+ 
+
+  "Näytä enemmän":"Show more",
+  "Näytä vähemmän":"Show less",
+  
+
+  "not_found_otsikko":"Not Found",
+  "not_found_teksti":"You just hit a route that doesn't exist.",
+
+  
+  "":""
+
+}

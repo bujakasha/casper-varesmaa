@@ -1,0 +1,37 @@
+{
+
+
+  "header_section_otsikko":"Hello, I am",
+  "header_section_apu_otsikko":"Developer, designer and more",
+
+  "header_section_teksti":"I make stunning websites and high performance web applications. I use modern technologies that allow rapid development and easy maintenance. Please contact me if you want to work with me",
+  "header_section_teksti":"I make stunning websites and progressive web applications. I am skilled javascript developer and I use modern techonologies that allow rapid developement and scalability to large audiences. Please be in touch if you want to work with me.",
+  "header_section_teksti":"I make stunning websites and progressive web applications. I design and code pages using modern techniques that enable rapid development and scalability for large audiences. Please be in touch if you want to work with me.",
+
+  "about_otsikko_start":"Briefly",
+  "about_otsikko_end":"about me.",
+  "about_nyt_otsikko":"Currently",
+  "about_nyt_teksti":"I live in Helsinki, I am a passionate coder and I enjoy designing stunning websites and seamless web experiences. Currently I'm looking for interesting projects and full-time job as a javascript developer, so please contact me if you want to work with me.",
+  "about_kehitys_otsikko":"Javascript developer",
+  "about_kehitys_teksti":"I use modern web technologies such as React, Node and Webpack to make highly scalable websites and webApps for large audiences. I have a lot of experience with database-driven web services, web maps and search engine friendly implementations.",
+
+
+  
+  "myt_stack_otsikko":"Fullstack javascript-developer",
+  "myt_stack_teksti":"Here are libraries, technologies and services, that I use daily, I choose best technologies for every project.",
+  "myt_stack_teksti":"I make high performance web applications by utilizing open source libraries and the most advanced web services.",
+  "my_works_otsikko":"My works",
+  "my_works_teksti":"Here are a few websites that I have been working on.",
+
+
+  "work_cta_otsikko":"Work with me",
+  "work_cta_teksti":"I'm currently looking for a full-time job as a javascript developer. You can reach me best by email or by leaving a callback request.",
+  "work_cta_verkkosivut_otsikko":"Websites cost-effectively",
+  "work_cta_verkkosivut_teksti":"I make elegant and efficient websites for businesses and individuals. I produce customized web pages cost-effectively, according to the customer's needs. All my pages are easy to update and scalable for large numbers of users.",
+
+ 
+ 
+  
+  "":""
+
+}

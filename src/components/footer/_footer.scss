@@ -1,0 +1,45 @@
+
+
+  #footer{
+  //  margin-top: 50px;
+   position: relative;
+  // background-color: #FFDD00;
+}
+#footer .inner{
+      background-color: #FFDD00;
+  }
+
+  #footer .footer_padding{
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.nav-dark .nav-item .nav-link{
+    color: rgb(55, 55, 55);
+}
+.nav-dark .nav-item:hover .nav-link{
+    color: rgb(33, 33, 33);
+    background-color: #ffdd00b5;
+    text-decoration: underline;
+}
+
+
+
+@media only screen and (min-width : 722px) {
+    #footer .footer_padding{
+    
+        padding-bottom: 100px;
+    }
+    #footer .inner{
+        padding-top: 0px;
+       // padding-bottom: 100px;
+      //  margin-top: 50px;
+    }
+    
+    #footer .inner{
+      position: absolute;
+      width: 100%;
+      top:175px;
+    }
+ 
+}
