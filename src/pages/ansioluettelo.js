@@ -3,6 +3,8 @@ import {Trans} from '@lingui/react'
 import BgZoom from '../components/bg_zoom'
 import Layout from '../components/layout'
 import { langFromPath } from '../i18n-config'
+import {  graphql} from 'gatsby'
+
 /*
 
               <br />

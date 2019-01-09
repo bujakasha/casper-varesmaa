@@ -1,7 +1,4 @@
 import React from 'react'
-import {Trans} from '@lingui/react'
-import SocialLinks from '../social_links'
-import PagePerformance from '../page_performance';
 import './_svg_section.scss'
 
 

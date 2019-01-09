@@ -2,6 +2,7 @@ import React from 'react'
 import {Trans} from '@lingui/react'
 import Layout from '../components/layout'
 import AboutSection from '../components/tilaa_section'
+import {  graphql} from 'gatsby'
 
 
   class OrgerWebsitePage extends React.PureComponent {

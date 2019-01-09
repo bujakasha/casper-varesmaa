@@ -10,6 +10,8 @@ import LeaveContact from '../leave_contacts/soitto'
 import MessageContact from '../leave_contacts/message'
 
 // import '@fortawesome/fontawesome-svg-core/styles.css';
+import 'typeface-nunito-sans'
+
 import '../../../fontawesome/library'
 import '../../../sass/main.scss'
 import './_layout.scss'
@@ -47,6 +49,7 @@ const Layout = props => {
           />
           <div className="navigation_offset" />
           <div className={' layout_area_top'}>
+          
             <LeaveContact
               isOpen={isContact && isContact !== 'viesti'}
               closeModal={openModal.bind(null, 'viesti')}

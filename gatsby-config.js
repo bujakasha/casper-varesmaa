@@ -117,6 +117,14 @@ module.exports = {
         icon: 'static/favicon-2562.png', // This path is relative to the root of the site.
       },
     },
+
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+      options: {
+          analyzerPort: 3000,
+          production: true,
+      },
+  },
      
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline

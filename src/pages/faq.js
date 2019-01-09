@@ -2,6 +2,7 @@ import React from 'react'
 import {Trans} from '@lingui/react'
 import Layout from '../components/layout'
 import CollapseBar from '../components/collapse_bar'
+import {  graphql} from 'gatsby'
 
   class FAQ extends React.PureComponent {
     state = {

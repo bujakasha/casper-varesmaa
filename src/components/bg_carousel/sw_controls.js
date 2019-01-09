@@ -9,6 +9,7 @@ const CarouselControls = ({count, activeImage}) => {
     <div className="sw_controls">
       <button
         type="button"
+        title="prev slide"
         className={'btn sw_control_arr ' + ((isLeft && 'active') || 'disabled')}
       >
         <FontAwesomeIcon
@@ -20,6 +21,7 @@ const CarouselControls = ({count, activeImage}) => {
 
       <button
         type="button"
+        title="next slide"
         className={
           'btn sw_control_arr ' + ((isRight && 'active') || 'disabled')
         }
