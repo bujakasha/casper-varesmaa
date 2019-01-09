@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import Img from 'gatsby-image'
+
 import './_bg_zoom.scss'
 
 class BgZoom extends React.PureComponent {
@@ -57,7 +59,24 @@ class BgZoom extends React.PureComponent {
           ((isLoaded && 'loaded ') || '')
         }
       >
-        <div
+             <Img fluid={img} className={
+            ((isLoaded && 'loaded ') || '') +
+            ' bg-img zoom-img   overlay-container ' +
+            ((contain && 'contain ') || '')
+          } />
+
+<div className="overlay white-slide" />
+    
+
+
+
+      </div>
+    )
+  }
+}
+
+/*
+    <div
           className={
             ((isLoaded && 'loaded ') || '') +
             ' bg-img zoom-img   overlay-container ' +
@@ -67,12 +86,10 @@ class BgZoom extends React.PureComponent {
             backgroundImage: `url(${img && img.src})`,
           }}
         >
+ 
           <div className="overlay white-slide" />
         </div>
-      </div>
-    )
-  }
-}
+         */
 
 BgZoom.propTypes = {
   siteTitle: PropTypes.string,

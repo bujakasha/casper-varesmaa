@@ -99,7 +99,6 @@ class LayoutWithProvider extends React.Component {
     window.removeEventListener('hashchange', this.hashChange)
   }
   openModal = value => {
-    console.log('opening modal')
     this.setState({isContact: value || !this.state.isContact})
   }
   closeModal = () => {

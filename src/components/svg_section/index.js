@@ -6,13 +6,13 @@ import './_svg_section.scss'
 
 
 
-const WaveSvg = ({children, transform}) => (
+const WaveSvg = ({children, id}) => (
   
 
   <svg  viewBox="0 0 100 10">
     <defs>
       <pattern
-        id="Wave"
+        id={id}
         x="0"
         y="0"
         width="100"
@@ -36,14 +36,14 @@ const WaveSvg = ({children, transform}) => (
     </defs>
 
     <rect 
-    width="100%" height="100%" fill="url(#Wave)" />
+    width="100%" height="100%" fill={"url(#"+id+")"} />
   </svg>
 
 )
 
 const SvgSection = ({children,style}) => (
   <div className="svg_section w-100">
-    <WaveSvg />
+    <WaveSvg  id="Wawetop"/>
 
     <div className="inner">
       {children}
@@ -57,7 +57,7 @@ const SvgSection = ({children,style}) => (
   width:'100%'
   }}>
     <WaveSvg 
-   
+   id="Wawebottom"
   />
   </div>
 

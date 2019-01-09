@@ -1,12 +1,9 @@
-import {Link} from 'gatsby'
 import PropTypes from 'prop-types'
 import {StaticQuery, graphql} from 'gatsby'
 import React from 'react'
 import Img from 'gatsby-image'
-import BgZoom from '../bg_zoom'
 import './_my_projects.scss'
 import {WithOverlay} from '../bg_zoom'
-import LazyLoad from 'react-lazyload'
 import {Trans, I18n} from '@lingui/react'
 import {t} from '@lingui/macro'
 const MyProjects = ({images, children}) => (
@@ -126,6 +123,3 @@ Projekti.propTypes = {
   toimija: PropTypes.string,
   teksti: PropTypes.string,
 }
-/*
- <a href="#"> Lue lisää </a>
-  */

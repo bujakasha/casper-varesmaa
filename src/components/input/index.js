@@ -1,4 +1,3 @@
-import {Link} from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import './_input.scss'
@@ -41,6 +40,19 @@ const Input = props => {
     </div>
   )
 }
+Input.propTypes = {
+  label: PropTypes.string,
+  name: PropTypes.string,
+  required: PropTypes.bool,
+  error: PropTypes.object,
+  value: PropTypes.string,
+  type: PropTypes.string,
+  inputStyle: PropTypes.object,
+  errorMsg: PropTypes.string,
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
+}
+
 
 export default Input
 
@@ -82,3 +94,18 @@ export const Textarea = props => {
     </div>
   )
 }
+
+Input.propTypes = {
+  label: PropTypes.string,
+  name: PropTypes.string,
+  required: PropTypes.bool,
+  error: PropTypes.object,
+  value: PropTypes.string,
+  rows: PropTypes.number,
+  inputStyle: PropTypes.object,
+  errorMsg: PropTypes.string,
+  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
+}
+
+

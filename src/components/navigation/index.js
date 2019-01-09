@@ -1,12 +1,12 @@
 import {Link} from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import './_navigation.scss'
 import Hamburger from './hamburger'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Collapse from 'reactstrap/lib/Collapse'
 import { getHomelink, prefix, deprefix} from '../../i18n-config'
 import {Trans} from '@lingui/react'
+import './_navigation.scss'
 
 class Navigation extends React.PureComponent {
   state = {
@@ -75,6 +75,7 @@ class Navigation extends React.PureComponent {
                   <FontAwesomeIcon
                     icon={['far', 'phone']}
                     size="1x"
+                    width="20px"
                     className="mr-2"
                     style={{ fontSize: '1em' }}
                   />

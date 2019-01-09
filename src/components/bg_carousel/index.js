@@ -1,8 +1,6 @@
-import {Link} from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import './_bg_carousel.scss'
-import SwPagination from './sw_pagination'
 import SwControls from './sw_controls'
 import BgZoom from '../bg_zoom'
 
@@ -17,14 +15,13 @@ class SwComponent extends React.PureComponent {
   changeImage = activeImage => {
     this.setState({activeImage})
   }
-
   toggle = () => {
     this.setState({isLoaded: !this.state.isLoaded})
   }
 
   render() {
     const {activeImage, status} = this.state
-    const {img, className, images} = this.props
+    const { className, images} = this.props
 
     return (
       <div className={'sw_container bg-ark '}>
@@ -58,7 +55,3 @@ SwComponent.propTypes = {
 
 export default SwComponent
 
-/*
-        <SwPagination changeImage={this.changeImage} count={images&&images.length} activeSlide={activeImage}/>
-
-*/

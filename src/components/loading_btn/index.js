@@ -18,4 +18,11 @@ const LoadingBtn = props => {
   )
 }
 
+LoadingBtn.propTypes = {
+  label: PropTypes.string.isRequired,
+  onClick: PropTypes.func,
+  type: PropTypes.string,
+  className: PropTypes.string,
+  isLoading: PropTypes.bool,
+}
 export default LoadingBtn

@@ -1,6 +1,4 @@
 import React from 'react'
-import {Trans} from '@lingui/react'
-import TouchCarousel from 'react-touch-carousel'
 import BgZoom from '../bg_zoom'
 import {ControlArrow} from './sw_controls'
 import './_sw_swiper.scss'

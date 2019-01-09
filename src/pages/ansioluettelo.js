@@ -1,7 +1,5 @@
 import React from 'react'
-import {Link} from 'gatsby'
-import {Trans, withI18n} from '@lingui/react'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {Trans} from '@lingui/react'
 import BgZoom from '../components/bg_zoom'
 import Layout from '../components/layout'
 import { langFromPath } from '../i18n-config'

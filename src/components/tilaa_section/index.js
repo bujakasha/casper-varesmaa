@@ -1,9 +1,6 @@
 import React from 'react'
 import {Trans, withI18n} from '@lingui/react'
-import {t} from '@lingui/macro'
-
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-
 import './_tilaa_section.scss'
 const TilaaSection = ({toggleMessage, i18n}) => (
   <div id="tilaa_section" className="container  col-md-10 px-md-5">

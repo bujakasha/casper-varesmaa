@@ -1,11 +1,7 @@
 import React from 'react'
 import {Trans} from '@lingui/react'
-import './_about_section.scss'
-
-
-
+// import './_about_section.scss'
 const AboutSection = () => (
-  <>
   <div id="about_section" className="container col-md-10 bg-secondary ">
    
     <div className="row">
@@ -41,7 +37,6 @@ const AboutSection = () => (
       </div>
     </div>
   </div>
-  </>
 )
 
 export default AboutSection

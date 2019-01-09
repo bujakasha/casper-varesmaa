@@ -2,8 +2,7 @@ import React from 'react'
 import {Link} from 'gatsby'
 import {Trans} from '@lingui/react'
 import SocialLinks from '../social_links'
-import PagePerformance from '../page_performance';
-import { getHomelink, prefix, deprefix} from '../../i18n-config'
+import { getHomelink } from '../../i18n-config'
 import Img from 'gatsby-image'
 import { StaticQuery, graphql} from 'gatsby'
 
@@ -11,11 +10,8 @@ import './_footer.scss'
 
 
 
-const Footer = ({children, lang, data}) => {
+const Footer = ({ lang}) => {
   const homelink = lang ? getHomelink(lang) : null
- // const profileImage = data.profileImage && data.profileImage.childImageSharp
-  console.log(data)
-
 return(
   <div id="footer" className="w-100">
     <WaveSvg />
@@ -76,22 +72,30 @@ return(
 
         <ul className="nav nav-dark flex-olumn mt-5 mt-lg-0 col justify-content-center">
           <li className="nav-item">
-            <Link to={homelink} className="nav-link  " href="#">
+            <Link to={homelink} 
+              title="Henkilökohtainen verkkosivu"
+            className="nav-link">
               <Trans id="kotisivu_page_link" />
             </Link>
           </li>
           <li className="nav-item">
-            <Link to={homelink + 'ansioluettelo'} className="nav-link" href="#">
+            <Link to={homelink + 'ansioluettelo'}
+              title="Ansioluettelo Casper Väresmaa"
+               className="nav-link">
               <Trans id="ansiluettelo_page_link" />
             </Link>
           </li>
           <li className="nav-item">
-            <Link to={homelink + 'tilaa-verkkosivut'} className="nav-link" href="#">
+            <Link to={homelink + 'tilaa-verkkosivut'} 
+            title="Verkkosivun tilaaminen"
+            className="nav-link">
               <Trans id="tilaa_page_link" />
             </Link>
           </li>
           <li className="nav-item">
-            <Link to={homelink + 'faq'} className="nav-link" href="#">
+            <Link to={homelink + 'faq'} 
+             title="Yleisiä kysymyksiä"
+             className="nav-link">
               <Trans id="faq_page_link" />
             </Link>
           </li>
@@ -121,7 +125,7 @@ const WaveSvg = ({children}) => (
   <svg viewBox="0 0 100 25">
     <defs>
       <pattern
-        id="Wave"
+        id="WaveFooter"
         x="0"
         y="0"
         width="100"
@@ -144,7 +148,7 @@ const WaveSvg = ({children}) => (
       </pattern>
     </defs>
 
-    <rect width="100%" height="100%" fill="url(#Wave)" />
+    <rect width="100%" height="100%" fill="url(#WaveFooter)" />
   </svg>
 
 )

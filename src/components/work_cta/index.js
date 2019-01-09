@@ -1,11 +1,7 @@
 import {Link} from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Img from 'gatsby-image'
 import {Trans} from '@lingui/react'
-
-import SocialLinks from '../social_links'
-
 const Header = ({toggleMessage}) => (
   <div id="work_with_me" className="container col-md-10 offset-md-1">
     <div className="row">
@@ -90,13 +86,3 @@ Header.propTypes = {
 
 export default Header
 
-/*
- <div className="">
-              <p className="mb-0">
-                <small>
-                  <Trans id="Sosiaaliset mediat" />
-                </small>
-              </p>
-              <SocialLinks />
-            </div>
-             */

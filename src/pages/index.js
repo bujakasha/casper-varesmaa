@@ -10,7 +10,6 @@ import AboutSection from '../components/about_section'
 // import SendMessage from '../components/send_message'
 import SocialLinks from '../components/social_links'
 import Social from '../components/work_cta'
-import MiddleCurve from '../components/svg/middle_curve'
 
 import {Trans, I18n} from '@lingui/react'
 import {t} from '@lingui/macro'

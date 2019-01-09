@@ -1,11 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import BrandSwiper from '../sw_swiper/brand_swiper'
-import './_my_stack.scss'
 import {StaticQuery, graphql} from 'gatsby'
 import Collapse from 'reactstrap/lib/Collapse'
 import Image from './brand'
-import Img from 'gatsby-image'
+import './_my_stack.scss'
 
   class Brands extends React.PureComponent {
     state = {

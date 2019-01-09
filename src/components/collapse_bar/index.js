@@ -1,4 +1,3 @@
-import {Link} from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Collapse from 'reactstrap/lib/Collapse'
@@ -11,8 +10,7 @@ const CollapseBar = props => {
     title,
     isOpen,
     children,
-    toggle,
-    index
+    toggle
   } = props
 
   return (

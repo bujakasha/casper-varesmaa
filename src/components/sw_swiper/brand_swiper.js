@@ -1,5 +1,4 @@
 import React from 'react'
-import {Trans} from '@lingui/react'
 import PropTypes from 'prop-types'
 
 import {ControlArrow} from './sw_controls'
@@ -20,21 +19,7 @@ class SwSwiper extends React.Component {
   goPrev = () => {
     if (this.swiper) this.swiper.slidePrev()
   }
-/*
-  renderCard = chunk => {
-    return (
-      <div className="col-12 h-10 bg-white">
-        <div className="row">
-          {chunk.map(
-            (item, i) =>
-              item.node.childImageSharp && (
-                <Image key={i} fluid={item.node.childImageSharp.fluid} />
-              )
-          )}
-        </div>
-      </div>
-    )
-  }*/
+
   renderCard = chunk => {
     return (
       <div className="col-12 h-10 bg-white">
