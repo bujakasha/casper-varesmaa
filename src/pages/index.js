@@ -53,7 +53,7 @@ class IndexPage extends React.PureComponent {
             <div className="layout_area">
          
               <Header img={headerImage.fluid} carouselImages={carouselImages}>
-                <div className="mt-md-5 pt-md-3">
+                <div className="mt-md-5 pt-md-2">
                   <h1 className="h1 font-weight-bold">
                     <Trans id="header_section_otsikko" />
                     <br />

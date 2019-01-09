@@ -39,7 +39,7 @@ const AnsioluetteloPage = props => {
           <div className="col-md-5 col-lg-4 col-xl-3 d-none d-md-block">
             <BgZoom
               className="profile_image"
-              delay={200}
+              delay={100}
               img={profileImage && profileImage.fluid}
             />
           </div>

@@ -70,7 +70,16 @@ module.exports = {
         precision: 8,
       },
     },
-    `gatsby-plugin-purgecss`,
+    { 
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        // develop: true, // Enable while using `gatsby develop`
+        // tailwind: true, // Enable tailwindcss support
+        whitelist: ['collapse', 'collapsing', 'show','navbar-collapse'],
+         ignore: ['/_sw_swiper.scss','_navigation.scss'], // Ignore files/folders
+        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+      }
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-sitemap`,
@@ -108,15 +117,20 @@ module.exports = {
         icon: 'static/favicon-2562.png', // This path is relative to the root of the site.
       },
     },
-        {
+     
+    // this (optional) plugin enables Progressive Web App + Offline functionality
+    // To learn more, visit: https://gatsby.app/offline
+    // 'gatsby-plugin-offline',
+  ],
+}
+
+/*
+
+   {
       resolve: 'gatsby-plugin-webpack-bundle-analyzer',
       options: {
           analyzerPort: 3000,
           production: true,
       },
   },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
-  ],
-}
+  */

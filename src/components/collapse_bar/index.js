@@ -32,8 +32,8 @@ const CollapseBar = props => {
      /></span>
       </button>
     </div>
-    <Collapse isOpen={isOpen} className="pb-5">
-     <div className="collapse_body">
+    <Collapse isOpen={isOpen}>
+     <div className="collapse_body pb-5">
      {children}
      </div>
       </Collapse>

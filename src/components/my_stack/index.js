@@ -1,22 +1,82 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import BrandSwiper from '../sw_swiper/brand_swiper'
-import brandArray from './stack_data';
 import './_my_stack.scss'
+import {StaticQuery, graphql} from 'gatsby'
+import Collapse from 'reactstrap/lib/Collapse'
+import Image from './brand'
 import Img from 'gatsby-image'
-/*
-        <BrandSwiper swiperData={imagesColored} brands={brandArray} />
 
-        */
-const Header = ({images, imagesColored, children}) => {
+  class Brands extends React.PureComponent {
+    state = {
+      showAll: false,
+    }
+  
+    toggle = () => {
+      this.setState({showAll: !this.state.showAll})
+    }
 
+    
+render(){
+  const {  showAll} =this.state;
+  const {  children, images} =this.props;
 return(
   <div id="my_stack" className="container col-md-10">
     <div className="row">
       <div className="col-md-6">{children}</div>
       <div className="col-md-11 pt-5">
 
-      <BrandSwiper swiperData={imagesColored} brands={brandArray} />
+      <StaticQuery
+      query={graphql`
+        query BrandDataQuery {
+          sprite: allSpriteImagesXlsxTaul1 {
+            edges {
+              node {
+                id
+                className
+                data
+                
+              }
+            }
+          }
+        }
+      `}
+      render={data => {
+        if(!data.sprite&&data.sprite.edges){return null}
+        const array = showAll ? data.sprite.edges : data.sprite.edges.slice(0, 12)
+
+        return(
+          <>
+        <div className="row">
+        {data.sprite.edges.slice(0, 12).map((brand,i)=>(
+            <Image {...brand.node}/>
+        ))}
+          </div>
+        <Collapse isOpen={showAll}>
+        <div className="row">
+          {data.sprite.edges.slice(12, 40).map((brand,i)=>(
+              <Image {...brand.node}/>
+          ))}
+         </div>
+        </Collapse>
+      
+        </>
+        )
+      }
+      }/>
+
+      <div className="col-12 text-center text-lg-right">
+            <button
+              onClick={this.toggle}
+              type="button"
+              className="btn btn-sm mt-3"
+            >
+              {' '}
+              {(!showAll && 'Näytä enemmän') || 'Näytä vähemmän'}{' '}
+            </button>
+          </div>
+    
+
 
 
       </div>
@@ -24,44 +84,14 @@ return(
   </div>
 )
               }
+            }
 
-Header.propTypes = {
+Brands.propTypes = {
   images: PropTypes.array,
   children: PropTypes.object,
 }
 
-export default Header
+export default Brands
 
 
 
-
-const Image = ({fluid,className,data}) => (
-  <div className="col-4 col-md-3 d-flex img_container align-items-center justify-content-center text-center brder  ">
-   <div>
-      {fluid&& <Img className="img" fluid={fluid} />
-      ||<img src={data} className={"img "+(className)}/>}
-    
-    </div>
-  </div>
-)
-
-Image.propTypes = {
-  fluid: PropTypes.obj,
-}
-
-
-
-const chunk = (arr, len) => {
-  if (!arr) {
-    return null
-  }
-  var chunks = [],
-    i = 0,
-    n = arr.length
-
-  while (i < n) {
-    chunks.push(arr.slice(i, (i += len)))
-  }
-
-  return chunks
-}

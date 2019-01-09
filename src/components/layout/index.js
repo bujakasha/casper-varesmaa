@@ -9,6 +9,7 @@ import Footer from '../footer'
 import LeaveContact from '../leave_contacts/soitto'
 import MessageContact from '../leave_contacts/message'
 
+// import '@fortawesome/fontawesome-svg-core/styles.css';
 import '../../../fontawesome/library'
 import '../../../sass/main.scss'
 import './_layout.scss'
@@ -78,8 +79,8 @@ class LayoutWithProvider extends React.Component {
 
   componentWillMount() {
     if (typeof window !== 'undefined') {
-      const WOW = require('wow.js')
-      new WOW().init()
+    //  const WOW = require('wow.js')
+     // new WOW().init()
     }
   }
   componentDidMount() {

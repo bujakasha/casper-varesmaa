@@ -47,7 +47,6 @@ class Navigation extends React.PureComponent {
 
     return (
       <div className={'sticky_box  ' + ((isSticky && ' sticky') || '')}>
-        {console.log(this.props)}
 
         <div
           className={
@@ -77,6 +76,7 @@ class Navigation extends React.PureComponent {
                     icon={['far', 'phone']}
                     size="1x"
                     className="mr-2"
+                    style={{ fontSize: '1em' }}
                   />
                   <strong>
                     <Trans id="Ota yhteyttä" />{' '}
@@ -162,6 +162,7 @@ class Navigation extends React.PureComponent {
                     icon={['far', 'phone']}
                     size="1x"
                     className="mr-2"
+                    style={{ fontSize: '1em' }}
                   />
                   <strong>
                     <Trans id="Ota yhteyttä" />{' '}
