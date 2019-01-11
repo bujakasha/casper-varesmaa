@@ -7,7 +7,6 @@ const catalogs = {
   ...require('./modal.json'),
   ...require('./my_works.json'),
   ...require('./faq.json'),
-
 }
 
 exports.default = catalogs

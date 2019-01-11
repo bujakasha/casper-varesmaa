@@ -53,7 +53,6 @@ Input.propTypes = {
   placeholder: PropTypes.string,
 }
 
-
 export default Input
 
 export const Textarea = props => {
@@ -107,5 +106,3 @@ Input.propTypes = {
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
 }
-
-

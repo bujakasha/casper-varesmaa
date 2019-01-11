@@ -3,7 +3,7 @@ import React from 'react'
 import SwSwiper from '../sw_swiper/header_swiper'
 import './_header.scss'
 
-const Header = ({ carouselImages, children}) => (
+const Header = ({carouselImages, children}) => (
   <div className="col-md-10 container">
     <div className="row">
       <div className="order-1 order-md-0 col-md-4 col-md-6">{children}</div>

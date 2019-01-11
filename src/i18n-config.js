@@ -31,8 +31,7 @@ const homelink = lang => {
   return lang.match(/fi/) ? '/' : `/${lang}/`
 }
 
-const langFromPath = pathname =>
-  pathname.startsWith('/en/') ? 'en' : 'fi'
+const langFromPath = pathname => (pathname.startsWith('/en/') ? 'en' : 'fi')
 
 exports.defaultLanguage = defaultLanguage
 exports.languages = languages

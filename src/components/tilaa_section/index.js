@@ -38,7 +38,6 @@ const TilaaSection = ({toggleMessage, i18n}) => (
 
         <a
           href="#soittopyyntö"
-          
           className="btn btn-secondary px-5"
           onClick={toggleMessage}
         >

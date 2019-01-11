@@ -9,29 +9,26 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
 
-
+/*
     {
      
       resolve: `gatsby-source-wordpress`,
       options: {
-          /* WORDPRESS SETTINGS */
           baseUrl: `casper-varesmaa.fi`,
           protocol: `https`,
           hostingWPCOM: false,
         //  hostingWPCOM: false,
         useACF: true,
-        includedRoutes: [
-          "/*/*/posts",
-          "/*/*/pages",
-         // "/*/*/media",
-          "/*/*/categories",
-       //   "/*/*/tags",
-      //    "/*/*/taxonomies",
-       //   "/*/*/users",
-        ]
       }
-    },
+    },*/
 
+
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/templates/layout/index.js`),
+      },
+    },
     
     {
       resolve: `gatsby-source-filesystem`,

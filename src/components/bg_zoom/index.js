@@ -42,13 +42,7 @@ class BgZoom extends React.PureComponent {
 
   render() {
     const {isLoaded} = this.state
-    const {
-      img,
-      className,
-      contain,
-      isOpen,
-      controlled,
-    } = this.props
+    const {img, className, contain, isOpen, controlled} = this.props
     const isVisivble = controlled === true ? isOpen : isLoaded
     return (
       <div
@@ -59,17 +53,16 @@ class BgZoom extends React.PureComponent {
           ((isLoaded && 'loaded ') || '')
         }
       >
-             <Img fluid={img} className={
+        <Img
+          fluid={img}
+          className={
             ((isLoaded && 'loaded ') || '') +
             ' bg-img zoom-img   overlay-container ' +
             ((contain && 'contain ') || '')
-          } />
+          }
+        />
 
-<div className="overlay white-slide" />
-    
-
-
-
+        <div className="overlay white-slide" />
       </div>
     )
   }

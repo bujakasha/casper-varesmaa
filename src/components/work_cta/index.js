@@ -8,7 +8,9 @@ const Header = ({toggleMessage}) => (
       <div className="col-md-7">
         <div className="">
           <h2 className="h2 font-weight-bold">
+          <strong>
             <Trans id="work_cta_otsikko" />
+            </strong>
           </h2>
           <p />
           <p>
@@ -22,9 +24,9 @@ const Header = ({toggleMessage}) => (
 
       <div className="col-lg-7 mt-5 mt-lg-0">
         <div className="col-xl-11 px-0">
-          <h4 className="h5 font-weight-bold">
+          <h4 className="h5 font-weight-">
             {' '}
-            <Trans id="work_cta_verkkosivut_otsikko" />
+           <strong> <Trans id="work_cta_verkkosivut_otsikko" /></strong>
           </h4>
           <p />
           <p>
@@ -37,7 +39,6 @@ const Header = ({toggleMessage}) => (
           </p>
           <br />
           <a
-         
             href="#soittopyynto"
             onClick={toggleMessage}
             className="btn btn-secondary btn-sm btn-simple"
@@ -69,7 +70,6 @@ const Header = ({toggleMessage}) => (
                 casper.varesmaa@gmail.com
               </p>
             </div>
-           
           </div>
 
           <br />
@@ -85,4 +85,3 @@ Header.propTypes = {
 }
 
 export default Header
-

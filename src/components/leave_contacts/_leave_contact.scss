@@ -3,6 +3,14 @@
     display: block;
 }
 
+.close-btn{
+    position: absolute;
+    right:10px;
+    top:10px;
+    z-index: 80;
+}
+
+
 .modal.contact_form{
     z-index: 999;
     background-color: rgba(84, 84, 59, 0.5)

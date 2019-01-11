@@ -4,11 +4,13 @@ import Helmet from 'react-helmet'
 import {StaticQuery, graphql} from 'gatsby'
 import {I18nProvider} from '@lingui/react'
 import {catalogs, langFromPath} from '../../i18n-config'
-import Navigation from '../navigation'
-import Footer from '../footer'
-import LeaveContact from '../leave_contacts/soitto'
-import MessageContact from '../leave_contacts/message'
+import Navigation from '../../components/navigation'
+import Footer from '../../components/footer'
+import Contact from '../../components/leave_contacts'
 
+import LeaveContact from '../../components/leave_contacts/soitto'
+import MessageContact from '../../components/leave_contacts/message'
+import Transition from '../../components/Transition'
 // import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'typeface-nunito-sans'
 
@@ -49,23 +51,16 @@ const Layout = props => {
           />
           <div className="navigation_offset" />
           <div className={' layout_area_top'}>
-          
-            <LeaveContact
-              isOpen={isContact && isContact !== 'viesti'}
-              closeModal={openModal.bind(null, 'viesti')}
-              toggle={closeModal}
-            />
-            <MessageContact
-              closeModal={openModal.bind(null, true)}
-              isOpen={isContact == 'viesti'}
-              toggle={closeModal}
-            />
-            {children}
+          <Contact 
+          isOpen={isContact}
+          closeModal={openModal}
+          toggle={closeModal}
+          />
+            
+            <Transition location={location}>{children}</Transition>
+
           </div>
-          <Footer
-           lang={lang}
-           location={location}
-           />
+          <Footer lang={lang} location={location} />
         </body>
       )}
     />
@@ -82,8 +77,8 @@ class LayoutWithProvider extends React.Component {
 
   componentWillMount() {
     if (typeof window !== 'undefined') {
-    //  const WOW = require('wow.js')
-     // new WOW().init()
+      //  const WOW = require('wow.js')
+      // new WOW().init()
     }
   }
   componentDidMount() {
@@ -93,7 +88,11 @@ class LayoutWithProvider extends React.Component {
     }
   }
   componentDidUpdate(prevProps) {
-    if(this.state.isContact==false&&this.props.parentIsContact&&this.props.parentIsContact!==prevProps.parentIsContact){
+    if (
+      this.state.isContact == false &&
+      this.props.parentIsContact &&
+      this.props.parentIsContact !== prevProps.parentIsContact
+    ) {
       this.openModal(this.props.parentIsContact)
     }
   }
@@ -120,7 +119,7 @@ class LayoutWithProvider extends React.Component {
   render = () => {
     const {isContact} = this.state
     const lang = this.props.location
-      ? langFromPath(this.props.location.pathname)
+      ? langFromPath(this.props.location&&this.props.location.pathname)
       : 'fi'
 
     const childrenWithProps = React.Children.map(this.props.children, child =>
@@ -152,3 +151,16 @@ function remove_hash_from_url() {
     window.history.replaceState({}, document.title, clean_uri)
   }
 }
+
+/*
+<LeaveContact
+              isOpen={isContact && isContact !== 'viesti'}
+              closeModal={openModal.bind(null, 'viesti')}
+              toggle={closeModal}
+            />
+            <MessageContact
+              closeModal={openModal.bind(null, true)}
+              isOpen={isContact == 'viesti'}
+              toggle={closeModal}
+            />
+             */

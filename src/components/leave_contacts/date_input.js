@@ -35,13 +35,14 @@ class DateInput extends React.PureComponent {
     super(props)
     this.switchLocale = this.switchLocale.bind(this)
     this.state = {
-      selectedDay: this.props.value || undefined,
+      selectedDay:  this.props.value || undefined,
       isEmpty: true,
       isDisabled: false,
 
       locale: 'fi',
     }
   }
+  
 
   switchLocale(e) {
     const locale = e.target.value || 'en'
@@ -64,22 +65,24 @@ class DateInput extends React.PureComponent {
 
     return (
       <div className="pick_date d-flex">
+      <br/>
         <DayPickerInput
           formatDate={formatDate}
           parseDate={parseDate}
           format={FORMAT}
-          value={formatDate(value, FORMAT)}
+         // value={formatDate(selectedDay, FORMAT)}
+          value={value}
           onDayChange={this.handleDayChange}
           inputProps={{className: 'date-whole noFocus'}}
-          selectedDay={selectedDay}
+         selectedDay={value}
           dayPickerProps={{
             ...dayInpuLocaleProps(locale),
-            month: value,
-            modifiers: modifiers(value || selectedDay),
-            month: value,
+            modifiers: modifiers(value),
             disabledDays: {
               daysOfWeek: [5, 6],
             },
+            selectedDay: value,
+            month:value,
             // fromMonth: new Date(),
             // toMonth: addMonths(new Date(), 2),
             showWeekNumbers: false,

@@ -102,10 +102,10 @@ class MessageForm extends React.PureComponent {
                     name="nimi"
                     value={nimi}
                     onChange={this.onChange}
-                    placeholder="Kirjoita nimesi"
+                    placeholder=""
                     error={errors && errors.nimi}
                     errorMsg="Lisää nimesi"
-                    inputStyle={{maxWidth: '300px'}}
+                    inputStyle={{maxWidth: !nimi&&'240px'||'300px'}}
                   />
 
                   <Input
@@ -117,7 +117,7 @@ class MessageForm extends React.PureComponent {
                     placeholder={i18n._(t`input_email_placeholder`)}
                     error={errors && errors.email}
                     errorMsg={i18n._(t`input_email_error`)}
-                    inputStyle={{maxWidth: '600px'}}
+                    inputStyle={{maxWidth: !email&&'240px'||'300px'}}
                   />
                 </div>
               </div>

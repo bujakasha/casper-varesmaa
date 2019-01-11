@@ -14,7 +14,7 @@ class LeavConactInfo extends React.PureComponent {
 
     return (
       <Modal
-        isOpen={isOpen}
+        isOpen={isOpen!==false}
         size="lg"
         className="mt-5"
         toggle={this.props.toggle}

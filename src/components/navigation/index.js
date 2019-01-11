@@ -4,7 +4,7 @@ import React from 'react'
 import Hamburger from './hamburger'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Collapse from 'reactstrap/lib/Collapse'
-import { getHomelink, prefix, deprefix} from '../../i18n-config'
+import {getHomelink, prefix, deprefix} from '../../i18n-config'
 import {Trans} from '@lingui/react'
 import './_navigation.scss'
 
@@ -17,6 +17,11 @@ class Navigation extends React.PureComponent {
   componentDidMount() {
     this.handleScroll()
     window.addEventListener('scroll', this.handleScroll, false)
+  }
+  componentDidUpdate(prevProps){
+    if(this.props.location&&prevProps.location!==this.props.location){
+      this.setState({isOpen:false})
+    }
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll)
@@ -34,9 +39,12 @@ class Navigation extends React.PureComponent {
   }
 
   toggle = () => {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    })
+    if(!window.innerWidth > 768){
+      this.setState({
+        isOpen: !this.state.isOpen,
+      })
+    }
+
   }
 
   render() {
@@ -47,7 +55,6 @@ class Navigation extends React.PureComponent {
 
     return (
       <div className={'sticky_box  ' + ((isSticky && ' sticky') || '')}>
-
         <div
           className={
             'navigation_container bg-white  ' +
@@ -60,11 +67,10 @@ class Navigation extends React.PureComponent {
               className="navbar bg-white navbar-light navbar-expand-lg"
             >
 
-
-
-        <div className="d-lg-none  mr-md-0 ml-lg-auto">
+          
+              <div className="d-lg-none  mr-md-0 ml-lg-auto">
                 <a
-                  href="#soittopyyntö"
+                  href="#soittopyynto"
                   onClick={this.props.toggleContact}
                   className={
                     'btn btn-secondary btn-sm btn-simple ' +
@@ -77,7 +83,7 @@ class Navigation extends React.PureComponent {
                     size="1x"
                     width="20px"
                     className="mr-2"
-                    style={{ fontSize: '1em' }}
+                    style={{fontSize: '1em'}}
                   />
                   <strong>
                     <Trans id="Ota yhteyttä" />{' '}
@@ -85,8 +91,7 @@ class Navigation extends React.PureComponent {
                 </a>
               </div>
 
-
-<div className="navbar-nav d-lg-none  ml-auto mr-4">
+              <div className="navbar-nav d-lg-none  ml-auto mr-2">
                 <div className="d-flex">
                   <Link
                     to={deprefix(this.props.location.pathname)}
@@ -99,6 +104,7 @@ class Navigation extends React.PureComponent {
                   <a className="nav-link  px-0"> | </a>
                   <Link
                     to={prefix('en') + deprefix(this.props.location.pathname)}
+                
                     className="nav-link px-1 "
                     activeClassName="active"
                   >
@@ -108,7 +114,10 @@ class Navigation extends React.PureComponent {
                 </div>
               </div>
 
-<div className="toggler d-lg-none">
+          
+
+
+              <div className="toggler d-lg-none">
                 <Hamburger
                   isOpen={isOpen}
                   className="dark-color"
@@ -120,6 +129,7 @@ class Navigation extends React.PureComponent {
                 <div className="navbar-nav ">
                   <Link
                     to={homelink}
+                    onClick={this.toggle}
                     className="nav-item nav-link"
                     activeClassName="active"
                   >
@@ -127,6 +137,7 @@ class Navigation extends React.PureComponent {
                   </Link>
                   <Link
                     to={homelink + 'ansioluettelo'}
+                    onClick={this.toggle}
                     className="nav-item nav-link"
                     activeClassName="active"
                   >
@@ -135,6 +146,7 @@ class Navigation extends React.PureComponent {
                   <Link
                     to={homelink + 'tilaa-verkkosivut'}
                     className="nav-item nav-link"
+                    onClick={this.toggle}
                     activeClassName="active"
                   >
                     <Trans id="tilaa_page_link" />
@@ -142,16 +154,18 @@ class Navigation extends React.PureComponent {
                   <Link
                     to={homelink + 'faq'}
                     className="nav-item nav-link"
+                    onClick={this.toggle}
                     activeClassName="active"
                   >
                     <Trans id="faq_page_link" />
                   </Link>
+                 
                 </div>
               </Collapse>
 
               <div className="d-none d-lg-block  mr-4 ml-lg-auto">
                 <a
-                  href="#soittopyyntö"
+                  href="#soittopyynto"
                   onClick={this.props.toggleContact}
                   className={
                     'btn btn-secondary btn-sm btn-simple ' +
@@ -163,7 +177,7 @@ class Navigation extends React.PureComponent {
                     icon={['far', 'phone']}
                     size="1x"
                     className="mr-2"
-                    style={{ fontSize: '1em' }}
+                    style={{fontSize: '1em'}}
                   />
                   <strong>
                     <Trans id="Ota yhteyttä" />{' '}
@@ -178,13 +192,12 @@ class Navigation extends React.PureComponent {
                     className="nav-link px-1"
                     activeClassName="active"
                   >
-                    {' '}
                     FI{' '}
                   </Link>
                   <a className="nav-link  px-0"> | </a>
                   <Link
                     to={prefix('en') + deprefix(this.props.location.pathname)}
-                    className="nav-link px-1 "
+                    className="nav-link px-1"
                     activeClassName="active"
                   >
                     {' '}
@@ -192,10 +205,6 @@ class Navigation extends React.PureComponent {
                   </Link>
                 </div>
               </div>
-
-              
-
-
             </nav>
           </div>
         </div>

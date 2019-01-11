@@ -1,15 +1,19 @@
 import React from 'react'
-import Layout from '../components/layout'
 import {Trans} from '@lingui/react'
 
 const NotFoundPage = props => (
-  <Layout location={props.location}>
+  <main>
     <div className="container col-md-10 pt-5 pl-md-5">
-      <h1 className="font-weight-bold"> <Trans id="not_found_otsikko" /></h1>
-   
-      <p><Trans id="not_found_teksti" /></p>
+      <h1 className="font-weight-bold">
+        {' '}
+        <Trans id="not_found_otsikko" />
+      </h1>
+
+      <p>
+        <Trans id="not_found_teksti" />
+      </p>
     </div>
-  </Layout>
+  </main>
 )
 
 export default NotFoundPage

@@ -21,7 +21,7 @@ class SwComponent extends React.PureComponent {
 
   render() {
     const {activeImage, status} = this.state
-    const { className, images} = this.props
+    const {className, images} = this.props
 
     return (
       <div className={'sw_container bg-ark '}>
@@ -54,4 +54,3 @@ SwComponent.propTypes = {
 }
 
 export default SwComponent
-

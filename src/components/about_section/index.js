@@ -3,9 +3,8 @@ import {Trans} from '@lingui/react'
 // import './_about_section.scss'
 const AboutSection = () => (
   <div id="about_section" className="container col-md-10 bg-secondary ">
-   
     <div className="row">
-      <div className="col-12 pb-5">
+      <div className="col-12 pb-5 d-none d-mdinline-block">
         <h4 className="h1 font-weight-bold">
           <span className="text-primary">
             <Trans id="about_otsikko_start" />

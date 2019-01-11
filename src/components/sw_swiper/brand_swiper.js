@@ -51,7 +51,6 @@ class SwSwiper extends React.Component {
 
     return (
       <div className="w-100">
-
         <Swiper
           {...params}
           shouldSwiperUpdate={true}
@@ -86,12 +85,12 @@ const chunk = (arr, len) => {
   return chunks
 }
 
-const Image = ({fluid,className,data}) => (
+const Image = ({fluid, className, data}) => (
   <div className="col-4 col-md-3 d-flex img_container align-items-center justify-content-center text-center brder  ">
     <div>
-      {fluid&& <Img className="img" fluid={fluid} />
-      ||<img src={data} className={"img "+(className)}/>}
-    
+      {(fluid && <Img className="img" fluid={fluid} />) || (
+        <img src={data} className={'img ' + className} />
+      )}
     </div>
   </div>
 )

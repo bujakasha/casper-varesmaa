@@ -61,25 +61,23 @@ const MyProjects = ({images, children}) => (
 
       return (
         <div id="my_projects" className="container col-md-11 offset-md-1">
-          <div className="col-md-6">
-            {children}
-          </div>
+          <div className="col-md-6 px-0">{children}</div>
           <I18n>
             {({i18n}) => (
               <>
                 <div className="row">
-                    <Projekti
-                      img={seahorseImage && seahorseImage.fluid}
-                      phoneImg={seahorseImageMobile}
-                      toimija="Sea Horse"
-                      teksti={i18n._(t`work_seahorse`)}
-                    />
-                    <Projekti
-                      img={sportteriImage && sportteriImage.fluid}
-                      phoneImg={sportteriImageMobile}
-                      toimija="Sportteri.fi"
-                      teksti={i18n._(t`work_sportteri`)}
-                    />
+                  <Projekti
+                    img={seahorseImage && seahorseImage.fluid}
+                    phoneImg={seahorseImageMobile}
+                    toimija="Sea Horse"
+                    teksti={i18n._(t`work_seahorse`)}
+                  />
+                  <Projekti
+                    img={sportteriImage && sportteriImage.fluid}
+                    phoneImg={sportteriImageMobile}
+                    toimija="Sportteri.fi"
+                    teksti={i18n._(t`work_sportteri`)}
+                  />
                 </div>
               </>
             )}
@@ -110,9 +108,9 @@ const Projekti = ({img, toimija, phoneImg, teksti, children}) => (
     <br />
     <div className="w-100 px-3 px-md-0 py-3">
       <h6> {toimija}</h6>
-      <p className="font-weight-bold" style={{maxWidth: '500px'}}>
-        {' '}
-        {teksti}
+      <p style={{maxWidth: '500px'}}>
+        <strong> {teksti}</strong>
+       
       </p>
     </div>
   </div>

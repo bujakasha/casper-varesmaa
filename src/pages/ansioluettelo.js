@@ -1,33 +1,25 @@
 import React from 'react'
 import {Trans} from '@lingui/react'
 import BgZoom from '../components/bg_zoom'
-import Layout from '../components/layout'
-import { langFromPath } from '../i18n-config'
-import {  graphql} from 'gatsby'
+import Layout from '../templates/layout'
+import {langFromPath} from '../i18n-config'
+import {graphql} from 'gatsby'
 
-/*
-
-              <br />
-
-              <Link to="/" className="btn btn-link d-flex align-items-center">
-                {' '}
-                <FontAwesomeIcon
-                  icon={['fal', 'long-arrow-left']}
-                  size="1x"
-                  transform="grow-3s"
-                  className="mr-2"
-                />{' '}
-                <Trans id="takaisin_kotisivulle" />
-              </Link>
-               */
 const AnsioluetteloPage = props => {
-  const profileImage = props.data.profileImage2 && props.data.profileImage2.childImageSharp
-    const activeLang = langFromPath(props.location.pathname)
-    const koulutusData = activeLang&&activeLang==='en'&&props.data.cvEnKoulutus.edges || props.data.cvKoulutus.edges
-    const kokemusData = activeLang&&activeLang==='en'&&props.data.cvEnKokemus.edges || props.data.cvKokemus.edges
-    const taidotData = activeLang&&activeLang==='en'&&props.data.cvEnTaidot.edges || props.data.cvTaidot.edges
+  const profileImage =
+    props.data.profileImage2 && props.data.profileImage2.childImageSharp
+  const activeLang = langFromPath(props.location.pathname)
+  const koulutusData =
+    (activeLang && activeLang === 'en' && props.data.cvEnKoulutus.edges) ||
+    props.data.cvKoulutus.edges
+  const kokemusData =
+    (activeLang && activeLang === 'en' && props.data.cvEnKokemus.edges) ||
+    props.data.cvKokemus.edges
+  const taidotData =
+    (activeLang && activeLang === 'en' && props.data.cvEnTaidot.edges) ||
+    props.data.cvTaidot.edges
   return (
-    <Layout location={props.location}>
+    <main>
       <div className="container col-md-10 pt-4">
         <div className="d-none justify-content-end">
           <a href="#" className="text-dark">
@@ -45,7 +37,8 @@ const AnsioluetteloPage = props => {
           </div>
           <div lassName="col">
             <div className="px-3 mt-4">
-              <h1 className="font-weight-bold">Casper Väresmaa</h1>
+              <h1>
+              <strong>Casper Väresmaa</strong></h1>
               <h5 className="text-muted">
                 <Trans id="ansioluettelo_page_apuotsikko" />
               </h5>
@@ -80,7 +73,6 @@ const AnsioluetteloPage = props => {
                   <p>www.casper-varesmaa.fi</p>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -89,15 +81,14 @@ const AnsioluetteloPage = props => {
       <div className="container col-md-10 pt-4 mt-5">
         <div>
           <h4 className="font-weight-bold">
-            <Trans id="Koulutus" />
+           <strong><Trans id="Koulutus" /></strong>
           </h4>
           <hr />
-          {koulutusData&&koulutusData.length?
-            koulutusData.map((item, i)=>(
-              <ResumeSection key={item.node.id} {...item.node} />
-            )):null}
-
-   
+          {koulutusData && koulutusData.length
+            ? koulutusData.map((item, i) => (
+                <ResumeSection key={item.node.id} {...item.node} />
+              ))
+            : null}
         </div>
       </div>
 
@@ -107,11 +98,11 @@ const AnsioluetteloPage = props => {
             <Trans id="Kokemus" />
           </h4>
           <hr />
-          {kokemusData&&kokemusData.length?
-            kokemusData.map((item, i)=>(
-              <ResumeSection key={item.node.id} {...item.node} />
-            )):null}
-         
+          {kokemusData && kokemusData.length
+            ? kokemusData.map((item, i) => (
+                <ResumeSection key={item.node.id} {...item.node} />
+              ))
+            : null}
         </div>
       </div>
 
@@ -122,14 +113,15 @@ const AnsioluetteloPage = props => {
           </h4>
           <hr />
           <div className="row">
-          {taidotData&&taidotData.length?
-            taidotData.map((item, i)=>(
-              <ExprerienceSection key={item.node.id} {...item.node} />
-            )):null}
-        </div>
+            {taidotData && taidotData.length
+              ? taidotData.map((item, i) => (
+                  <ExprerienceSection key={item.node.id} {...item.node} />
+                ))
+              : null}
+          </div>
         </div>
       </div>
-    </Layout>
+    </main>
   )
 }
 
@@ -143,7 +135,7 @@ const ResumeSection = ({ajankohta, otsikko, toimija, teksti}) => {
           <p className="text-muted">{ajankohta} </p>
         </div>
         <div className="col-md">
-          <h5 className="font-weight-bold">{otsikko}</h5>
+          <h5 className="font--bold"><strong>{otsikko}</strong></h5>
           <h6 className="text-primary"> {toimija} </h6>
           <p>{teksti}</p>
         </div>
@@ -157,7 +149,7 @@ const ExprerienceSection = ({ajankohta, otsikko, toimija, teksti}) => {
     <div className="col-md-6 py-4">
       <div className="row">
         <div className="col-md">
-          <h5 className="font-weight-bold">{otsikko}</h5>
+          <h5><strong>{otsikko}</strong></h5>
           <p>{teksti}</p>
         </div>
       </div>
@@ -205,7 +197,7 @@ export const query = graphql`
         }
       }
     }
-    cvKokemus: allAnsioluetteloXlsxKokemus{
+    cvKokemus: allAnsioluetteloXlsxKokemus {
       edges {
         node {
           id
@@ -216,7 +208,7 @@ export const query = graphql`
         }
       }
     }
-    cvEnKokemus: allAnsioluetteloXlsxEnKokemus{
+    cvEnKokemus: allAnsioluetteloXlsxEnKokemus {
       edges {
         node {
           id

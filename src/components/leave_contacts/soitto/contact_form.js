@@ -1,20 +1,21 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import '../_leave_contact.scss'
 import DateInput from '../date_input'
 import startOfTomorrow from 'date-fns/start_of_tomorrow'
 import isWeekend from 'date-fns/is_weekend'
 import addDays from 'date-fns/add_days'
 import addHours from 'date-fns/add_hours'
+import InputMask from 'react-input-mask';
 
-import setHours from 'date-fns/set_hours'
 import LoadingBtn from '../../loading_btn'
 import Input from '../../input'
 
 import 'rc-input-number/assets/index.css'
-import InputNumber from 'rc-input-number'
 import NumericInput from 'react-numeric-input'
 import NumberFormat from 'react-number-format'
-
+import { postSoittopyynto } from '../../../utils/form_request'
 import {Trans, I18n} from '@lingui/react'
 import {t} from '@lingui/macro'
 //import TimeInput from 'react-time-input';
@@ -57,8 +58,9 @@ const getNextWeekday = () => {
     nextDay = addDays(nextDay, 1)
   }
   if (isWeekend(nextDay)) {
-    nextDay = addDays(nextDay, 1)
+    //nextDay = addDays(nextDay, 1)
   }
+  return nextDay;
   return addHours(nextDay, 13)
 }
 class ContactForm extends React.PureComponent {
@@ -67,13 +69,19 @@ class ContactForm extends React.PureComponent {
     this.state = {
       ajankohta: getNextWeekday(),
       tunti: 13,
-      puhelin: '+(358)',
+      puhelin: '+(358) ',
       loading: false,
     }
   }
 
   sendForm = event => {
     this.setState({loading: true}, () => {
+      postSoittopyynto(this.state)
+      this.setState({loading: false})
+      //.then(res=>{
+     //   this.setState({loading: false})
+     // })
+     /*
       setTimeout(() => {
         const errors = validate(this.state)
         if (errors && errors !== {}) {
@@ -81,7 +89,7 @@ class ContactForm extends React.PureComponent {
         } else {
           this.setState({loading: false})
         }
-      }, 400)
+      }, 400)*/
     })
 
     event.preventDefault()
@@ -104,6 +112,9 @@ class ContactForm extends React.PureComponent {
     return x
   }
   format = num => {
+    if(num.match(/\d\d:/)){
+      return num
+    }
     return ` ${num}:00`
   }
 
@@ -115,7 +126,7 @@ class ContactForm extends React.PureComponent {
           {({i18n}) => (
             <>
               <div className="form-row">
-                <div className="col-md-5 col-lg4 col-lg-5 pr-md-4 pr-lg-5 px-0 mb-4">
+                <div className="col-5 col-md-5 col-lg4 col-lg-5 pr-md-4 pr-lg-5 px-0 mb-4">
                   <p className="mb-1">
                     <Trans id="input_ajankohta" />
                   </p>
@@ -129,19 +140,22 @@ class ContactForm extends React.PureComponent {
                   <label className="mb-0" for="">
                     <Trans id="input_tunti" />
                   </label>
-
-                  <NumericInput
+                <NumericInput
                     className={
                       'date-whole noFocus form-contro' +
                       ((errors && errors.tunti && 'is-invalid') || '')
                     }
-                    min={10}
-                    max={22}
+                    min={9}
+                    max={tunti>21?2200:22}
                     value={tunti}
                     format={this.format}
                     style={false}
                     onChange={val => this.onChangeInputField('tunti', val)}
                   />
+                   
+                  
+                  
+                 
                   {errors && errors.tunti ? (
                     <div className="invalid-feedback">{errors.tunti}</div>
                   ) : null}
@@ -149,16 +163,21 @@ class ContactForm extends React.PureComponent {
               </div>
 
               <div className="form-row">
-                <div className="col-md-4 col-lg-5">
+                <div className="col-md-4 col-lg-5 ">
+
+             
+
                   <Input
+
                     label="Nimi"
                     name="nimi"
                     value={nimi}
                     onChange={this.onChange}
-                    placeholder={i18n._(t`input_nimi_placeholder`)}
+                    placeholder={"    "||i18n._(t`input_nimi_placeholder`)}
                     error={errors && errors.nimi}
                     errorMsg={i18n._(t`input_nimi_error`)}
                     inputStyle={{maxWidth: '300px'}}
+                    inputStyle={{maxWidth: !nimi&&'240px'||'300px'}}
                   />
                 </div>
 
@@ -167,11 +186,12 @@ class ContactForm extends React.PureComponent {
                     <label for="exampleInputEmail1">
                       <Trans id="input_puhelin" />
                     </label>
+                  
                     <NumberFormat
                       name="puhelin"
                       value={puhelin}
                       className={
-                        'noFocus w-100 form-control form-control-sm sw-input datewhole ' +
+                        ' w-100 form-control form-control-sm sw-input datewhole noFocus ' +
                         ((errors && errors.puhelin && 'is-invalid') || '')
                       }
                       onChange={this.onChange}
@@ -212,37 +232,9 @@ class ContactForm extends React.PureComponent {
   }
 }
 
+ContactForm.propTypes = {
+  closeModal: PropTypes.func.isRequired,
+}
+
+
 export default ContactForm
-
-/*
-
-
-
-  <NumericInput 
-        className="date-whole"
-       // min={10} max={22}
-        value={puhelin}
-        format={this.formatPhone}
-         style={ false }
-         onChange={(val)=>this.onChangeInputField('puhelin',val)}
-        />
-
-        <InputNumber  
-         defaultValue={13}
-         formatter={idPattern}
-         parser={value => value.replace(':00', '')}
-         value={tunti}
-         style={{ width: 200 }}
-         autoFocus={false}
-         step={1}
-         className='date-whole'
-        />
-       
-
- <TimePicker
-         value={tunti}
-   			 className='date-whole'
-         //onChange={(val)=>this.onChangeInputField('tunti',val)}
-      //   minuteStep={15}
-       />
-        */
