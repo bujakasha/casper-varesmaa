@@ -21,7 +21,7 @@ class Brands extends React.PureComponent {
     return (
       <div id="my_stack" className="container col-md-10">
         <div className="row">
-          <div className="col-md-8 offset-md-2 col-lg-6 offset-lg-3">{children}</div>
+          <div className="col-md-8 offset-md-2">{children}</div>
           <div className="col-md-12 pt-5">
             <StaticQuery
               query={graphql`

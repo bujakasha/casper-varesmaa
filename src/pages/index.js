@@ -107,7 +107,6 @@ class IndexPage extends React.PureComponent {
               </SvgSection>
 
               <div className="container col-md-10 py5 my-5" />
-              <div className="container d-none col-md-10  my-5" />
               <div className="layout_area">
                 <MyStack>
                   <div className="text-center">
