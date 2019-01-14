@@ -19,7 +19,7 @@ const AnsioluetteloPage = props => {
     (activeLang && activeLang === 'en' && props.data.cvEnTaidot.edges) ||
     props.data.cvTaidot.edges
   return (
-    <main>
+    <main className="layout_area">
       <div className="container col-md-10 pt-4">
         <div className="d-none justify-content-end">
           <a href="#" className="text-dark">

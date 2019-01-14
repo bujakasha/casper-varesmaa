@@ -80,7 +80,7 @@ class Navigation extends React.PureComponent {
                     size="1x"
                     width="20px"
                     className="mr-2"
-                    style={{fontSize: '1em'}}
+                    style={{fontSize: '1em', maxWidth:'20px'}}
                   />
                   <strong>
                     <Trans id="Ota yhteyttä" />{' '}
