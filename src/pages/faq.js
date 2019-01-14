@@ -23,7 +23,7 @@ class FAQ extends React.PureComponent {
     const {faqTilaus, faqRekry, faqOther} = this.props.data
     return (
       <main>
-        <div className="container col-md-10 pt-4">
+        <div className="container col-md-10 pt-4 page_minheight">
           <div className="row">
             <div className="col px-md-5">
               <div className="mt-4 col-12 px-0">

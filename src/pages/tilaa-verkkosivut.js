@@ -17,7 +17,7 @@ class OrgerWebsitePage extends React.PureComponent {
     const {showMessage} = this.state
     return (
       <main>
-        <div className="container col-md-10 pt4 px-md-5">
+        <div className="container col-md-10 pt4 px-md-5 page_minheight">
           <div className="row">
             <div className="col px5">
               <div className="mt-4 col-12 px-0">

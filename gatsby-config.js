@@ -73,7 +73,7 @@ module.exports = {
         // develop: true, // Enable while using `gatsby develop`
         // tailwind: true, // Enable tailwindcss support
         whitelist: ['collapse', 'collapsing', 'show','navbar-collapse'],
-         ignore: ['/_sw_swiper.scss','_navigation.scss'], // Ignore files/folders
+         ignore: ['/_sw_swiper.scss','_navigation.scss','_leave_contact.scss'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
       }
     },

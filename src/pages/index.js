@@ -39,7 +39,7 @@ class IndexPage extends React.PureComponent {
         <I18n>
           {({i18n}) => (
             <>
-              <div className="layout_area">
+              <div className="layout_area page_minheight">
                 <Header img={headerImage.fluid} carouselImages={carouselImages}>
                   <div className="mt-md-5 pt-md-2">
                     <h1 className="h1 font-weight-bold">

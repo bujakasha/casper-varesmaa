@@ -3,7 +3,7 @@ import {Trans} from '@lingui/react'
 
 const NotFoundPage = props => (
   <main>
-    <div className="container col-md-10 pt-5 pl-md-5">
+    <div className="container col-md-10 pt-5 pl-md-5 ">
       <h1 className="font-weight-bold">
         {' '}
         <Trans id="not_found_otsikko" />
