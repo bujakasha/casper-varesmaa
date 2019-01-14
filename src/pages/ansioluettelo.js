@@ -38,7 +38,8 @@ const AnsioluetteloPage = props => {
           <div lassName="col">
             <div className="px-3 mt-4">
               <h1>
-              <strong>Casper Väresmaa</strong></h1>
+                <strong>Casper Väresmaa</strong>
+              </h1>
               <h5 className="text-muted">
                 <Trans id="ansioluettelo_page_apuotsikko" />
               </h5>
@@ -81,7 +82,9 @@ const AnsioluetteloPage = props => {
       <div className="container col-md-10 pt-4 mt-5">
         <div>
           <h4 className="font-weight-bold">
-           <strong><Trans id="Koulutus" /></strong>
+            <strong>
+              <Trans id="Koulutus" />
+            </strong>
           </h4>
           <hr />
           {koulutusData && koulutusData.length
@@ -135,7 +138,9 @@ const ResumeSection = ({ajankohta, otsikko, toimija, teksti}) => {
           <p className="text-muted">{ajankohta} </p>
         </div>
         <div className="col-md">
-          <h5 className="font--bold"><strong>{otsikko}</strong></h5>
+          <h5 className="font--bold">
+            <strong>{otsikko}</strong>
+          </h5>
           <h6 className="text-primary"> {toimija} </h6>
           <p>{teksti}</p>
         </div>
@@ -149,7 +154,9 @@ const ExprerienceSection = ({ajankohta, otsikko, toimija, teksti}) => {
     <div className="col-md-6 py-4">
       <div className="row">
         <div className="col-md">
-          <h5><strong>{otsikko}</strong></h5>
+          <h5>
+            <strong>{otsikko}</strong>
+          </h5>
           <p>{teksti}</p>
         </div>
       </div>

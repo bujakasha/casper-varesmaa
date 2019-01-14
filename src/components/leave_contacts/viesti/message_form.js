@@ -5,56 +5,34 @@ import {Textarea} from '../../input'
 import LoadingBtn from '../../loading_btn'
 import {Trans, I18n} from '@lingui/react'
 import {t} from '@lingui/macro'
-
-const validate = data => {
-  let errors = {}
-  if (!data.viesti) {
-    errors = {
-      ...errors,
-      viesti: 'Lisää viesti',
-    }
-  }
-  if (!data.nimi) {
-    errors = {
-      ...errors,
-      nimi: 'Lisää nimi',
-    }
-  }
-  if (
-    !data.email ||
-    !data.email.match(
-      '/^(([^<>()[]\\.,;:s@"]+(.[^<>()[]\\.,;:s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/'
-    )
-  ) {
-    errors = {
-      ...errors,
-      email: 'Sähköposti ei ole kelvollinen',
-    }
-  }
-  return errors
-}
+import {postForm} from '../../../utils/form_request'
 
 class MessageForm extends React.PureComponent {
   constructor(props) {
     super(props)
     this.state = {
       viesti: null,
-      puhelin: null,
       email: null,
       nimi: null,
       loading: false,
     }
   }
+
   sendForm = event => {
     this.setState({loading: true}, () => {
-      setTimeout(() => {
-        const errors = validate(this.state)
-        if (errors && errors !== {}) {
-          this.setState({errors, loading: false})
-        } else {
-          this.setState({loading: false})
-        }
-      }, 400)
+      postForm(this.state, 'Viesti').then(res => {
+          if (res.err) {
+            this.setState({
+              message: (!res.body && res.message) || null,
+              errors: res.body,
+              loading: false,
+            })
+          } else {
+            this.setState({loading: false, errors: {}})
+            this.props.changeView(null, 3)
+          }
+        })
+      
     })
 
     event.preventDefault()
@@ -75,14 +53,15 @@ class MessageForm extends React.PureComponent {
   }
 
   render() {
-    const {nimi, viesti, puhelin, email, errors, loading} = this.state
+    const {nimi, viesti, message, email, errors, loading} = this.state
     return (
       <form className="lomake " onSubmit={this.sendForm}>
         <I18n>
           {({i18n}) => (
             <>
-              <div className="form-row">
-                <div className="col-md-5  col-lg-6 pr-md-4 pr-lg-5 px-0 mb-4">
+      
+              <div className="form-row px-md-2">
+                <div className="col-lg-6 pr-lg-4 pr-lg-5 px-0 mb-4">
                   <Textarea
                     label={i18n._(t`input_viesti`)}
                     name="viesti"
@@ -96,7 +75,7 @@ class MessageForm extends React.PureComponent {
                   />
                 </div>
 
-                <div className=" col-md-6 ">
+                <div className=" col-lg-6 ">
                   <Input
                     label="Nimi"
                     name="nimi"
@@ -104,25 +83,23 @@ class MessageForm extends React.PureComponent {
                     onChange={this.onChange}
                     placeholder=""
                     error={errors && errors.nimi}
-                    errorMsg="Lisää nimesi"
-                    inputStyle={{maxWidth: !nimi&&'240px'||'300px'}}
+                    errorMsg={i18n._(t`input_nimi_placeholder`)}
                   />
 
                   <Input
-                    label="Email"
+                    label={i18n._(t`input_email`)}
                     name="email"
                     type="email"
                     value={email}
+                    outerClassName={" mt-lg-4 pt-lg-1"}
                     onChange={this.onChange}
-                    placeholder={i18n._(t`input_email_placeholder`)}
                     error={errors && errors.email}
                     errorMsg={i18n._(t`input_email_error`)}
-                    inputStyle={{maxWidth: !email&&'240px'||'300px'}}
                   />
                 </div>
               </div>
 
-              <div className="col-md-12 px-0 d-md-flex justify-content-between mt-5">
+              <div className="col-md-12 px-0 d-lg-flex text-center justify-content-between mt-5">
                 <LoadingBtn
                   type="submit"
                   label={i18n._(t`btn_viesti`)}
@@ -133,7 +110,7 @@ class MessageForm extends React.PureComponent {
                 <button
                   type="button"
                   className="btn btn-simple mt-4 mt-md-0"
-                  onClick={this.props.closeModal}
+                  onClick={this.props.changeView.bind(this, null, 2)}
                 >
                   <Trans id="btn_soittopyynto" />
                 </button>
@@ -147,15 +124,3 @@ class MessageForm extends React.PureComponent {
 }
 
 export default MessageForm
-
-/*
-
- {!errors&&!errors!=={}?
-      <p
-      style={{maxWidth:'400px'}}
-       className="border  border-danger px-3 py-1 text-danger">
-      Korjaa virheet</p>:null}
-      
-      
-      
-      */

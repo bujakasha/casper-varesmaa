@@ -1,9 +1,9 @@
 {
 
   "soittopyynto_otsikko":"Call back request",
-  "soittopyynto_teksti":"Leave your phone number and the right time, so I'll get back to you",
-  "viesti_otsikko":"Send message",
-  "viesti_teksti":"Send a free message, or leave a callback request.",
+  "soittopyynto_teksti":"Leave your phone number and the right time, so I'll get back to you, or",
+  "viesti_otsikko":"Send a message",
+  "viesti_teksti":"Send a free message, or leave a",
 
   "input_ajankohta":"Date",
   "input_tunti":"Hour",
@@ -20,9 +20,13 @@
   "input_email_placeholder":"Email address ",
   "input_email_error":"Add a valid email",
 
-  "btn_soittopyynto":"Send callback request",
+  "btn_soittopyynto":"Send kiitoallback request",
   "btn_viesti":"Send a message",
 
+  "valmis_otsikko":"thank you for contacting",
+  "valmis_teksti":"Usually you will get the answer the same day",
+
+  "Sulje ikkuna":"Close the window",
 
  
  

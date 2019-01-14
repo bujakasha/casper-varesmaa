@@ -8,8 +8,6 @@ import Navigation from '../../components/navigation'
 import Footer from '../../components/footer'
 import Contact from '../../components/leave_contacts'
 
-import LeaveContact from '../../components/leave_contacts/soitto'
-import MessageContact from '../../components/leave_contacts/message'
 import Transition from '../../components/Transition'
 // import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'typeface-nunito-sans'
@@ -51,14 +49,13 @@ const Layout = props => {
           />
           <div className="navigation_offset" />
           <div className={' layout_area_top'}>
-          <Contact 
-          isOpen={isContact}
-          closeModal={openModal}
-          toggle={closeModal}
-          />
-            
-            <Transition location={location}>{children}</Transition>
+            <Contact
+              isOpen={isContact}
+              closeModal={openModal}
+              toggle={closeModal}
+            />
 
+            <Transition location={location}>{children}</Transition>
           </div>
           <Footer lang={lang} location={location} />
         </body>
@@ -119,7 +116,7 @@ class LayoutWithProvider extends React.Component {
   render = () => {
     const {isContact} = this.state
     const lang = this.props.location
-      ? langFromPath(this.props.location&&this.props.location.pathname)
+      ? langFromPath(this.props.location && this.props.location.pathname)
       : 'fi'
 
     const childrenWithProps = React.Children.map(this.props.children, child =>

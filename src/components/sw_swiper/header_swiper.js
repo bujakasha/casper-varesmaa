@@ -1,13 +1,15 @@
 import React from 'react'
 import BgZoom from '../bg_zoom'
-import {ControlArrow} from './sw_controls'
 import './_sw_swiper.scss'
 import Swiper from 'react-id-swiper'
+import Control from './swiper_controls'
 
 class SwSwiper extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      updateCount: 0,
+    }
     this.swiper = null
   }
   goNext = () => {
@@ -29,6 +31,12 @@ class SwSwiper extends React.Component {
       } else {
         this.swiper.slidePrev()
       }
+    }
+  }
+
+  goToSlide = index => {
+    if (this.swiper) {
+      this.swiper.slideTo(index)
     }
   }
 
@@ -58,18 +66,27 @@ class SwSwiper extends React.Component {
     const params = {
       on: {
         slideChange: item => {
-          this.setState({active: this.swiper && this.swiper.realIndex})
+          this.setState({
+            active: this && this.swiper && this.swiper.realIndex,
+            updateCount: this.state.updateCount + 1,
+          })
         },
       },
       renderNextButton: () => (
         <button className="swiper-button-next">Next</button>
       ),
+
+      autoplay: {
+        delay: (this.state.updateCount >= 3 && 10000) || 5000,
+        disableOnInteraction: true,
+      },
     }
 
     return (
       <div className="w-100">
         <Swiper
           {...params}
+          rebuildOnUpdate={(this.state.updateCount === 3 && true) || false}
           shouldSwiperUpdate={true}
           component={this.swiperContainer}
           ref={node => (node ? (this.swiper = node.swiper) : null)}
@@ -78,10 +95,13 @@ class SwSwiper extends React.Component {
             this.renderCard(item, i, this.swiper && this.swiper.activeIndex)
           )}
         </Swiper>
-        <div className="sw_controls text-right">
-          <ControlArrow direction="left" onClick={this.goPrev} />
-          <ControlArrow direction="right" onClick={this.goNext} />
-        </div>
+        <Control
+          slideTo={this.goToSlide}
+          goNext={this.goNext}
+          goPrev={this.goPrev}
+          slides={Array(swiperData.length).fill(null)}
+          activeIndex={this.swiper && this.swiper.activeIndex}
+        />
       </div>
     )
   }

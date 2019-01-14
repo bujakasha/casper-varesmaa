@@ -7,25 +7,30 @@ const Input = props => {
     label,
     name,
     required,
+    className,
+    outerClassName,
     error,
     value,
     type,
     inputStyle,
     errorMsg,
     onChange,
+    onBlur,
     placeholder,
   } = props
 
   return (
-    <div className="form-group ">
+    <div className={'form-group ' + outerClassName}>
       <label for={`${name}Input`}>{label}</label>
       <div className="input-border " style={inputStyle}>
         <input
           type={type || 'text'}
           onChange={onChange}
           value={value}
+          onBlur={onBlur}
           name={name}
           className={
+            `${className || ''} ` +
             'form-control noFocus form-control-sm sw-input ' +
             ((error && 'is-invalid') || '')
           }
@@ -51,6 +56,7 @@ Input.propTypes = {
   errorMsg: PropTypes.string,
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
+  outerClassName: PropTypes.string,
 }
 
 export default Input
@@ -60,6 +66,7 @@ export const Textarea = props => {
     label,
     name,
     required,
+    outerClassName,
     rows,
     value,
     error,
@@ -70,7 +77,7 @@ export const Textarea = props => {
   } = props
 
   return (
-    <div className="form-group ">
+    <div className={'form-group ' + outerClassName}>
       <label for={`${name}Textarea`}>{label}</label>
       <div className="input-border " style={inputStyle}>
         <textarea
@@ -105,4 +112,5 @@ Input.propTypes = {
   errorMsg: PropTypes.string,
   onChange: PropTypes.func,
   placeholder: PropTypes.string,
+  outerClassName: PropTypes.string,
 }

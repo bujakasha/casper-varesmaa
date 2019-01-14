@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 import {
   TransitionGroup,
   Transition as ReactTransition,
-} from "react-transition-group"
+} from 'react-transition-group'
 
 const timeout = 250
 const getTransitionStyles = {
@@ -22,7 +22,7 @@ const getTransitionStyles = {
 
 class Transition extends React.PureComponent {
   render() {
-    const { children, location } = this.props
+    const {children, location} = this.props
 
     return (
       <TransitionGroup>

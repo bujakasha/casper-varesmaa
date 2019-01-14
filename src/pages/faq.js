@@ -22,7 +22,7 @@ class FAQ extends React.PureComponent {
     const {showMessage, activeTab} = this.state
     const {faqTilaus, faqRekry, faqOther} = this.props.data
     return (
-      <main >
+      <main>
         <div className="container col-md-10 pt-4">
           <div className="row">
             <div className="col px-md-5">

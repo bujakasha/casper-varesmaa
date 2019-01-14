@@ -1,12 +1,12 @@
 {
 
   "soittopyynto_otsikko":"Soittopyyntö",
-  "soittopyynto_teksti":"Jätä puhelinnumerosi ja sopiva ajankohta, niin palaan asiaan.",
+  "soittopyynto_teksti":"Jätä puhelinnumerosi ja sopiva ajankohta, niin palaan asiaan tai",
   "viesti_otsikko":"Lähetä viesti",
-  "viesti_teksti":"Lähetä vapaa viesti, tai halutessasi jätä soittopyyntö.",
+  "viesti_teksti":"Lähetä vapaa viesti, tai halutessasi jätä",
 
-  "input_ajankohta":"Ajankohta",
-  "input_tunti":"Tunti",
+  "input_ajankohta":"Päivämäärä",
+  "input_tunti":"Ajankohta",
   "input_nimi":"Nimi",
   "input_nimi_placeholder":"Kirjoita nimesi",
   "input_nimi_error":"Lisää nimesi",
@@ -16,14 +16,16 @@
   "input_viesti":"Viesti",
   "input_viesti_placeholder":"kirjoita viesti",
   "input_viesti_error":"Lisää viesti",
-  "input_email":"Email",
+  "input_email":"Sähköposti",
   "input_email_placeholder":"Sähköposti osoite",
   "input_email_error":"Lisää kelvollinen sähköposti",
 
   "btn_soittopyynto":"Lähetä soittopyyntö",
   "btn_viesti":"Lähetä viesti",
 
-
+  "valmis_otsikko":"Kiitos yhteydenotosta",
+  "valmis_teksti":"Yleensä saat vastauksen vielä samana päivänä",
+  "Sulje ikkuna":"Sulje ikkuna",
  
  
   "":""

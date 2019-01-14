@@ -3,17 +3,14 @@
 
   "header_section_otsikko":"Hello, I am",
   "header_section_apu_otsikko":"Developer, designer and more",
-
-  "header_section_teksti":"I make stunning websites and high performance web applications. I use modern technologies that allow rapid development and easy maintenance. Please contact me if you want to work with me",
-  "header_section_teksti":"I make stunning websites and progressive web applications. I am skilled javascript developer and I use modern techonologies that allow rapid developement and scalability to large audiences. Please be in touch if you want to work with me.",
-  "header_section_teksti":"I make stunning websites and progressive web applications. I design and code pages using modern techniques that enable rapid development and scalability for large audiences. Please be in touch if you want to work with me.",
+  "header_section_teksti":"I make stunning websites and performant web applications. I design and code using modern technologies that enable rapid development and scalability for large audiences. Please be in touch if you want to work with me.",
 
   "about_otsikko_start":"Briefly",
   "about_otsikko_end":"about me.",
   "about_nyt_otsikko":"Currently",
-  "about_nyt_teksti":"I live in Helsinki, I am a passionate coder and I enjoy designing stunning websites and seamless web experiences. Currently I'm looking for interesting projects and full-time job as a javascript developer, so please contact me if you want to work with me.",
+  "about_nyt_teksti":"I live in Helsinki, I have a passion for coding and web design. I write powerful applications and design great websites. Currently I'm looking for new projects and full-time job as a fullstack javascript developer",
   "about_kehitys_otsikko":"Javascript developer",
-  "about_kehitys_teksti":"I use modern web technologies such as React, Node and Webpack to make highly scalable websites and webApps for large audiences. I have a lot of experience with database-driven web services, web maps and search engine friendly implementations.",
+  "about_kehitys_teksti":"I use modern web technologies such as React, Node and Webpack to make scalable web applications fast and flexible. I have a lot of knowledge of database-driven web services, map applications and content management systems.",
 
 
   

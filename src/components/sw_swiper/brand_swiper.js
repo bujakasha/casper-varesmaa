@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import {ControlArrow} from './sw_controls'
+import ControlArrow from './swiper_controls/arrow_control'
 import Swiper from 'react-id-swiper'
 import Img from 'gatsby-image'
 

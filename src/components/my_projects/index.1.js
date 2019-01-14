@@ -6,11 +6,10 @@ import './_my_projects.scss'
 import {WithOverlay} from '../bg_zoom'
 import {Trans, I18n} from '@lingui/react'
 import {t} from '@lingui/macro'
-import ProjektiSwiper from '../sw_swiper/project_swiper'
 const MyProjects = ({images, children}) => (
   <StaticQuery
     query={graphql`
-      query ProjektiQuery3 {
+      query ProjektiQuery {
         sportteriImage: file(
           relativePath: {regex: "/projektit/sportteri.png/"}
         ) {
@@ -61,14 +60,27 @@ const MyProjects = ({images, children}) => (
         data.seahorseImageMobile && data.seahorseImageMobile.childImageSharp
 
       return (
-        <div id="my_projects" className="container  col-xl-10 ">
-          <div className="col-md-8 offset-md-2 col-lg-6 offset-lg-3 ">{children}</div>
+        <div id="my_projects" className="container col-md-11 offset-md-1">
+          <div className="col-md-6 px-0">{children}</div>
           <I18n>
             {({i18n}) => {
+              const projektiData = [
+                {
+                  img: seahorseImage && seahorseImage.fluid,
+                  phoneImg: seahorseImageMobile,
+                  toimija: 'Sea Horse',
+                  teksti: i18n._(t`work_seahorse`),
+                },
+                {
+                  img: sportteriImage && sportteriImage.fluid,
+                  phoneImg: sportteriImageMobile,
+                  toimija: 'Sportteri.fi',
+                  teksti: i18n._(t`work_sportteri`),
+                },
+              ]
               return (
                 <>
-                  <div className="col-12 col-md-10 offset-md-2 col-lg-11 pl-md-0 offset-lg-1">
-                    <div className="row pt-md-4">
+                  <div className="row">
                     <Projekti
                       img={seahorseImage && seahorseImage.fluid}
                       phoneImg={seahorseImageMobile}
@@ -81,10 +93,6 @@ const MyProjects = ({images, children}) => (
                       toimija="Sportteri.fi"
                       teksti={i18n._(t`work_sportteri`)}
                     />
-
-
-                    
-                    </div>
                   </div>
                 </>
               )
@@ -98,12 +106,10 @@ const MyProjects = ({images, children}) => (
 
 export default MyProjects
 
-export const Projekti = ({img, toimija, phoneImg, teksti, children}) => (
-  <div className="col-lg-6 mb-5">
-    <div>
-
+const Projekti = ({img, toimija, phoneImg, teksti, children}) => (
+  <div className="col-xl-6  mb-5 bg-white">
     <WithOverlay
-      imgClassName="projekti-tag border"
+      imgClassName="projekti-tag z-depth1 border "
       imgStyle={{maxWidth: '500px'}}
       className="projekti-img "
       top
@@ -117,11 +123,10 @@ export const Projekti = ({img, toimija, phoneImg, teksti, children}) => (
     </WithOverlay>
     <br />
     <div className="w-100 px-3 px-md-0 py-3">
-      <h6 className="h5 font-weight-bold"> {toimija}</h6>
+      <h6> {toimija}</h6>
       <p style={{maxWidth: '500px'}}>
-     {teksti}
+        <strong> {teksti}</strong>
       </p>
-    </div>
     </div>
   </div>
 )

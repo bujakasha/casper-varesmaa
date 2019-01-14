@@ -18,9 +18,9 @@ class Navigation extends React.PureComponent {
     this.handleScroll()
     window.addEventListener('scroll', this.handleScroll, false)
   }
-  componentDidUpdate(prevProps){
-    if(this.props.location&&prevProps.location!==this.props.location){
-      this.setState({isOpen:false})
+  componentDidUpdate(prevProps) {
+    if (this.props.location && prevProps.location !== this.props.location) {
+      this.setState({isOpen: false})
     }
   }
   componentWillUnmount() {
@@ -39,12 +39,11 @@ class Navigation extends React.PureComponent {
   }
 
   toggle = () => {
-    if(!window.innerWidth > 768){
+    if (window.innerWidth < 768) {
       this.setState({
         isOpen: !this.state.isOpen,
       })
     }
-
   }
 
   render() {
@@ -64,13 +63,11 @@ class Navigation extends React.PureComponent {
           <div className={'col-md-10 container px-0 px-md-4    '}>
             <nav
               id="cv_navigation"
-              className="navbar bg-white navbar-light navbar-expand-lg"
+              className="navbar d-print-none bg-white navbar-light navbar-expand-lg"
             >
-
-          
               <div className="d-lg-none  mr-md-0 ml-lg-auto">
-                <a
-                  href="#soittopyynto"
+                <button
+                  type="button"
                   onClick={this.props.toggleContact}
                   className={
                     'btn btn-secondary btn-sm btn-simple ' +
@@ -88,7 +85,7 @@ class Navigation extends React.PureComponent {
                   <strong>
                     <Trans id="Ota yhteyttä" />{' '}
                   </strong>
-                </a>
+                </button>
               </div>
 
               <div className="navbar-nav d-lg-none  ml-auto mr-2">
@@ -104,7 +101,6 @@ class Navigation extends React.PureComponent {
                   <a className="nav-link  px-0"> | </a>
                   <Link
                     to={prefix('en') + deprefix(this.props.location.pathname)}
-                
                     className="nav-link px-1 "
                     activeClassName="active"
                   >
@@ -113,9 +109,6 @@ class Navigation extends React.PureComponent {
                   </Link>
                 </div>
               </div>
-
-          
-
 
               <div className="toggler d-lg-none">
                 <Hamburger
@@ -159,13 +152,12 @@ class Navigation extends React.PureComponent {
                   >
                     <Trans id="faq_page_link" />
                   </Link>
-                 
                 </div>
               </Collapse>
 
               <div className="d-none d-lg-block  mr-4 ml-lg-auto">
-                <a
-                  href="#soittopyynto"
+                <button
+                  type="button"
                   onClick={this.props.toggleContact}
                   className={
                     'btn btn-secondary btn-sm btn-simple ' +
@@ -182,7 +174,7 @@ class Navigation extends React.PureComponent {
                   <strong>
                     <Trans id="Ota yhteyttä" />{' '}
                   </strong>
-                </a>
+                </button>
               </div>
 
               <div className="navbar-nav d-none d-lg-block mr-aut mr-4">

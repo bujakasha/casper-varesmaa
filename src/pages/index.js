@@ -2,7 +2,6 @@ import React from 'react'
 import {Link} from 'gatsby'
 import {graphql} from 'gatsby'
 
-import Layout from '../templates/layout'
 import Header from '../components/header'
 import MyStack from '../components/my_stack'
 import MyProjects from '../components/my_projects'
@@ -26,13 +25,15 @@ class IndexPage extends React.PureComponent {
 
   render() {
     const {data} = this.props
-    const {showMessage} = this.state
     const headerImage = data.headerImage && data.headerImage.childImageSharp
     const headerImage2 = data.headerImage2 && data.headerImage2.childImageSharp
-    const logoImages = data.logoImages.edges
-    const logoImagesColored = data.logoImages_colored.edges
+    const headerImage3 = data.headerImage3 && data.headerImage3.childImageSharp
 
-    const carouselImages = [{...headerImage}, {...headerImage2}]
+    const carouselImages = [
+      {...headerImage},
+      {...headerImage2},
+      {...headerImage3},
+    ]
     return (
       <main>
         <I18n>
@@ -107,36 +108,53 @@ class IndexPage extends React.PureComponent {
 
               <div className="container col-md-10 py5 my-5" />
               <div className="container d-none col-md-10  my-5" />
-
-              <MyStack imagesColored={logoImagesColored} images={logoImages}>
-                <>
-                  <h2 className="h2 font-weight-bold">
-                  <strong>
-                    <Trans id="myt_stack_otsikko" />
-                    </strong>
-                  </h2>
-                  <p>
-                    <Trans id="myt_stack_teksti" />
-                  </p>
-                </>
-              </MyStack>
-              <div className="w-100 py4 py-md5" />
-              <MyProjects>
-                <div className="mt-5 pt-5 mb-5">
-                  <h3 className="h2 font-weight-bold">
-                  <strong>
-                    <Trans id="my_works_otsikko" />
-                    </strong>
-                  </h3>
-                  <p>
-                    <Trans id="my_works_teksti" />
-                  </p>
+              <div className="layout_area">
+                <MyStack>
+                  <div className="text-center">
+                    <h2 className="h2 font-weight-bold">
+                      <strong>
+                        <Trans id="myt_stack_otsikko" />
+                      </strong>
+                    </h2>
+                    <p>
+                      <Trans id="myt_stack_teksti" />
+                    </p>
+                  </div>
+                </MyStack>
                 </div>
-              </MyProjects>
-
+                <div className="w-100 " style={{
+                  minHeight: '100px',
+                //  backgroundImage: 'url(curve.svg)',
+                  backgroundSize:'cover'
+                  }} />
+                <div className="layout_area">
+                <MyProjects>
+                  <div className="mt-5 pt-5 mb-5 text-center">
+                    <h3 className="h2 font-weight-bold">
+                      <strong>
+                        <Trans id="my_works_otsikko" />
+                      </strong>
+                    </h3>
+                    <p>
+                      <Trans id="my_works_teksti" />
+                    </p>
+                  </div>
+                </MyProjects>
+              </div>
+              <div className="w-100 text-center">
+              
+              
+              </div>
+              <div className="w-100 d-none" style={{
+                  minHeight: '200px',
+                  backgroundImage: 'url(/curve2.svg)',
+                  backgroundSize:'cover'
+                  }} />
               <div className="w-100" style={{minHeight: '100px'}} />
-
-              <Social toggleMessage={this.toggleMessage} />
+              <div className="layout_area">
+                <Social toggleMessage={this.toggleMessage} />
+              </div>
+              <div className="w-100" style={{minHeight: '60px'}} />
             </>
           )}
         </I18n>
@@ -165,32 +183,10 @@ export const query = graphql`
       }
     }
 
-    logoImages: allFile(
-      filter: {relativePath: {regex: "/logoja/logoja/"}}
-      sort: {fields: name, order: ASC}
-    ) {
-      edges {
-        node {
-          childImageSharp {
-            fluid(maxWidth: 600, grayscale: true) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
-            }
-          }
-        }
-      }
-    }
-
-    logoImages_colored: allFile(
-      filter: {relativePath: {regex: "/logoja/logoja/"}}
-      sort: {fields: name, order: ASC}
-    ) {
-      edges {
-        node {
-          childImageSharp {
-            fluid(maxWidth: 600) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
-            }
-          }
+    headerImage3: file(relativePath: {regex: "/kuvaaa.jpg/"}) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }

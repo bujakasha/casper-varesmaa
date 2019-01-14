@@ -11,7 +11,7 @@ import './_footer.scss'
 const Footer = ({lang}) => {
   const homelink = lang ? getHomelink(lang) : null
   return (
-    <div id="footer" className="w-100">
+    <div id="footer" className="w-100 d-print-none">
       <WaveSvg />
 
       <div className="inner">

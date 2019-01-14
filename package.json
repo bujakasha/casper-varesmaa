@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Casper Väresmaa <casper.varesmaa@gmail.com>",
   "dependencies": {
+    "@atlaskit/datetime-picker": "^6.3.24",
     "@buttercup/react-formatted-input": "^0.4.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
     "@fortawesome/free-brands-svg-icons": "^5.1.0-11",

@@ -4,6 +4,7 @@ import {StaticQuery, graphql} from 'gatsby'
 import Collapse from 'reactstrap/lib/Collapse'
 import Image from './brand'
 import './_my_stack.scss'
+import {Trans} from '@lingui/react'
 
 class Brands extends React.PureComponent {
   state = {
@@ -20,8 +21,8 @@ class Brands extends React.PureComponent {
     return (
       <div id="my_stack" className="container col-md-10">
         <div className="row">
-          <div className="col-md-6">{children}</div>
-          <div className="col-md-11 pt-5">
+          <div className="col-md-8 offset-md-2 col-lg-6 offset-lg-3">{children}</div>
+          <div className="col-md-12 pt-5">
             <StaticQuery
               query={graphql`
                 query BrandDataQuery {
@@ -70,7 +71,7 @@ class Brands extends React.PureComponent {
                 className="btn btn-sm mt-3"
               >
                 {' '}
-                {(!showAll && 'Näytä enemmän') || 'Näytä vähemmän'}{' '}
+                {(!showAll && <Trans id='Näytä enemmän' />) || <Trans id='Näytä vähemmän'/>}{' '}
               </button>
             </div>
           </div>

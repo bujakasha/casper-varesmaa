@@ -6,15 +6,12 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 
 const ValintaKortti = ({icon, otsikko, onClick, teksti}) => {
   return (
-    <div 
-    onClick={onClick}
-    className="card contact_card text-center py-4 hoverable px-md-4">
-        <FontAwesomeIcon
-          icon={icon}
-          size="4x"
-        />
-        <h3 className="h5 font-weight-bold mt-4"> {otsikko} </h3>
-    
+    <div
+      onClick={onClick}
+      className="card contact_card text-center py-4 hoverable px-md-4"
+    >
+      <FontAwesomeIcon icon={icon} size="4x" />
+      <h3 className="h5 font-weight-bold mt-4"> {otsikko} </h3>
     </div>
   )
 }
@@ -26,9 +23,7 @@ ValintaKortti.propTypes = {
   valitse: PropTypes.func,
 }
 
-
 export default ValintaKortti
-
 
 /*
 
