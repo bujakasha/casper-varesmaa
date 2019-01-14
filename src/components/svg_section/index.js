@@ -15,13 +15,13 @@ const WaveSvg = ({children, id}) => (
         <path
           transform="translate(0, -2)"
           d="M0 15 0 6C20 9 38 11 55 8 78 5 87 4 140 6l0 19z"
-          id="path6"
+          id={id+'-center'}
           fill="#ffdd00b5"
         />
 
         <path
           d="M0 25 0 6C20 9 38 11 55 7 68 4 87 2 140 6l0 19z"
-          id="path7"
+          id={id+'-bottom'}
           fill="#FFDD00"
         />
       </pattern>

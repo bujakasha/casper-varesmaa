@@ -86,6 +86,7 @@ class SwSwiper extends React.Component {
       <div className="w-100">
         <Swiper
           {...params}
+          style={{overflow:'hidden'}}
           rebuildOnUpdate={(this.state.updateCount === 3 && true) || false}
           shouldSwiperUpdate={true}
           component={this.swiperContainer}
