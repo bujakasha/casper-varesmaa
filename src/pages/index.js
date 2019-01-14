@@ -48,8 +48,8 @@ class IndexPage extends React.PureComponent {
                       <strong className="text-primary">Casper Väresmaa</strong>
                     </h1>
 
-                    <div className="col-lg-11 col-xl-10 px-0 mt-4 mt-md-5">
-                      <h6 className="mb-3 h5">
+                    <div className="col-lg-11 col-xl-10 px-0 mt-4 mt-md-4">
+                      <h6 className="mb-3 h5 d-none">
                         <strong>
                           <Trans id="header_section_apu_otsikko" />
                         </strong>{' '}
