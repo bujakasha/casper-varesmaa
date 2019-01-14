@@ -8,7 +8,7 @@ const SwiperControl = ({activeIndex, slides, slideTo, goPrev, goNext}) => {
   //  const slides = [0,1,2];
 
   return (
-    <div className="sw_controls d-flex align-items-end justify-content-between">
+    <div className="sw_controls d-none d-sm-flex align-items-end justify-content-between">
       <div className="numbers d-none d-md-flex  align-items-end">
         {slides.map((index, i) => (
           <PaginationControl

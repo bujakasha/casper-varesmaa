@@ -4,12 +4,12 @@ import SwSwiper from '../sw_swiper/header_swiper'
 import './_header.scss'
 
 const Header = ({carouselImages, children}) => (
-  <div className="col-md-10 container">
+  <div className="col-md-10 container pt-5 pt-md-0">
     <div className="row">
-      <div className="order-1 order-md-0 col-md-4 col-md-6">{children}</div>
+      <div className="order-1 order-md-0 col-md-4 col-md-6 pt-4 pt-sm-0">{children}</div>
       <div className="pull-md-12 col-md-6 col-lg-5 offset-lg-1 px-0 px-sm-3">
-        <SwSwiper swiperData={carouselImages} />
-        {window.typeof != 'undefined'}
+      <SwSwiper swiperData={carouselImages} />
+       
       </div>
     </div>
   </div>
@@ -21,3 +21,8 @@ Header.propTypes = {
 }
 
 export default Header
+
+/*
+ {typeof window != 'undefined'&&window.innerWidth>768?
+       <SwSwiper swiperData={carouselImages} />:null  }
+        */
