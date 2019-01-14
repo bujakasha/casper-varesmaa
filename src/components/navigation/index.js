@@ -169,7 +169,9 @@ class Navigation extends React.PureComponent {
                     icon={['far', 'phone']}
                     size="1x"
                     className="mr-2"
-                    style={{fontSize: '1em', maxWidth:'14px'}}
+                    style={{fontSize: '1em', 
+                    verticalAlign: '-0.125em',
+                    maxWidth:'14px'}}
                   />
                   <strong>
                     <Trans id="Ota yhteyttä" />{' '}
