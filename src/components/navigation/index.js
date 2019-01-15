@@ -66,26 +66,25 @@ class Navigation extends React.PureComponent {
               className="navbar d-print-none bg-white navbar-light navbar-expand-lg"
             >
               <div className="d-lg-none  mr-md-0 ml-lg-auto">
-                <button
-                  type="button"
-                  onClick={this.props.toggleContact}
+              <Link
+                  to={homelink+'soittopyynto'}
                   className={
-                    'btn btn-secondary btn-sm btn-simple ' +
-                    ((isContact && 'active') || '')
+                    'btn btn-secondary btn-sm btn-simple ' 
                   }
                   style={{minWidth: '160px'}}
                 >
                   <FontAwesomeIcon
                     icon={['far', 'phone']}
                     size="1x"
-                    width="20px"
                     className="mr-2"
-                    style={{fontSize: '1em', maxWidth:'20px'}}
+                    style={{fontSize: '1em', 
+                    verticalAlign: '-0.125em',
+                    maxWidth:'14px'}}
                   />
                   <strong>
                     <Trans id="Ota yhteyttä" />{' '}
                   </strong>
-                </button>
+                </Link>
               </div>
 
               <div className="navbar-nav d-lg-none  ml-auto mr-2">
@@ -156,12 +155,10 @@ class Navigation extends React.PureComponent {
               </Collapse>
 
               <div className="d-none d-lg-block  mr-4 ml-lg-auto">
-                <button
-                  type="button"
-                  onClick={this.props.toggleContact}
+                <Link
+                  to={homelink+'soittopyynto'}
                   className={
-                    'btn btn-secondary btn-sm btn-simple ' +
-                    ((isContact && 'active') || '')
+                    'btn btn-secondary btn-sm btn-simple ' 
                   }
                   style={{minWidth: '160px'}}
                 >
@@ -176,7 +173,7 @@ class Navigation extends React.PureComponent {
                   <strong>
                     <Trans id="Ota yhteyttä" />{' '}
                   </strong>
-                </button>
+                </Link>
               </div>
 
               <div className="navbar-nav d-none d-lg-block mr-aut mr-4">

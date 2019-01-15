@@ -1,9 +1,9 @@
 {
 
   "soittopyynto_otsikko":"Soittopyyntö",
-  "soittopyynto_teksti":"Jätä puhelinnumerosi ja sopiva ajankohta, niin palaan asiaan tai",
+  "soittopyynto_teksti":"Jätä puhelinnumerosi ja sopiva ajankohta tai",
   "viesti_otsikko":"Lähetä viesti",
-  "viesti_teksti":"Lähetä vapaa viesti, tai halutessasi jätä",
+  "viesti_teksti":"Lähetä viesti ja yhteystietosi, tai voit myös jättää",
 
   "input_ajankohta":"Päivämäärä",
   "input_tunti":"Ajankohta",

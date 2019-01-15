@@ -6,6 +6,8 @@ import LoadingBtn from '../../loading_btn'
 import {Trans, I18n} from '@lingui/react'
 import {t} from '@lingui/macro'
 import {postForm} from '../../../utils/form_request'
+import { Link } from 'gatsby'
+import { navigate } from "gatsby"
 
 class MessageForm extends React.PureComponent {
   constructor(props) {
@@ -29,7 +31,7 @@ class MessageForm extends React.PureComponent {
             })
           } else {
             this.setState({loading: false, errors: {}})
-            this.props.changeView(null, 3)
+            navigate(this.props.homelink+'valmis')
           }
         })
       
@@ -54,6 +56,7 @@ class MessageForm extends React.PureComponent {
 
   render() {
     const {nimi, viesti, message, email, errors, loading} = this.state
+    const { homelink } = this.props;
     return (
       <form className="lomake " onSubmit={this.sendForm}>
         <I18n>
@@ -107,13 +110,13 @@ class MessageForm extends React.PureComponent {
                   isLoading={loading}
                   onClick={this.sendForm}
                 />
-                <button
-                  type="button"
+                <Link
+                replace
+                  to={homelink+'soittopyynto'}
                   className="btn btn-simple mt-4 mt-md-0"
-                  onClick={this.props.changeView.bind(this, null, 2)}
                 >
                   <Trans id="btn_soittopyynto" />
-                </button>
+                </Link>
               </div>
             </>
           )}

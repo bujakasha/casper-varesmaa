@@ -19,6 +19,8 @@ const LoadableValmis = Loadable({
   loader: () => import('./valmis/index'),
   loading: Loading,
 })
+
+
 class LeavConactInfo extends React.PureComponent {
   constructor(props) {
     super(props)

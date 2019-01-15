@@ -7,6 +7,9 @@ import {catalogs, langFromPath} from '../../i18n-config'
 import Navigation from '../../components/navigation'
 import Footer from '../../components/footer'
 import Contact from '../../components/leave_contacts'
+import Loadable from 'react-loadable'
+import {getHomelink} from '../../i18n-config'
+
 
 import Transition from '../../components/Transition'
 // import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -16,8 +19,10 @@ import '../../../fontawesome/library'
 import '../../../sass/main.scss'
 import './_layout.scss'
 
+
+
 const Layout = props => {
-  const {children, isContact, location, closeModal, lang, openModal} = props
+  const {children, isContact, location,  lang} = props
 
   return (
     <StaticQuery
@@ -45,15 +50,11 @@ const Layout = props => {
             lang={lang}
             location={location}
             isContact={isContact}
-            toggleContact={openModal}
           />
           <div className="navigation_offset" />
           <div className={' layout_area_top'}>
-            <Contact
-              isOpen={isContact}
-              closeModal={openModal}
-              toggle={closeModal}
-            />
+        
+         
 
             <Transition location={location}>{children}</Transition>
           </div>
@@ -68,9 +69,6 @@ Layout.propTypes = {
 }
 
 class LayoutWithProvider extends React.Component {
-  state = {
-    isContact: false,
-  }
 
   componentWillMount() {
     if (typeof window !== 'undefined') {
@@ -78,49 +76,16 @@ class LayoutWithProvider extends React.Component {
       // new WOW().init()
     }
   }
-  componentDidMount() {
-    if (typeof window !== 'undefined') {
-      this.hashChange()
-      window.addEventListener('hashchange', this.hashChange)
-    }
-  }
-  componentDidUpdate(prevProps) {
-    if (
-      this.state.isContact == false &&
-      this.props.parentIsContact &&
-      this.props.parentIsContact !== prevProps.parentIsContact
-    ) {
-      this.openModal(this.props.parentIsContact)
-    }
-  }
 
-  componentWillUnmount() {
-    window.removeEventListener('hashchange', this.hashChange)
-  }
-  openModal = value => {
-    this.setState({isContact: value || !this.state.isContact})
-  }
-  closeModal = () => {
-    this.setState({isContact: false})
-    if (typeof window !== 'undefined') {
-      remove_hash_from_url()
-    }
-  }
-  hashChange = () => {
-    const {location} = this.props
-    if (location && location.hash) {
-      this.openModal(location.hash.replace('#', ''))
-    }
-  }
 
   render = () => {
-    const {isContact} = this.state
     const lang = this.props.location
       ? langFromPath(this.props.location && this.props.location.pathname)
       : 'fi'
+      const homelink = lang ? getHomelink(lang) : null
 
     const childrenWithProps = React.Children.map(this.props.children, child =>
-      React.cloneElement(child, {openModal: this.openModal})
+      React.cloneElement(child, {openModal: this.openModal, homelink:homelink, lang:lang})
     )
     console.log(this.props)
 
@@ -130,9 +95,6 @@ class LayoutWithProvider extends React.Component {
           {...this.props}
           children={childrenWithProps}
           lang={lang}
-          isContact={isContact}
-          openModal={this.openModal}
-          closeModal={this.closeModal}
         />
       </I18nProvider>
     )

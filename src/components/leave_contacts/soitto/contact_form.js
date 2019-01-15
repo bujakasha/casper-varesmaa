@@ -8,6 +8,9 @@ import FormattedInput from '@buttercup/react-formatted-input'
 import {postForm} from '../../../utils/form_request'
 import {Trans, I18n} from '@lingui/react'
 import {t} from '@lingui/macro'
+import {Link} from 'gatsby'
+import { navigate } from "gatsby"
+
 import { validateSoittopyynto, getNextWeekday, telPattern, telPatternFin} from '../../../utils/forms'
 import 'rc-input-number/assets/index.css'
 
@@ -46,7 +49,8 @@ class ContactForm extends React.PureComponent {
           })
         } else {
           this.setState({loading: false, errors: {}})
-          this.props.changeView(null, 3)
+          navigate(this.props.homelink+'valmis')
+        //  this.props.changeView(null, 3)
         }
       })
     })
@@ -91,6 +95,7 @@ class ContactForm extends React.PureComponent {
       errors,
       loading,
     } = this.state
+    const { homelink='/' } = this.props;
     return (
       <form className="lomake" onSubmit={this.sendForm}>
         <I18n>
@@ -98,7 +103,7 @@ class ContactForm extends React.PureComponent {
             <>
               <div className="col-12 px-0">
                 <div className="row ">
-                  <div className="col-lg-6 justify-content-left d-flex flex-wrap">
+                  <div className="col-lg-6 justify-content-center d-md-inline-block d-flex flex-wrap">
                     <div className="form-group mb-md-0">
                       <label className="mb-1">
                         <Trans id="input_ajankohta" />
@@ -124,7 +129,7 @@ class ContactForm extends React.PureComponent {
                       errorMsg={i18n._(t`input_nimi_error`)}
                     />
                   </div>
-                  <div className="col-lg-5  justify-content-center d-flex d-lg-block flex-wrap">
+                  <div className="col-lg-5  justify-content-center d-md-inline-block d-flex d-lg- flex-wrap">
                     <Input
                        label={i18n._(t`input_email`)}
 
@@ -178,13 +183,13 @@ class ContactForm extends React.PureComponent {
                   onClick={this.sendForm}
                 />
 
-                <button
-                  type="button"
+                <Link
+                replace
+                  to={homelink+'viesti'}
                   className="btn btn-simple mt-4 mt-md-0"
-                  onClick={this.props.changeView.bind(this, null, 1)}
                 >
                   <Trans id="btn_viesti" />
-                </button>
+                </Link>
               </div>
             </>
           )}

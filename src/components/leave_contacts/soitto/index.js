@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {Trans} from '@lingui/react'
 import ContactForm from './contact_form'
+import { Link  } from 'gatsby'
 
 const SoittopyyntoView = props => {
   return (
@@ -17,19 +18,22 @@ const SoittopyyntoView = props => {
       <p className="col-md-6 px-0">
         {' '}
         <Trans id="soittopyynto_teksti" />
-        <a href="#" onClick={props.changeView.bind(this,null,1)} className="text-lowercase">  <Trans id="viesti_otsikko" /></a>.
+        <Link
+         to={props.homelink + 'viesti'} 
+         replace
+         className="text-lowercase">  <Trans id="viesti_otsikko" /></Link>.
       </p>
 
       <br />
       <div className="">
-        <ContactForm changeView={props.changeView} />
+        <ContactForm homelink={props.homelink} />
       </div>
     </div>
   )
 }
-
 SoittopyyntoView.propTypes = {
-  changeView: PropTypes.func.isRequired,
+  homelink: PropTypes.string.isRequired,
 }
+
 
 export default SoittopyyntoView

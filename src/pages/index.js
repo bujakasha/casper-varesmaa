@@ -63,7 +63,18 @@ class IndexPage extends React.PureComponent {
                     <div className="w-100 py-3 py-md-4" />
 
                     <div>
-                      <a
+                    {'ll'!=='lol'?
+                      <Link
+                      to={this.props.homelink+'soittopyynto'}
+                     // href="#soittopyyntö"
+                      title={i18n._(t`btn_title_yhteydenotto`)}
+                      className="btn btn-secondary  px-5 btn-simple "
+                    >
+                      <strong>
+                        <Trans id="btn_yhteydenotto" />
+                      </strong>
+                    </Link>
+                    :  <a
                         onClick={this.toggleMessage}
                         href="#soittopyyntö"
                         title={i18n._(t`btn_title_yhteydenotto`)}
@@ -72,7 +83,7 @@ class IndexPage extends React.PureComponent {
                         <strong>
                           <Trans id="btn_yhteydenotto" />
                         </strong>
-                      </a>
+                      </a>}
                       <br />
 
                       <Link
