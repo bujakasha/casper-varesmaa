@@ -1,10 +1,19 @@
 import React from 'react'
 import {Trans} from '@lingui/react'
 import BgZoom from '../components/bg_zoom'
-import Layout from '../templates/layout'
 import {langFromPath} from '../i18n-config'
 import {graphql} from 'gatsby'
 
+/*
+
+   <div className="d-none justify-content-end">
+          <a href="#" className="text-dark">
+            Lataa tiedostona
+          </a>
+        </div>
+
+
+        */
 const AnsioluetteloPage = props => {
   const profileImage =
     props.data.profileImage2 && props.data.profileImage2.childImageSharp
@@ -21,12 +30,7 @@ const AnsioluetteloPage = props => {
   return (
     <main className="layout_area page_minheight">
       <div className="container col-md-10 pt-4">
-        <div className="d-none justify-content-end">
-          <a href="#" className="text-dark">
-            Lataa tiedostona
-          </a>
-        </div>
-
+     
         <div className="row">
           <div className="col-md-5 col-lg-4 col-xl-3 d-none d-md-block">
             <BgZoom
@@ -149,7 +153,7 @@ const ResumeSection = ({ajankohta, otsikko, toimija, teksti}) => {
   )
 }
 
-const ExprerienceSection = ({ajankohta, otsikko, toimija, teksti}) => {
+const ExprerienceSection = ({ otsikko, toimija, teksti}) => {
   return (
     <div className="col-md-6 py-4">
       <div className="row">

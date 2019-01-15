@@ -1,6 +1,4 @@
-import PropTypes from 'prop-types'
 import React from 'react'
-
 import Img from 'gatsby-image'
 import './_my_stack.scss'
 
@@ -14,8 +12,5 @@ const Image = ({fluid, className, data}) => (
   </div>
 )
 
-Image.propTypes = {
-  fluid: PropTypes.obj,
-}
 
 export default Image

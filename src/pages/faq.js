@@ -1,6 +1,5 @@
 import React from 'react'
 import {Trans} from '@lingui/react'
-import Layout from '../templates/layout'
 import CollapseBar from '../components/collapse_bar'
 import {graphql} from 'gatsby'
 
@@ -11,7 +10,7 @@ class FAQ extends React.PureComponent {
 
   toggleTab = index => {
     const activeTab = this.state.activeTab
-    if (activeTab && activeTab == index) {
+    if (activeTab && activeTab === index) {
       this.setState({activeTab: null})
     } else {
       this.setState({activeTab: index})
@@ -19,7 +18,7 @@ class FAQ extends React.PureComponent {
   }
 
   render() {
-    const {showMessage, activeTab} = this.state
+    const { activeTab} = this.state
     const {faqTilaus, faqRekry, faqOther} = this.props.data
     return (
       <main>

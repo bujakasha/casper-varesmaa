@@ -1,8 +1,9 @@
 import React from 'react'
 import {Trans, withI18n} from '@lingui/react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import { Link } from 'gatsby'
 import './_tilaa_section.scss'
-const TilaaSection = ({toggleMessage, i18n}) => (
+const TilaaSection = ({homelink, i18n}) => (
   <div id="tilaa_section" className="container  col-md-10 px-md-5">
     <div className="row">
       <div className="col-lg-6">
@@ -36,14 +37,13 @@ const TilaaSection = ({toggleMessage, i18n}) => (
       <div className="col-md-6 pt-4 wowfadeIn" data-wow-offset="200">
         <br />
 
-        <a
-          href="#soittopyyntö"
+        <Link
+          to={homelink+'soittopyynto'}
           className="btn btn-secondary px-5"
-          onClick={toggleMessage}
         >
           {' '}
           <strong><Trans id="btn_yhteydenotto" /></strong>{' '}
-        </a>
+        </Link>
       </div>
       <div className="col-md-6">
         <br />

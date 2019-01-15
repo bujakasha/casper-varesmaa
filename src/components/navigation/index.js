@@ -1,5 +1,4 @@
 import {Link} from 'gatsby'
-import PropTypes from 'prop-types'
 import React from 'react'
 import Hamburger from './hamburger'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -48,10 +47,11 @@ class Navigation extends React.PureComponent {
 
   render() {
     const {isOpen, isSticky} = this.state
-    const {isContact, lang} = this.props
+    const {innerWidth, lang} = this.props
 
     const homelink = lang ? getHomelink(lang) : null
-
+    const isSm = innerWidth < 768;
+    console.log({innerWidth})
     return (
       <div className={'sticky_box  ' + ((isSticky && ' sticky') || '')}>
         <div
@@ -65,7 +65,7 @@ class Navigation extends React.PureComponent {
               id="cv_navigation"
               className="navbar d-print-none bg-white navbar-light navbar-expand-lg"
             >
-              <div className="d-lg-none  mr-md-0 ml-lg-auto">
+            {isSm? <div className="d-lg-none  mr-md-0 ml-lg-auto">
               <Link
                   to={homelink+'soittopyynto'}
                   className={
@@ -85,9 +85,9 @@ class Navigation extends React.PureComponent {
                     <Trans id="Ota yhteyttä" />{' '}
                   </strong>
                 </Link>
-              </div>
+              </div>:null}
 
-              <div className="navbar-nav d-lg-none  ml-auto mr-2">
+              {isSm?<div className="navbar-nav d-lg-none  ml-auto mr-2">
                 <div className="d-flex">
                   <Link
                     to={deprefix(this.props.location.pathname)}
@@ -97,7 +97,7 @@ class Navigation extends React.PureComponent {
                     {' '}
                     FI{' '}
                   </Link>
-                  <a className="nav-link  px-0"> | </a>
+                  <span className="nav-link px-0"> | </span>
                   <Link
                     to={prefix('en') + deprefix(this.props.location.pathname)}
                     className="nav-link px-1 "
@@ -107,15 +107,15 @@ class Navigation extends React.PureComponent {
                     EN{' '}
                   </Link>
                 </div>
-              </div>
+              </div>:null}
 
-              <div className="toggler d-lg-none">
+              {isSm?<div className="toggler d-lg-none">
                 <Hamburger
                   isOpen={isOpen}
                   className="dark-color"
                   toggle={this.toggle}
                 />
-              </div>
+              </div>:null}
 
               <Collapse isOpen={isOpen} className="" navbar id="cv_navbar">
                 <div className="navbar-nav ">
@@ -154,7 +154,7 @@ class Navigation extends React.PureComponent {
                 </div>
               </Collapse>
 
-              <div className="d-none d-lg-block  mr-4 ml-lg-auto">
+              {!isSm?<div className="d-none d-lg-block  mr-4 ml-lg-auto">
                 <Link
                   to={homelink+'soittopyynto'}
                   className={
@@ -174,9 +174,9 @@ class Navigation extends React.PureComponent {
                     <Trans id="Ota yhteyttä" />{' '}
                   </strong>
                 </Link>
-              </div>
+              </div>:null}
 
-              <div className="navbar-nav d-none d-lg-block mr-aut mr-4">
+             {!isSm? <div className="navbar-nav d-none d-lg-block mr-aut mr-4">
                 <div className="d-flex">
                   <Link
                     to={deprefix(this.props.location.pathname)}
@@ -185,7 +185,7 @@ class Navigation extends React.PureComponent {
                   >
                     FI{' '}
                   </Link>
-                  <a className="nav-link  px-0"> | </a>
+                  <span className="nav-link px-0"> | </span>
                   <Link
                     to={prefix('en') + deprefix(this.props.location.pathname)}
                     className="nav-link px-1"
@@ -195,7 +195,7 @@ class Navigation extends React.PureComponent {
                     EN{' '}
                   </Link>
                 </div>
-              </div>
+              </div>:null}
             </nav>
           </div>
         </div>

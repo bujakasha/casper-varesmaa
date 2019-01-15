@@ -2,7 +2,7 @@ import React from 'react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import './_social_links.scss'
 
-const SocialLinks = ({children, className}) => (
+const SocialLinks = ({ className}) => (
   <div className={'social_links ' + className || ' d-flex '}>
     <a
       href="https://github.com/bujakasha"
@@ -15,7 +15,7 @@ const SocialLinks = ({children, className}) => (
         transform="shrink-5s"
       />
     </a>
-    <a href="" title="Facebook Casper" className="btn s_link">
+    <a href="#" title="Facebook Casper" className="btn s_link">
       <FontAwesomeIcon
         icon={['fab', 'facebook']}
         size="2x"

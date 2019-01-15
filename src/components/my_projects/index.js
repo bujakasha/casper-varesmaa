@@ -4,10 +4,10 @@ import React from 'react'
 import Img from 'gatsby-image'
 import './_my_projects.scss'
 import {WithOverlay} from '../bg_zoom'
-import {Trans, I18n} from '@lingui/react'
+import { I18n} from '@lingui/react'
 import {t} from '@lingui/macro'
-import ProjektiSwiper from '../sw_swiper/project_swiper'
-const MyProjects = ({images, children}) => (
+
+const MyProjects = ({ children}) => (
   <StaticQuery
     query={graphql`
       query ProjektiQuery3 {
@@ -61,8 +61,8 @@ const MyProjects = ({images, children}) => (
         data.seahorseImageMobile && data.seahorseImageMobile.childImageSharp
 
       return (
-        <div id="my_projects" className="container  col-xl-10 ">
-          <div className="col-md-8 offset-md-2 col-lg-6 offset-lg-3 ">{children}</div>
+        <div id="my_projects" className="container col-xl-10 ">
+          <div className="col-md-8 offset-md-2 col-lg-6 offset-lg-3">{children}</div>
           <I18n>
             {({i18n}) => {
               return (
@@ -82,8 +82,6 @@ const MyProjects = ({images, children}) => (
                       teksti={i18n._(t`work_sportteri`)}
                     />
 
-
-                    
                     </div>
                   </div>
                 </>
@@ -109,9 +107,9 @@ export const Projekti = ({img, toimija, phoneImg, teksti, children}) => (
       top
       img={img}
     >
-      <div className="d-flex align-items-center align-items-sm-end justify-content-end w-100 ">
+      <div className="d-flex align-items-center align-items-sm-end justify-content-end w-100">
         <div>
-          <Img className=" z-depth-1 phone-img" fluid={phoneImg.fluid} />
+          <Img className="z-depth-1 phone-img" fluid={phoneImg.fluid} />
         </div>
       </div>
     </WithOverlay>

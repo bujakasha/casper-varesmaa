@@ -48,9 +48,9 @@ class SwSwiper extends React.Component {
 
   renderCard = (item, index, active) => {
     return (
-      <div key={index} className="">
+      <div key={index}>
         <BgZoom
-          isOpen={index == active}
+          isOpen={index === active}
           controlled={true}
           className="header_image"
           delay={200}
@@ -65,9 +65,8 @@ class SwSwiper extends React.Component {
 
     const params = {
       on: {
-        slideChange: item => {
+        slideChange: (item) => {
           this.setState({
-            active: this && this.swiper && this.swiper.realIndex,
             updateCount: this.state.updateCount + 1,
           })
         },

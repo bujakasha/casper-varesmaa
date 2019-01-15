@@ -17,7 +17,7 @@ class Brands extends React.PureComponent {
 
   render() {
     const {showAll} = this.state
-    const {children, images} = this.props
+    const {children} = this.props
     return (
       <div id="my_stack" className="container col-md-10">
         <div className="row">
@@ -40,22 +40,18 @@ class Brands extends React.PureComponent {
               render={data => {
                 if (!data.sprite && data.sprite.edges) {
                   return null
-                }
-                const array = showAll
-                  ? data.sprite.edges
-                  : data.sprite.edges.slice(0, 12)
-
+                } 
                 return (
                   <>
                     <div className="row">
                       {data.sprite.edges.slice(0, 12).map((brand, i) => (
-                        <Image {...brand.node} />
+                        <Image key={i+'brands'} {...brand.node} />
                       ))}
                     </div>
                     <Collapse isOpen={showAll}>
                       <div className="row">
                         {data.sprite.edges.slice(12, 40).map((brand, i) => (
-                          <Image {...brand.node} />
+                          <Image key={i+'brands-collapse'}  {...brand.node} />
                         ))}
                       </div>
                     </Collapse>

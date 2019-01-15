@@ -7,24 +7,22 @@ import MyStack from '../components/my_stack'
 import MyProjects from '../components/my_projects'
 
 import AboutSection from '../components/about_section'
-import SocialLinks from '../components/social_links'
 import Social from '../components/work_cta'
 
 import {Trans, I18n} from '@lingui/react'
 import {t} from '@lingui/macro'
 import SvgSection from '../components/svg_section'
 
-class IndexPage extends React.PureComponent {
-  state = {
-    showMessage: false,
-  }
+/*
+<h6 className="mb-3 h5 d-none">
+                        <strong>
+                          <Trans id="header_section_apu_otsikko" />
+                        </strong>{' '}
+                      </h6>
 
-  toggleMessage = () => {
-    this.setState({showMessage: 'soittopyyntö'})
-  }
-
-  render() {
-    const {data} = this.props
+                      */
+const IndexPage = props => {
+    const {data} = props
     const headerImage = data.headerImage && data.headerImage.childImageSharp
     const headerImage2 = data.headerImage2 && data.headerImage2.childImageSharp
     const headerImage3 = data.headerImage3 && data.headerImage3.childImageSharp
@@ -49,47 +47,32 @@ class IndexPage extends React.PureComponent {
                     </h1>
 
                     <div className="col-lg-11 col-xl-10 px-0 mt-4 pt-1 mt-md-4">
-                      <h6 className="mb-3 h5 d-none">
-                        <strong>
-                          <Trans id="header_section_apu_otsikko" />
-                        </strong>{' '}
-                      </h6>
-
-                      <p className="h" style={{fontSize: '1.1em'}}>
+                      
+                      <p style={{fontSize: '1.1em'}}>
                         <Trans id="header_section_teksti" />
                       </p>
                     </div>
 
-                    <div className="w-100 py-3 py-md-4" />
+                    <div className="w-100 py-3 py-md-4"/>
 
                     <div>
-                    {'ll'!=='lol'?
+                 
                       <Link
-                      to={this.props.homelink+'soittopyynto'}
-                     // href="#soittopyyntö"
+                      to={props.homelink+'soittopyynto'}
                       title={i18n._(t`btn_title_yhteydenotto`)}
-                      className="btn btn-secondary  px-5 btn-simple "
+                      className="btn btn-secondary px-5 btn-simple"
                     >
                       <strong>
-                        <Trans id="btn_yhteydenotto" />
+                        <Trans id="btn_yhteydenotto"/>
                       </strong>
                     </Link>
-                    :  <a
-                        onClick={this.toggleMessage}
-                        href="#soittopyyntö"
-                        title={i18n._(t`btn_title_yhteydenotto`)}
-                        className="btn btn-secondary  px-5 btn-simple "
-                      >
-                        <strong>
-                          <Trans id="btn_yhteydenotto" />
-                        </strong>
-                      </a>}
+                   
                       <br />
 
                       <Link
                         to="/ansioluettelo"
                         title={i18n._(t`btn_title_ansioluettelo`)}
-                        className="btn btn-outline-light  btn-simple   text-dark  mt-3"
+                        className="btn btn-outline-light btn-simple text-dark mt-3"
                       >
                         <Trans id="btn_ansioluettelo" />
                       </Link>
@@ -97,19 +80,7 @@ class IndexPage extends React.PureComponent {
 
                     <div className="w-100 py-3 py-md-3" />
 
-                    <div className="d-fex d-none">
-                      <SocialLinks />
-                      <p>
-                        <Trans id="Puhelin" />
-                        <br />
-                        <small>+358 453535 813</small>
-                      </p>
-                      <p>
-                        <Trans id="Email" />
-                        <br />
-                        <small>Casper.varesmaa@gmail.com</small>
-                      </p>
-                    </div>
+               
                   </div>
                 </Header>
               </div>
@@ -117,7 +88,7 @@ class IndexPage extends React.PureComponent {
                 <AboutSection />
               </SvgSection>
 
-              <div className="container col-md-10 py5 my-5" />
+              <div className="container col-md-10 my-5" />
               <div className="layout_area">
                 <MyStack>
                   <div className="text-center">
@@ -133,9 +104,7 @@ class IndexPage extends React.PureComponent {
                 </MyStack>
                 </div>
                 <div className="w-100 " style={{
-                  minHeight: '100px',
-                //  backgroundImage: 'url(curve.svg)',
-                  backgroundSize:'cover'
+                  minHeight: '100px'
                   }} />
                 <div className="layout_area">
                 <MyProjects>
@@ -151,18 +120,11 @@ class IndexPage extends React.PureComponent {
                   </div>
                 </MyProjects>
               </div>
-              <div className="w-100 text-center">
-              
-              
-              </div>
-              <div className="w-100 d-none" style={{
-                  minHeight: '200px',
-                  backgroundImage: 'url(/curve2.svg)',
-                  backgroundSize:'cover'
-                  }} />
+           
+             
               <div className="w-100" style={{minHeight: '100px'}} />
               <div className="layout_area">
-                <Social toggleMessage={this.toggleMessage} />
+                <Social homelink={props.homelink} />
               </div>
               <div className="w-100" style={{minHeight: '60px'}} />
             </>
@@ -171,10 +133,9 @@ class IndexPage extends React.PureComponent {
       </main>
     )
   }
-}
+
 
 export default IndexPage
-//    <MiddleCurve/>
 export const query = graphql`
   query {
     headerImage: file(relativePath: {regex: "/sup3.jpg/"}) {
@@ -205,7 +166,23 @@ export const query = graphql`
 
 /*
 
-  <div
-          className="w-100"
-          style={{minHeight: '200px'}}
-        />*/
+ <div className="w-100 d-none" style={{
+                  minHeight: '200px',
+                  backgroundImage: 'url(/curve2.svg)',
+                  backgroundSize:'cover'
+                  }} />
+
+     <div className="dnone">
+                      <SocialLinks />
+                      <p>
+                        <Trans id="Puhelin" />
+                        <br />
+                        <small>+358 453535 813</small>
+                      </p>
+                      <p>
+                        <Trans id="Email" />
+                        <br />
+                        <small>Casper.varesmaa@gmail.com</small>
+                      </p>
+                    </div>
+                    */

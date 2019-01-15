@@ -1,5 +1,5 @@
 
-import { library, config } from '@fortawesome/fontawesome-svg-core'
+import { library } from '@fortawesome/fontawesome-svg-core'
 
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram'

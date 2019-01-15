@@ -19,7 +19,7 @@ class BgZoom extends React.PureComponent {
 
   componentDidUpdate(prevProps) {
     if (this.props.controlled && prevProps.isOpen !== this.props.isOpen) {
-      if (this.props.isOpen == true) {
+      if (this.props.isOpen === true) {
         setTimeout(() => {
           this.setState({isLoaded: this.props.isOpen})
         }, this.props.delay || 200)
@@ -42,8 +42,7 @@ class BgZoom extends React.PureComponent {
 
   render() {
     const {isLoaded} = this.state
-    const {img, className, contain, isOpen, controlled} = this.props
-    const isVisivble = controlled === true ? isOpen : isLoaded
+    const {img, className, contain} = this.props
     return (
       <div
         onClick={this.toggle}
@@ -68,21 +67,7 @@ class BgZoom extends React.PureComponent {
   }
 }
 
-/*
-    <div
-          className={
-            ((isLoaded && 'loaded ') || '') +
-            ' bg-img zoom-img   overlay-container ' +
-            ((contain && 'contain ') || '')
-          }
-          style={{
-            backgroundImage: `url(${img && img.src})`,
-          }}
-        >
- 
-          <div className="overlay white-slide" />
-        </div>
-         */
+
 
 BgZoom.propTypes = {
   siteTitle: PropTypes.string,

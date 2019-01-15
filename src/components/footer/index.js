@@ -49,13 +49,8 @@ const Footer = ({lang}) => {
             </div>
           </div>
 
-          <div className="col pl-md-5  pr-md-5">
-            <div className="pt-5 col d-flex flex-wrap justify-content-center">
-              <p>Verkkosivut</p> <p className="mx-2">|</p>
-              <p>React.js sovellukset</p> <p className="mx-2">|</p>
-              <p>Api-rajapinnat</p> <p className="mx-2">|</p>
-              <p>Hakukoneoptimointi</p>
-            </div>
+          <div className="col pl-md-5 pr-md-5">
+           
             <div className="text-center">
               <hr className="col-10 d-inline-block" />
             </div>
@@ -70,6 +65,7 @@ const Footer = ({lang}) => {
                   <Trans id="kotisivu_page_link" />
                 </Link>
               </li>
+          
               <li className="nav-item">
                 <Link
                   to={homelink + 'ansioluettelo'}
@@ -142,3 +138,18 @@ const WaveSvg = ({children}) => (
     <rect width="100%" height="100%" fill="url(#WaveFooter)" />
   </svg>
 )
+
+
+/*
+
+ <div className="pt-5 col d-flex flex-wrap justify-content-center">
+              <p>Verkkosivut</p>
+               <p className="mx-2">|</p>
+              <p>React.js sovellukset</p> 
+              <p className="mx-2">|</p>
+              <p>Api-rajapinnat</p>
+               <p className="mx-2">|</p>
+              <p>Hakukoneoptimointi</p>
+            </div>
+            
+            */

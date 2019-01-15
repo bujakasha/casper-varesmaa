@@ -1,5 +1,4 @@
 import React from 'react'
-import {Trans} from '@lingui/react'
 import Soittopyynto from '../components/leave_contacts/soitto/index'
 
 

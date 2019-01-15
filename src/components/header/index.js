@@ -21,7 +21,3 @@ Header.propTypes = {
 
 export default Header
 
-/*
- {typeof window != 'undefined'&&window.innerWidth>768?
-       <SwSwiper swiperData={carouselImages} />:null  }
-        */

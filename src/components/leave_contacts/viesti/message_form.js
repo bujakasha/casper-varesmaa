@@ -3,10 +3,9 @@ import '../_leave_contact.scss'
 import Input from '../../input'
 import {Textarea} from '../../input'
 import LoadingBtn from '../../loading_btn'
-import {Trans, I18n} from '@lingui/react'
+import { I18n} from '@lingui/react'
 import {t} from '@lingui/macro'
 import {postForm} from '../../../utils/form_request'
-import { Link } from 'gatsby'
 import { navigate } from "gatsby"
 
 class MessageForm extends React.PureComponent {
@@ -48,17 +47,15 @@ class MessageForm extends React.PureComponent {
     })
   }
   onChangeInputField = (name, value) => {
-    console.log(name, value)
     this.setState({
       [name]: value,
     })
   }
 
   render() {
-    const {nimi, viesti, message, email, errors, loading} = this.state
-    const { homelink } = this.props;
+    const {nimi, viesti, email, errors, loading} = this.state
     return (
-      <form className="lomake " onSubmit={this.sendForm}>
+      <form className="lomake " onSubmit={this.sendForm} style={{maxWidth:'800px'}}>
         <I18n>
           {({i18n}) => (
             <>
@@ -110,13 +107,7 @@ class MessageForm extends React.PureComponent {
                   isLoading={loading}
                   onClick={this.sendForm}
                 />
-                <Link
-                replace
-                  to={homelink+'soittopyynto'}
-                  className="btn btn-simple mt-4 mt-md-0"
-                >
-                  <Trans id="btn_soittopyynto" />
-                </Link>
+            
               </div>
             </>
           )}
@@ -127,3 +118,16 @@ class MessageForm extends React.PureComponent {
 }
 
 export default MessageForm
+
+
+/*
+
+    <Link
+                replace
+                  to={homelink+'soittopyynto'}
+                  className="btn btn-simple mt-4 mt-md-0"
+                >
+                  <Trans id="btn_soittopyynto" />
+                </Link>
+                
+                */

@@ -1,23 +1,14 @@
 import React from 'react'
 import {Trans} from '@lingui/react'
-import Layout from '../templates/layout'
 import AboutSection from '../components/tilaa_section'
 import {graphql} from 'gatsby'
 
-class OrgerWebsitePage extends React.PureComponent {
-  state = {
-    showMessage: false,
-  }
 
-  toggleMessage = () => {
-    this.setState({showMessage: 'soittopyyntö'})
-  }
 
-  render() {
-    const {showMessage} = this.state
+const OrgerWebsitePage = props =>{
     return (
       <main className="page_minheight">
-        <div className="container col-md-10 pt4 px-md-5 ">
+        <div className="container col-md-10 pt4 px-md-5">
           <div className="row">
             <div className="col px5">
               <div className="mt-4 col-12 px-0">
@@ -39,16 +30,13 @@ class OrgerWebsitePage extends React.PureComponent {
           </div>
         </div>
 
-        <AboutSection toggleMessage={this.toggleMessage} />
+        <AboutSection homelink={props.homelink} />
         <br />
-        <div
-          className="w-100 bg-liht d-none"
-          style={{minHeight: '200px', marginTop: '', marginBottom: ''}}
-        />
+    
       </main>
     )
   }
-}
+
 export default OrgerWebsitePage
 
 export const query = graphql`
@@ -62,7 +50,3 @@ export const query = graphql`
     }
   }
 `
-/*
-            <p className="p-small d-flex justify-content-end"><small>Päivitetty: 20.12.2018</small></p>
-
-'            */

@@ -8,11 +8,10 @@ import FormattedInput from '@buttercup/react-formatted-input'
 import {postForm} from '../../../utils/form_request'
 import {Trans, I18n} from '@lingui/react'
 import {t} from '@lingui/macro'
-import {Link} from 'gatsby'
 import { navigate } from "gatsby"
 
-import { validateSoittopyynto, getNextWeekday, telPattern, telPatternFin} from '../../../utils/forms'
-import 'rc-input-number/assets/index.css'
+import { getNextWeekday, telPattern, telPatternFin} from '../../../utils/forms'
+//import 'rc-input-number/assets/index.css'
 
 const FORMAT = 'D/M/YYYY'
 
@@ -50,7 +49,6 @@ class ContactForm extends React.PureComponent {
         } else {
           this.setState({loading: false, errors: {}})
           navigate(this.props.homelink+'valmis')
-        //  this.props.changeView(null, 3)
         }
       })
     })
@@ -59,13 +57,7 @@ class ContactForm extends React.PureComponent {
     event.stopPropagation()
   }
 
-  onBlur=(event)=>{
-    /*
-    const errors = validateSoittopyynto({[event.target.name]:event.target.value})
-    if(errors){
-      this.setState({errors: errors})
-    }*/
-  }
+ 
   onChangeInputField = (name,value) => {
     this.setState({
       [name]:value,
@@ -101,7 +93,7 @@ class ContactForm extends React.PureComponent {
         <I18n>
           {({i18n}) => (
             <>
-              <div className="col-12 px-0">
+              <div className="col-12 px-0" style={{maxWidth:'800px'}}>
                 <div className="row ">
                   <div className="col-lg-6 justify-content-center d-md-inline-block d-flex flex-wrap">
                     <div className="form-group mb-md-0">
@@ -112,7 +104,7 @@ class ContactForm extends React.PureComponent {
                         value={ajankohta}
                         tunti={tunti}
                         onChange={this.onChangeInputField}
-                        error={errors && errors.pvm||errors && errors.tunti}
+                        error={(errors && errors.pvm)||(errors && errors.tunti)}
                         errorMsg={i18n._(t`input_nimi_ajankohta`)}
                       />
                     </div>
@@ -121,7 +113,7 @@ class ContactForm extends React.PureComponent {
                       label="Nimi"
                       name="nimi"
                       onBlur={this.onBlur}
-                      outerClassName=" mt-lg-4 pt-lg-1"
+                      outerClassName="mt-lg-4 pt-lg-0"
                       value={nimi}
                       onChange={this.onChange}
                       placeholder={'    ' || i18n._(t`input_nimi_placeholder`)}
@@ -129,7 +121,7 @@ class ContactForm extends React.PureComponent {
                       errorMsg={i18n._(t`input_nimi_error`)}
                     />
                   </div>
-                  <div className="col-lg-5  justify-content-center d-md-inline-block d-flex d-lg- flex-wrap">
+                  <div className="col-lg-5 justify-content-center d-md-inline-block d-flex flex-wrap">
                     <Input
                        label={i18n._(t`input_email`)}
 
@@ -143,13 +135,13 @@ class ContactForm extends React.PureComponent {
                     />
 
                     <div className="form-group mt-lg-4 pt-lg-2">
-                      <label for="exampleInputEmail1">
+                      <label htmlFor="phone_input">
                         <Trans id="input_puhelin" />
                       </label>
                       <FormattedInput
                         className={
                           'sw-input noFocus noBorder form-control form-control-sm  ' +
-                          ((errors && errors.puhelin && ' is-invalid') || '')
+                          (((errors && errors.puhelin) && ' is-invalid') || '')
                         }
                         label={i18n._(t`input_puhelin`)}
                         format={
@@ -158,6 +150,7 @@ class ContactForm extends React.PureComponent {
                             telPatternFin) ||
                           telPattern
                         }
+                        id="phone_input"
                         onBlur={this.onBlur}
                         value={puhelin}
                         name="puhelin"
@@ -183,13 +176,7 @@ class ContactForm extends React.PureComponent {
                   onClick={this.sendForm}
                 />
 
-                <Link
-                replace
-                  to={homelink+'viesti'}
-                  className="btn btn-simple mt-4 mt-md-0"
-                >
-                  <Trans id="btn_viesti" />
-                </Link>
+         
               </div>
             </>
           )}
@@ -205,99 +192,12 @@ ContactForm.propTypes = {
 
 export default ContactForm
 
-function spliceSlice(str, index, count, add) {
-  // We cannot pass negative indexes directly to the 2nd slicing operation.
-  if (index < 0) {
-    index = str.length + index
-    if (index < 0) {
-      index = 0
-    }
-  }
-
-  return str.slice(0, index) + (add || '') + str.slice(index + count)
-}
-
 /*
 
-   <Input
-                        label="puhelin"
-                        name="puhelin"
-                        className="noBorder"
-                        value={formatPhoneNumber(puhelin)}
-                        onChange={this.onPuhelinChange}
-                        error={errors && errors.puhelin}
-                        errorMsg={i18n._(t`input_nimi_error`)}
-                        inputStyle={{maxWidth: '300px'}}
-                        inputStyle={{maxWidth: !nimi&&'240px'||'300px'}}
-                        />
-
-    <NumericInput
-                    className={
-                      'date-whole noFocus form-contro ' +
-                      ((errors && errors.tunti && ' is-invalid') || '')
-                    }
-                    min={9}
-                    max={tunti>21?2200:22}
-                    value={tunti}
-                    format={this.format}
-                    style={false}
-                    onChange={val => this.onChangeInputField('tunti', val)}
-                  />
-
-
-                  <InputMask mask="+(999)" maskChar={null}
-  value={puhelin} onChange={this.onPuhelinChange}>
-    {(inputProps) => 
-     <Input
-     name="puhelin"
-     {...inputProps}
-     className="noBorder"
-     inputStyle={{maxWidth: !nimi&&'240px'||'300px'}}
-     />}
-  </InputMask>
-
-                    <NumberFormat
-                      name="puhelin"
-                      value={puhelin}
-                      className={
-                        ' w-100 form-control form-control-sm sw-input noBorder datewhole noFocus ' +
-                        ((errors && errors.puhelin && 'is-invalid') || '')
-                      }
-                      onChange={this.onChange}
-                      format="+(###) ### ### ###"
-                      mask="_"
-                    />
-
-
-const validate = data => {
-  let errors = {}
-  if (!data.nimi) {
-    errors = {
-      ...errors,
-      nimi: 'Lisää nimesi',
-    }
-  }
-  if (!data.ajankohta) {
-    errors = {
-      ...errors,
-      ajankohta: 'Lisää päivämäärä',
-    }
-  }
-  if (!data.tunti) {
-    errors = {
-      ...errors,
-      tunti: 'Lisää tarkempi aika',
-    }
-  }
-  if (
-    !data.puhelin ||
-    !`${data.puhelin}`.match(/^\+[(]\d{3}[)]\s\d{3} \d{3} \d{3}/g)
-  ) {
-    errors = {
-      ...errors,
-      puhelin: 'Puhelinnumero ei ole kelvollinen',
-    }
-  }
-  return errors&&errors!=={}&&errors||false
-}
-*/
+       <Link
+                replace
+                  to={homelink+'viesti'}
+                  className="btn btn-simple mt-4 mt-md-0"
+                >
+                  <Trans id="btn_viesti" />
+                </Link>*/

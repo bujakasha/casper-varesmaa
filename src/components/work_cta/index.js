@@ -5,7 +5,7 @@ import {Trans} from '@lingui/react'
 const Header = ({toggleMessage,homelink}) => (
   <div id="work_with_me" className="container col-xl-10">
     <div className="row">
-      <div className="col-md-8 offset-lg-1 ">
+      <div className="col-md-8 offset-lg-1">
         <div className="col">
           <h2 className="h2 font-weight-bold">
             <strong>
@@ -22,7 +22,7 @@ const Header = ({toggleMessage,homelink}) => (
 
       <div className="col-md-8 offset-md-1 mt-3 mt-md-5" />
 
-      <div className="col-lg-7 offset-lg-1  mt-5 mt-lg-0">
+      <div className="col-lg-7 offset-lg-1 mt-5 mt-lg-0">
         <div className="col-xl-11 ">
           <h4 className="h5 font-weight-">
             {' '}
@@ -54,11 +54,11 @@ const Header = ({toggleMessage,homelink}) => (
         </div>
       </div>
 
-      <div className=" col-lg-4 mt-5 mt-lg-0">
+      <div className="col-lg-4 mt-5 mt-lg-0">
         <div className="col-xl-11 ">
 
 
-          <div className="d-mdflex">
+        
             <div className="w-50">
               <p>
                 <small>
@@ -68,7 +68,7 @@ const Header = ({toggleMessage,homelink}) => (
                 casper.varesmaa@gmail.com
               </p>
             </div>
-          </div>
+        
 
           <br />
         </div>

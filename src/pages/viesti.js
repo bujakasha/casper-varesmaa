@@ -1,7 +1,5 @@
 import React from 'react'
-import {Trans} from '@lingui/react'
 import Viesti from '../components/leave_contacts/viesti/index'
-
 
 const ViestiPage = props => (
   <main>

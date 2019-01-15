@@ -15,7 +15,7 @@ const catalogs = {
 }
 
 const defaultLanguage = 'fi'
-const prefix = lang => (lang == defaultLanguage ? '' : '/' + lang)
+const prefix = lang => (lang === defaultLanguage ? '' : '/' + lang)
 
 const deprefix = pathname => {
   const path = pathname

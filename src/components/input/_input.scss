@@ -24,6 +24,8 @@ input.sw-input{
     padding: 6px 13px;
     padding-top: 6px;
     width: 155px;
+    height:42px;
+    margin-right:0px;
 
 }
 
@@ -90,3 +92,17 @@ select.sw-input{
     }
  }
 
+
+ @media only screen and (min-width : 968px) {
+
+    .form-group{
+        max-height: 70px;
+    }
+    .date-whole.sw-input{
+        width: 150px;
+     
+    }
+    select.sw-input{
+        min-width: 10px;    
+    }
+ }
