@@ -12,6 +12,7 @@ import Social from '../components/work_cta'
 import {Trans, I18n} from '@lingui/react'
 import {t} from '@lingui/macro'
 import SvgSection from '../components/svg_section'
+import {SeoWithI18n} from '../components/seo'
 
 /*
 <h6 className="mb-3 h5 d-none">
@@ -32,11 +33,16 @@ const IndexPage = props => {
       {...headerImage2},
       {...headerImage3},
     ]
+    const isSm = props.innerWidth<768;
     return (
       <main>
         <I18n>
           {({i18n}) => (
             <>
+              <SeoWithI18n
+                title="etusivu_page_title"
+                description="etusivu_page_description"
+                />
               <div className="layout_area page_minheight">
                 <Header img={headerImage.fluid} carouselImages={carouselImages}>
                   <div className="mt-md-5 pt-md-2">
@@ -63,7 +69,8 @@ const IndexPage = props => {
                       className="btn btn-secondary px-5 btn-simple"
                     >
                       <strong>
-                        <Trans id="btn_yhteydenotto"/>
+                        {'Tarvitsetko verkkosivut'||<Trans id="btn_yhteydenotto"/>}
+                       
                       </strong>
                     </Link>
                    
@@ -74,7 +81,7 @@ const IndexPage = props => {
                         title={i18n._(t`btn_title_ansioluettelo`)}
                         className="btn btn-outline-light btn-simple text-dark mt-3"
                       >
-                        <Trans id="btn_ansioluettelo" />
+                       {'Etsitkö työntekijää'|| <Trans id="btn_ansioluettelo" />}
                       </Link>
                     </div>
 
@@ -90,7 +97,7 @@ const IndexPage = props => {
 
               <div className="container col-md-10 my-5" />
               <div className="layout_area">
-                <MyStack>
+                <MyStack isSm={isSm}>
                   <div className="text-center">
                     <h2 className="h2 font-weight-bold">
                       <strong>
@@ -107,8 +114,11 @@ const IndexPage = props => {
                   minHeight: '100px'
                   }} />
                 <div className="layout_area">
-                <MyProjects>
-                  <div className="mt-5 pt-5 mb-5 text-center">
+               
+              </div>
+
+              <MyProjects>
+                  <div className="layout_area mt-5 pt-5 mb-5 text-center">
                     <h3 className="h2 font-weight-bold">
                       <strong>
                         <Trans id="my_works_otsikko" />
@@ -119,7 +129,6 @@ const IndexPage = props => {
                     </p>
                   </div>
                 </MyProjects>
-              </div>
            
              
               <div className="w-100" style={{minHeight: '100px'}} />

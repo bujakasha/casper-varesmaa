@@ -20,7 +20,7 @@ const WaveSvg = ({children, id}) => (
         />
 
         <path
-          d="M0 25 0 6C20 9 38 11 55 7 68 4 87 2 140 6l0 19z"
+          d="M0 25 0 6C20 9 38 11 55 7 68 4 87 2 140 6l0 1z"
           id={id+'-bottom'}
           fill="#FFDD00"
         />
@@ -39,7 +39,7 @@ const SvgSection = ({children, style}) => (
     <div
       className=""
       style={{
-        display: 'inline-block',
+        display: 'block',
         transform: 'rotate(180deg)',
         marginTop: '-1px',
         width: '100%',

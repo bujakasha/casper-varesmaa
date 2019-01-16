@@ -2,6 +2,7 @@ import React from 'react'
 import {Trans} from '@lingui/react'
 import CollapseBar from '../components/collapse_bar'
 import {graphql} from 'gatsby'
+import {SeoWithI18n} from '../components/seo'
 
 class FAQ extends React.PureComponent {
   state = {
@@ -22,6 +23,10 @@ class FAQ extends React.PureComponent {
     const {faqTilaus, faqRekry, faqOther} = this.props.data
     return (
       <main>
+         <SeoWithI18n
+                title="faq_page_title"
+                description="faq_page_description"
+                />
         <div className="container col-md-10 pt-4 page_minheight">
           <div className="row">
             <div className="col px-md-5">

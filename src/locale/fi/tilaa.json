@@ -1,19 +1,27 @@
 {
 
+  "tilaa_page_title":"Tilaa verkkosivut",
+  "tilaa_page_description":"Verkkosivujen tilaaminen",
 
   "tilaa_page_otsikko":"Tehokkaat verkkosivut",
   "tilaa_page_otsikko_apu":"Tilaa verkkosivut kustannustehokkaasti",
-  "tilaa_page_teksti":"Modernissa verkossa tärkeintä on saumattomuus ja laadukas sisältö. Teen näyttäviä verkkosivuja, joissa sisältö ja asiakkaasi on etusijalla. Tee tarjouspyyntö jättämällä soittopyyntö tai lähettämällä sähköpostia.",
+  "tilaa_page_teksti":"Modernissa verkossa tärkeintä on saumaton käytettävyys ja laadukas sisältö. Teen näyttäviä verkkosivuja, joissa sisältö ja asiakkaasi on etusijalla. Tee tarjouspyyntö jättämällä soittopyyntö tai lähettämällä sähköpostia.",
 
 
-  "tilaa_section_verkkosivut_otsikko":"Tilaa suorituskykyiset verkkosivut",  
-  "tilaa_section_verkkosivut_teksti":"Teen laadukkaita verkkosivuja hyödyntämällä moderneja teknologioita. Suunnittelen sivut aina yrityksen tarpeiden ja tavoitteiden mukaan. Saat nopeat hakukoneoptimoidut sivut, joita on helppo päivittää ja edullisia ylläpitää. Tarvittaessa otan valokuvia ja luon sisältöä verkkosivuille. Aloita ottamalla yhteyttä, vastaan yleensä vielä samana päivänä.",
+  "tilaa_section_verkkosivut_otsikko":"Tilaa verkkosivut",  
+  "tilaa_section_verkkosivut_teksti_1":" Aloita ottamalla yhteyttä ja kertomalla sivustosi tarpeista, vastaan yleensä vielä samana päivänä",
+  "tilaa_section_verkkosivut_teksti_2":" Teen tarjouksen ja arvion työtunneista, jos tarpeesi ovat selkeät voimme myös sopia kiinteästä hinnasta.",
+  "tilaa_section_verkkosivut_teksti_3":" Tarvittaessa otan valokuvia ja luon sisältöä verkkosivuille",
+  "tilaa_section_verkkosivut_teksti_4":" Saat salamannopeat hakukoneoptimoidut sivut, joita on helppo päivittää ja edullisia ylläpitää.",
+
+
   "tilaa_section_react_otsikko":"React.js verkkosovellukset",
   "tilaa_section_react_teksti":"Teen suorituskykyisiä React.js sovelluksia, jotka skaalautuvat suurille käyttäjämäärille. Käytän avoimen lähdekoodin kirjastoja, joiden avulla vaativatkin ideat voi tehdä nopealla aikataululla.",
 
 
 
  
+
   "":""
 
 }

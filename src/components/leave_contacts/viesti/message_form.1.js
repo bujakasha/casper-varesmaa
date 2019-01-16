@@ -55,14 +55,14 @@ class MessageForm extends React.PureComponent {
   render() {
     const {nimi, viesti, email, errors, loading} = this.state
     return (
-      <form className="lomake" onSubmit={this.sendForm} style={{maxWidth:'800px'}}>
+      <form className="lomake " onSubmit={this.sendForm} style={{maxWidth:'800px'}}>
         <I18n>
           {({i18n}) => (
             <>
       
-              <div className="row">
+              <div className="form-row px-md-2">
+                <div className="col-lg-6 pr-lg-4 pr-lg-5 px-0 mb-4">
                   <Textarea
-                    outerClassName="col-lg-6"
                     label={i18n._(t`input_viesti`)}
                     name="viesti"
                     rows="4"
@@ -73,6 +73,7 @@ class MessageForm extends React.PureComponent {
                     errorMsg={i18n._(t`input_viesti_error`)}
                     inputStyle={{maxWidth: '300px'}}
                   />
+                </div>
 
                 <div className=" col-lg-6 ">
                   <Input
@@ -96,17 +97,17 @@ class MessageForm extends React.PureComponent {
                     errorMsg={i18n._(t`input_email_error`)}
                   />
                 </div>
-            
+              </div>
 
-              <div className="col-md-12 mt-3 mt-sm-4 pt-sm-2">
+              <div className="col-md-12 px-0 d-lg-flex text-center justify-content-between mt-5">
                 <LoadingBtn
                   type="submit"
                   label={i18n._(t`btn_viesti`)}
-                  className="btn-secondary px-5 btn-simple"
+                  className="btn-secondary  bt-block px-5 btn-simple"
                   isLoading={loading}
                   onClick={this.sendForm}
                 />
-              </div>
+            
               </div>
             </>
           )}
@@ -117,3 +118,16 @@ class MessageForm extends React.PureComponent {
 }
 
 export default MessageForm
+
+
+/*
+
+    <Link
+                replace
+                  to={homelink+'soittopyynto'}
+                  className="btn btn-simple mt-4 mt-md-0"
+                >
+                  <Trans id="btn_soittopyynto" />
+                </Link>
+                
+                */

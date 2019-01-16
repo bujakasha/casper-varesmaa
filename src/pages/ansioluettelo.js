@@ -3,6 +3,7 @@ import {Trans} from '@lingui/react'
 import BgZoom from '../components/bg_zoom'
 import {langFromPath} from '../i18n-config'
 import {graphql} from 'gatsby'
+import {SeoWithI18n} from '../components/seo'
 
 /*
 
@@ -29,6 +30,10 @@ const AnsioluetteloPage = props => {
     props.data.cvTaidot.edges
   return (
     <main className="layout_area page_minheight">
+     <SeoWithI18n
+                title="ansioluettelo_page_title"
+                description="ansioluettelo_page_description"
+                />
       <div className="container col-md-10 pt-4">
      
         <div className="row">

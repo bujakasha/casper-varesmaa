@@ -13,7 +13,7 @@ const CollapseBar = props => {
       <div className="collapse_header">
         <button
           type="button"
-          className="btn btn-block text-left pt-4"
+          className="btn btn-link btn-block text-left pt-4"
           onClick={toggle}
         >
           <h5 className="text-dark font-weight-bold"> {title}</h5>

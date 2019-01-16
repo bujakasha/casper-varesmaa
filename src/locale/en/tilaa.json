@@ -1,13 +1,25 @@
 {
 
+  "tilaa_page_title":"Order a website",
+  "tilaa_page_description":"Ordering a website",
+
 
   "tilaa_page_otsikko":"Powerful websites",
   "tilaa_page_otsikko_apu":"Order a website cost-effectively",
   "tilaa_page_teksti":"In the modern web, the most important thing is smooth functionality and quality content. I do stunning websites and high-performance React applications that are easy to update and maintain. Leave a call request or send an email to make a request for quotation.",
-
+  "tilaa_page_teksti":"In the modern web, the most important thing is seamless usability and quality content. I do stunning websites, where your content shines and performance isn't a issue.",
 
   "tilaa_section_verkkosivut_otsikko":"Order a website",  
   "tilaa_section_verkkosivut_teksti":"I make high quality websites by utilizing modern technologies. I always design the pages according to the needs of the company, sales, brand and usability above. Get fast search engine optimized pages that are easy to update and affordable to maintain. If necessary, I'll take photos and create content for websites.",
+  
+  
+  "tilaa_section_verkkosivut_teksti_1":" Start by contacting and telling about your website's needs, usually I answer on the same day.",
+  "tilaa_section_verkkosivut_teksti_2":" I will make an offer and an estimate of working hours. If you have clear picture of the site, we can also agree on a fixed price.",
+  "tilaa_section_verkkosivut_teksti_3":" If necessary, I'll take photos and create content for websites",
+  "tilaa_section_verkkosivut_teksti_4":" You get lightning fast search engine optimized web pages that are easy to update and maintain.",
+
+
+
   "tilaa_section_react_otsikko":"React.js Web Applications",
   "tilaa_section_react_teksti":"I do high-performance React.js applications that are scalable to large audiences. I use open-source libraries so that even the most demanding ideas can be done cost-effectively",
 

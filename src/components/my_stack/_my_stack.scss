@@ -2,7 +2,6 @@
 
 
 
-
 #my_stack{
     margin-top: 50px;
 }
@@ -34,6 +33,7 @@
 
 @media only screen and (min-width : 722px) {
 
+   
     #my_stack .img{
       //  min-width: 200px;
     // min-height: 150px;
@@ -57,40 +57,7 @@
   }
 
 
- /*
-  .redux, .react, .babel, .cloudfare, .digital-ocean, 
-  .gatsby, .graph-gl, .typescrpt, .socket-io, .mapbox, 
-  .aws, .nginx, .serverless, .webpack, .google-cloud, 
-  .leaflet, .mongo-db, .next, .node-js, .bootstrap, 
-  .express, .passport, .ubuntu, .github
-  { max-width: 100%; background-size: 100%; background-image: url('/brand-sprite.png'); }
-   
-  .redux { background-position: 0 0%; background-size: 100%; }
-  .react { background-position: 0 9.975889%; background-size: 108.991826%; }
-  .babel { background-position: 0 17.372107%; background-size: 133.333333%; }
-  .cloudfare { background-position: 0 25.178998%; background-size: 133.333333%; }
-  .digital-ocean { background-position: 0 30.297344%; background-size: 160%; }
-  .gatsby { background-position: 0 34.568275%; background-size: 160%; }
-  .graph-gl { background-position: 0 41.224309%; background-size: 160%; }
-  .typescrpt { background-position: 0 45.632902%; background-size: 187.793427%; }
-  .socket-io { background-position: 0 49.450388%; background-size: 197.2873%; }
-  .mapbox { background-position: 0 52.877542%; background-size: 200%; }
-  .aws { background-position: 0 57.227841%; background-size: 219.178082%; }
-  .nginx { background-position: 0 61.631288%; background-size: 228.571429%; }
-  .serverless { background-position: 0 65.190795%; background-size: 228.571429%; }
-  .webpack { background-position: 0 69.06885%; background-size: 228.571429%; }
-  .google-cloud { background-position: 0 74.147137%; background-size: 266.666667%; }
-  .leaflet { background-position: 0 77.250503%; background-size: 266.666667%; }
-  .mongo-db { background-position: 0 79.554277%; background-size: 266.666667%; }
-  .next { background-position: 0 81.690343%; background-size: 266.666667%; }
-  .node-js { background-position: 0 85.703802%; background-size: 266.666667%; }
-  .bootstrap { background-position: 0 87.753644%; background-size: 366.132723%; }
-  .express { background-position: 0 89.965497%; background-size: 367.816092%; }
-  .passport { background-position: 0 91.81571%; background-size: 392.156863%; }
-  .ubuntu { background-position: 0 97.4676%; background-size: 400%; }
-  .github { background-position: 0 100%; background-size: 533.333333%; }
-*/
-  .digital-ocean, .drupal, .next, .bootstrap, .aws, 
+.digital-ocean, .drupal, .next, .bootstrap, .aws, 
 .babel, .cloudfare, .express, .gatsby, .google-cloud, 
 .graph-gl, .leaflet, .mapbox, .mongo-db, .nginx, 
 .node-js, .passport, .react, .redux, .serverless, 

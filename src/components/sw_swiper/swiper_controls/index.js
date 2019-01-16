@@ -4,12 +4,14 @@ import PaginationControl from './pagination_control'
 import ControlArrow from './arrow_control'
 import './_swiper_controls.scss'
 
-const SwiperControl = ({activeIndex, slides, slideTo, goPrev, goNext}) => {
+const SwiperControl = ({activeIndex, showIfSm, slides, slideTo, goPrev, goNext}) => {
   //  const slides = [0,1,2];
 
   return (
-    <div className="sw_controls d-none d-sm-flex align-items-end justify-content-between">
-      <div className="numbers d-none d-md-flex  align-items-end">
+    <div className={(!showIfSm&&'d-none d-sm-flex '||'d-flex')+
+    
+    " sw_controls align-items-end justify-content-between"}>
+      <div className="numbers d-one d-flex  align-items-end">
         {slides.map((index, i) => (
           <PaginationControl
             key={`desktop${i}`}
@@ -31,6 +33,7 @@ const SwiperControl = ({activeIndex, slides, slideTo, goPrev, goNext}) => {
 
 SwiperControl.propTypes = {
   activeIndex: PropTypes.number,
+  showIfSm: PropTypes.bool,
   slideTo: PropTypes.func,
   goPrev: PropTypes.func,
   goNext: PropTypes.func,

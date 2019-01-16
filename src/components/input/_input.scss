@@ -82,7 +82,7 @@ select.sw-input{
  @media only screen and (min-width : 722px) {
 
     .form-group{
-        max-height: 70px;
+        min-height: 70px;
     }
     .date-whole.sw-input{
         width: 150px;
@@ -96,7 +96,7 @@ select.sw-input{
  @media only screen and (min-width : 968px) {
 
     .form-group{
-        max-height: 70px;
+        min-height: 70px;
     }
     .date-whole.sw-input{
         width: 150px;

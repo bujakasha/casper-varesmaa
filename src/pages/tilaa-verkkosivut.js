@@ -2,12 +2,16 @@ import React from 'react'
 import {Trans} from '@lingui/react'
 import AboutSection from '../components/tilaa_section'
 import {graphql} from 'gatsby'
-
+import {SeoWithI18n} from '../components/seo'
 
 
 const OrgerWebsitePage = props =>{
     return (
       <main className="page_minheight">
+        <SeoWithI18n
+        title="tilaa_page_title"
+        description="tilaa_page_description"
+        />
         <div className="container col-md-10 pt4 px-md-5">
           <div className="row">
             <div className="col px5">

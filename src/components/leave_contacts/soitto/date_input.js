@@ -1,44 +1,44 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import DayPickerInput from 'react-day-picker/DayPickerInput'
 import {DateUtils} from 'react-day-picker'
-import 'react-day-picker/lib/style.css'
 import dateFnsFormat from 'date-fns/format'
 import dateFnsParse from 'date-fns/parse'
+import {Trans, I18n} from '@lingui/react'
 
 import {dayInpuLocaleProps} from '../../../i18n-config'
 import {createTuntiOption} from '../../../utils/forms'
 
-function parseDate(str, format, locale) {
+import 'react-day-picker/lib/style.css'
+
+
+const parseDate = (str, format, locale) => {
   const parsed = dateFnsParse(str, format, {locale})
   if (DateUtils.isDate(parsed)) {
     return parsed
   }
   return undefined
 }
-
 const modifiers = activeDay => ({
   highlighted: new Date(activeDay),
 })
-
-function formatDate(date, format, locale) {
+const formatDate = (date, format, locale) => {
   return dateFnsFormat(date, format, {locale})
 }
 const FORMAT = 'D-M-YYYY'
 
-class DateInput extends React.PureComponent {
+
+class DateHourInput extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.switchLocale = this.switchLocale.bind(this)
     this.state = {
-      selectedDay: this.props.value || undefined,
-      isEmpty: true,
-      isDisabled: false,
+     // selectedDay: this.props.ajankohta,
       times: createTuntiOption(),
       locale: 'fi',
     }
   }
 
-  switchLocale(e) {
+  switchLocale = (e) => {
     const locale = e.target.value || 'en'
     this.setState({locale})
   }
@@ -53,33 +53,32 @@ class DateInput extends React.PureComponent {
 
   render() {
     const {selectedDay, locale, times} = this.state
-    const {value, error, errorMsg, tunti} = this.props
+    const {error, ajankohta, label, errorMsg, tunti, outerClassName} = this.props
 
     return (
-      <div className="pick_date d-flex form-group">
-        <br />
-
+      <div className={"pick_date form-group "+outerClassName}>
+        <label>
+          {label}
+        </label>
+        <div className="d-flex ">
         <DayPickerInput
           formatDate={formatDate}
           parseDate={parseDate}
           format={FORMAT}
-          // value={formatDate(selectedDay, FORMAT)}
-          value={value}
+          value={ajankohta}
           onDayChange={this.handleDayChange}
           inputProps={{
             className: 'date-whole sw-input noFocus radius-right-0' +  ((error && ' is-invalid') || '')
           }}
-          selectedDay={value}
+          selectedDay={ajankohta}
           dayPickerProps={{
             ...dayInpuLocaleProps(locale),
-            modifiers: modifiers(value),
+            modifiers: modifiers(ajankohta),
             disabledDays: {
               daysOfWeek: [5, 6],
             },
-            selectedDay: value,
-            month: value,
-            // fromMonth: new Date(),
-            // toMonth: addMonths(new Date(), 2),
+            selectedDay: ajankohta,
+            month: ajankohta,
             showWeekNumbers: false,
             showOutsideDays: true,
           }}
@@ -100,10 +99,10 @@ class DateInput extends React.PureComponent {
             null}
           <option value={'00:00'}> Ei määritetty </option>
         </select>
-
+        </div>
         {error ? (
             <div className="invalid-feedback">
-              {errorMsg}ddd
+              {errorMsg}
             </div>
           ) : null}
       </div>
@@ -111,4 +110,15 @@ class DateInput extends React.PureComponent {
   }
 }
 
-export default DateInput
+DateHourInput.propTypes = {
+  label: PropTypes.string,
+  ajankohta: PropTypes.string,
+  label: PropTypes.string,
+  tunti: PropTypes.bool,
+  error: PropTypes.object,
+  errorMsg: PropTypes.string,
+  onChange: PropTypes.func,
+  outerClassName: PropTypes.string,
+}
+
+export default DateHourInput

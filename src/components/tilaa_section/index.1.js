@@ -14,18 +14,9 @@ const TilaaSection = ({homelink, i18n}) => (
               <Trans id="tilaa_section_verkkosivut_otsikko" />
             </strong>{' '}
           </h5>
-          <p>1.
-          <Trans id="tilaa_section_verkkosivut_teksti_1" />
+          <p>
+            <Trans id="tilaa_section_verkkosivut_teksti" />
           </p>
-          <p>2.
-          <Trans id="tilaa_section_verkkosivut_teksti_2" />
-          </p>
-          <p>3. <Trans id="tilaa_section_verkkosivut_teksti_3" /></p>
-
-          <p>4.
-          <Trans id="tilaa_section_verkkosivut_teksti_4" />
-          </p>
-      
         </div>
       </div>
 

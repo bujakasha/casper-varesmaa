@@ -17,7 +17,7 @@ class Brands extends React.PureComponent {
 
   render() {
     const {showAll} = this.state
-    const {children} = this.props
+    const {children,isSm} = this.props
     return (
       <div id="my_stack" className="container col-md-10">
         <div className="row">
@@ -64,7 +64,7 @@ class Brands extends React.PureComponent {
               <button
                 onClick={this.toggle}
                 type="button"
-                className="btn btn-sm mt-3"
+                className="btn btn-link text-dark btn-sm mt-md-3"
               >
                 {' '}
                 {(!showAll && <Trans id='Näytä enemmän' />) || <Trans id='Näytä vähemmän'/>}{' '}

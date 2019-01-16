@@ -50,9 +50,9 @@ class ProjectSwiper extends React.Component {
 
   renderCard = (item, index, active) => {
     return (
-      <div key={index} className="">
-        <Projekti {...item} />
-      </div>
+        <div className="projekti">
+        <Projekti key={index} {...item} />
+        </div>
     )
   }
 
@@ -60,6 +60,11 @@ class ProjectSwiper extends React.Component {
     const {swiperData} = this.props
 
     const params = {
+      slidesPerView: 'auto',
+      centeredSlides: true,
+     //spaceBetween: 5,
+    //  loop: true,
+
       on: {
         slideChange: item => {
           this.setState({
@@ -79,9 +84,99 @@ class ProjectSwiper extends React.Component {
         : swiperData[0]
 
     return (
-      <div className="col-md-10 px-0 mb-md-5">
-        <div className="row">
-          <div className="col-md-6">
+          <div className="w-100 mb-md-5">
+            <Swiper
+              {...params}
+              shouldSwiperUpdate={true}
+              component={this.swiperContainer}
+              ref={node => (node ? (this.swiper = node.swiper) : null)}
+            >
+              {swiperData.map((item, i) =>
+                this.renderCard(item, i, this.swiper && this.swiper.activeIndex)
+              )}
+            </Swiper>
+            <div className="col-12 col-sm-9 col-md-7 col-lg-5 layout_area container">
+              <Control
+                showIfSm={true}
+                slideTo={this.goToSlide}
+                goNext={this.goNext}
+                goPrev={this.goPrev}
+                slides={Array(swiperData.length).fill(null)}
+                activeIndex={this.swiper && this.swiper.activeIndex}
+              />
+            </div>
+          </div>
+    )
+  }
+}
+
+export default ProjectSwiper
+
+export const Projekti = ({img, toimija, phoneImg, teksti, children}) => (
+    <div>
+    <WithOverlay
+      imgClassName="projekti-tag border"
+      imgStyle={{maxWidth: '500px'}}
+      className="projekti-img"
+      top
+      img={img}
+    >
+      <div className="d-flex align-items-center align-items-sm-end justify-content-end w-100">
+        <div>
+          <Img className="z-depth-1 phone-img" fluid={phoneImg.fluid} />
+        </div>
+      </div>
+    </WithOverlay>
+    <br />
+    <div className="w-100 px-3 px-md-0 py-3">
+      <h6 className="h5 font-weight-bold"> {toimija}</h6>
+      <p style={{maxWidth: '500px'}}>
+     {teksti}
+      </p>
+    </div>
+    </div>
+)
+Projekti.propTypes = {
+  img: PropTypes.object,
+  toimija: PropTypes.string,
+  teksti: PropTypes.string,
+}
+
+/*
+
+export const Projekti = ({img, toimija, phoneImg, teksti, children}) => (
+    <div>
+
+    <WithOverlay
+      imgClassName="projekti-tag border"
+      imgStyle={{maxWidth: '500px'}}
+      className="projekti-img "
+      top
+      img={img}
+    >
+      <div className="d-flex align-items-center align-items-sm-end justify-content-end w-100">
+        <div>
+          <Img className="z-depth-1 phone-img" fluid={phoneImg.fluid} />
+        </div>
+      </div>
+    </WithOverlay>
+    <br />
+    <div className="w-100 px-3 px-md-0 py-3">
+      <h6 className="h5 font-weight-bold"> {toimija}</h6>
+      <p style={{maxWidth: '500px'}}>
+     {teksti}
+      </p>
+    </div>
+    </div>
+)
+Projekti.propTypes = {
+  img: PropTypes.object,
+  toimija: PropTypes.string,
+  teksti: PropTypes.string,
+}
+
+
+      <div className="col-md-6">
             {activeItem ? (
               <div className="w-100 animated fadeIn px-3 px-md-0 py-3 pt-4">
                 <h6 className="h4 mb-3">
@@ -93,55 +188,5 @@ class ProjectSwiper extends React.Component {
               'null'
             )}
           </div>
-          <div className="col-md-12">
-            <Swiper
-              {...params}
-              shouldSwiperUpdate={true}
-              component={this.swiperContainer}
-              ref={node => (node ? (this.swiper = node.swiper) : null)}
-            >
-              {swiperData.map((item, i) =>
-                this.renderCard(item, i, this.swiper && this.swiper.activeIndex)
-              )}
-            </Swiper>
-            <div className="col-12">
-              <Control
-                slideTo={this.goToSlide}
-                goNext={this.goNext}
-                goPrev={this.goPrev}
-                slides={Array(swiperData.length).fill(null)}
-                activeIndex={this.swiper && this.swiper.activeIndex}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-}
-
-export default ProjectSwiper
-
-export const Projekti = ({img, toimija, phoneImg, teksti, children}) => (
-  <div className="col-12">
-    <WithOverlay
-      imgClassName="projekti-tag z-depth1 border "
-      imgStyle={{maxWidth: '500px'}}
-      className="projekti-img "
-      top
-      img={img}
-    >
-      <div className="d-flex align-items-center align-items-sm-end justify-content-end w-100 ">
-        <div>
-          <Img className=" z-depth-1 phone-img" fluid={phoneImg.fluid} />
-        </div>
-      </div>
-    </WithOverlay>
-  </div>
-)
-
-Projekti.propTypes = {
-  img: PropTypes.object,
-  toimija: PropTypes.string,
-  teksti: PropTypes.string,
-}
+          
+          */
