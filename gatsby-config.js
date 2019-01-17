@@ -8,19 +8,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-page-load-delay',
-/*
-    {
-     
-      resolve: `gatsby-source-wordpress`,
-      options: {
-          baseUrl: `casper-varesmaa.fi`,
-          protocol: `https`,
-          hostingWPCOM: false,
-        //  hostingWPCOM: false,
-        useACF: true,
-      }
-    },*/
 
 
     {
