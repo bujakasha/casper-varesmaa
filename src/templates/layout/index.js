@@ -18,7 +18,7 @@ import './_layout.scss'
 
 
 const Layout = props => {
-  const {children, innerWidth, isMounted, location,  lang} = props
+  const {children, innerWidth, location,  lang} = props
 
   return (
   
@@ -49,7 +49,7 @@ const Layout = props => {
             innerWidth={innerWidth}
           />
           <div className="navigation_offset" />
-          <div className={' layout_area_top page_minheight'+(isMounted&&' loaded'||'')}>
+          <div className={' layout_area_top page_minheight'}>
         
          
 
@@ -74,15 +74,12 @@ componentDidMount(){
 class LayoutWithProvider extends React.Component {
   state = {
     innerWidth:null,
-    isMounted:false
   }
   componentDidMount() {
     if (typeof window !== 'undefined') {
       window.addEventListener('click',clickAnimation);
       
-      setTimeout(() => {
-        this.setState({isMounted:true})
-      },100)
+  
     }
     
     this.handleResize()
@@ -97,7 +94,7 @@ class LayoutWithProvider extends React.Component {
     this.setState({innerWidth:windowWidth})
   }
   render = () => {
-    const { innerWidth, isMounted } = this.state;
+    const { innerWidth } = this.state;
     const lang = this.props.location
       ? langFromPath(this.props.location && this.props.location.pathname)
       : 'fi'
@@ -111,7 +108,7 @@ class LayoutWithProvider extends React.Component {
       <I18nProvider language={lang} catalogs={catalogs}>
         <Layout
           {...this.props}
-          isMounted={isMounted}
+   
           children={childrenWithProps}
           lang={lang}
           innerWidth={innerWidth}
