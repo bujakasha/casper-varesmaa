@@ -3,8 +3,9 @@ import {Trans} from '@lingui/react'
 import CollapseBar from '../components/collapse_bar'
 import {graphql} from 'gatsby'
 import {SeoWithI18n} from '../components/seo'
+import {langFromPath} from '../i18n-config'
 
-class FAQ extends React.PureComponent {
+class FAQ extends React.Component {
   state = {
     activeTab: null,
   }
@@ -20,7 +21,19 @@ class FAQ extends React.PureComponent {
 
   render() {
     const { activeTab} = this.state
-    const {faqTilaus, faqRekry, faqOther} = this.props.data
+    const {faqTilaus,  faqEnTilaus, faqRekry, faqEnRekry,  faqOther, faqEnOther} = this.props.data
+    
+    const activeLang = this.props.lang
+
+      const tilausData =
+      (activeLang && activeLang === 'en' && faqEnTilaus.edges) ||
+      faqTilaus.edges
+      const rekryData =
+        (activeLang && activeLang === 'en' && faqEnRekry.edges) ||
+        faqRekry.edges
+      const otherData =
+        (activeLang && activeLang === 'en' && faqEnOther.edges) ||
+        faqOther.edges
     return (
       <main>
          <SeoWithI18n
@@ -41,8 +54,8 @@ class FAQ extends React.PureComponent {
                 <br />
                 <br />
                 <div className="" style={{minHeight: '300px'}}>
-                  {faqTilaus && faqTilaus.edges
-                    ? faqTilaus.edges.map((item, i) => (
+                  {tilausData
+                    ? tilausData.map((item, i) => (
                         <CollapseBar
                           key={item.node.id}
                           title={item.node.title}
@@ -55,8 +68,8 @@ class FAQ extends React.PureComponent {
                     : null}
                   <br />
                   <br />
-                  {faqRekry && faqRekry.edges
-                    ? faqRekry.edges.map((item, i) => (
+                  {rekryData
+                    ? rekryData.map((item, i) => (
                         <CollapseBar
                           key={item.node.id}
                           title={item.node.title}
@@ -69,8 +82,8 @@ class FAQ extends React.PureComponent {
                     : null}
                   <br />
                   <br />
-                  {faqOther && faqOther.edges
-                    ? faqOther.edges.map((item, i) => (
+                  {otherData
+                    ? otherData.map((item, i) => (
                         <CollapseBar
                           key={item.node.id}
                           title={item.node.title}
@@ -125,6 +138,38 @@ export const query = graphql`
       }
     }
     faqOther: allFaqXlsxFaqOther {
+      edges {
+        node {
+          id
+          title
+          teksti
+        }
+      }
+    }
+
+
+
+
+    faqEnTilaus: allFaqXlsxEnTilaus {
+      edges {
+        node {
+          id
+          title
+          teksti
+        }
+      }
+    }
+
+    faqEnRekry: allFaqXlsxEnRekry {
+      edges {
+        node {
+          id
+          title
+          teksti
+        }
+      }
+    }
+    faqEnOther: allFaqXlsxEnOther {
       edges {
         node {
           id

@@ -6,7 +6,7 @@ import Image from './brand'
 import './_my_stack.scss'
 import {Trans} from '@lingui/react'
 
-class Brands extends React.PureComponent {
+class Brands extends React.Component {
   state = {
     showAll: false,
   }

@@ -13,7 +13,6 @@ import {Trans, I18n} from '@lingui/react'
 import {t} from '@lingui/macro'
 import SvgSection from '../components/svg_section'
 import {SeoWithI18n} from '../components/seo'
-
 /*
 <h6 className="mb-3 h5 d-none">
                         <strong>
@@ -44,15 +43,15 @@ const IndexPage = props => {
                 description="etusivu_page_description"
                 />
               <div className="layout_area page_minheight">
-                <Header img={headerImage.fluid} carouselImages={carouselImages}>
-                  <div className="mt-md-5 pt-md-2">
+                <Header isSm={isSm} img={headerImage.fluid} carouselImages={carouselImages}>
+                  <div className="mt-md-5 pt-md-2" >
                     <h1 className="h1 font-weight-bold">
                       <Trans id="header_section_otsikko" />
                       <br />
                       <strong className="text-primary">Casper Väresmaa</strong>
                     </h1>
 
-                    <div className="col-lg-11 col-xl-10 px-0 mt-4 pt-1 mt-md-4">
+                    <div className="col-lg-11 col-xl-10 px-0 mt-4 pt-1">
                       
                       <p style={{fontSize: '1.1em'}}>
                         <Trans id="header_section_teksti" />
@@ -69,7 +68,7 @@ const IndexPage = props => {
                       className="btn btn-secondary px-5 btn-simple"
                     >
                       <strong>
-                        {'Tarvitsetko verkkosivut'||<Trans id="btn_yhteydenotto"/>}
+                        <Trans id="btn_tilaa_verkkosivut"/>
                        
                       </strong>
                     </Link>
@@ -79,9 +78,10 @@ const IndexPage = props => {
                       <Link
                         to="/ansioluettelo"
                         title={i18n._(t`btn_title_ansioluettelo`)}
+                        style={props.lang==='fi'&&{minWidth:'270px'}||{}}
                         className="btn btn-outline-light btn-simple text-dark mt-3"
                       >
-                       {'Etsitkö työntekijää'|| <Trans id="btn_ansioluettelo" />}
+                       <Trans id="btn_lataa_ansioluettelo" />
                       </Link>
                     </div>
 
@@ -155,6 +155,37 @@ export const query = graphql`
       }
     }
 
+    headerImage2: file(relativePath: {regex: "/casper_.jpg/"}) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+
+    headerImage3: file(relativePath: {regex: "/casper_katajanokka.jpg/"}) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`
+
+/*
+
+
+export const query = graphql`
+  query {
+    headerImage: file(relativePath: {regex: "/sup3.jpg/"}) {
+      childImageSharp {
+        fluid(maxWidth: 2000) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+
     headerImage2: file(relativePath: {regex: "/dun.jpg/"}) {
       childImageSharp {
         fluid(maxWidth: 2000) {
@@ -172,9 +203,6 @@ export const query = graphql`
     }
   }
 `
-
-/*
-
  <div className="w-100 d-none" style={{
                   minHeight: '200px',
                   backgroundImage: 'url(/curve2.svg)',

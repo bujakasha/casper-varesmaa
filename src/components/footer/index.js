@@ -49,13 +49,13 @@ const Footer = ({lang}) => {
             </div>
           </div>
 
-          <div className="col pl-md-5 pr-md-5">
+          <div className="">
            
-            <div className="text-center">
-              <hr className="col-10 d-inline-block" />
+            <div className="text-center container">
+              <hr className="col-10 col-md-6 d-inline-block" />
             </div>
 
-            <ul className="nav nav-dark flex-olumn mt-5 mt-lg-0 col justify-content-center">
+            <ul className="nav nav-dark  justify-content-center">
               <li className="nav-item">
                 <Link
                   to={homelink}
@@ -64,6 +64,10 @@ const Footer = ({lang}) => {
                 >
                   <Trans id="kotisivu_page_link" />
                 </Link>
+              </li>
+
+              <li>
+                <span className="nav-link px-0">|</span>
               </li>
           
               <li className="nav-item">
@@ -75,6 +79,10 @@ const Footer = ({lang}) => {
                   <Trans id="ansiluettelo_page_link" />
                 </Link>
               </li>
+
+              <li>
+                <span className="nav-link px-0">|</span>
+              </li>
               <li className="nav-item">
                 <Link
                   to={homelink + 'tilaa-verkkosivut'}
@@ -83,6 +91,9 @@ const Footer = ({lang}) => {
                 >
                   <Trans id="tilaa_page_link" />
                 </Link>
+              </li>
+              <li>
+                <span className="nav-link px-0">|</span>
               </li>
               <li className="nav-item">
                 <Link
@@ -99,7 +110,7 @@ const Footer = ({lang}) => {
         <div className="footer_padding" />
         <div className="w-100 text-center">
           <p className="mb-0 pb-3">
-            <small> Tämän sivu päivitettiin viimeksi 20.4.2019. </small>
+            <small> <Trans id="footer_updated"/> 20.4.2019. </small>
             <small />
           </p>
         </div>

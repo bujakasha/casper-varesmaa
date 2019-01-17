@@ -5,6 +5,7 @@ import {
 } from 'react-transition-group'
 
 const timeout = 250
+const timeoutExit = 150
 const getTransitionStyles = {
   entering: {
     position: `absolute`,
@@ -15,12 +16,12 @@ const getTransitionStyles = {
     opacity: 1,
   },
   exiting: {
-    transition: `opacity ${timeout}ms ease-in-out`,
+    transition: `opacity ${timeoutExit}ms ease-in-out`,
     opacity: 0,
   },
 }
 
-class Transition extends React.PureComponent {
+class Transition extends React.Component {
   render() {
     const {children, location} = this.props
 

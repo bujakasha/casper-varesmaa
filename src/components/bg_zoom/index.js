@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 
 import './_bg_zoom.scss'
 
-class BgZoom extends React.PureComponent {
+class BgZoom extends React.Component {
   state = {
     isLoaded: false,
     status: 'loading',
@@ -77,7 +77,7 @@ BgZoom.propTypes = {
 
 export default BgZoom
 
-export class WithOverlay extends React.PureComponent {
+export class WithOverlay extends React.Component {
   render() {
     const {className, imgClassName, children} = this.props
     return (
@@ -85,7 +85,7 @@ export class WithOverlay extends React.PureComponent {
         <div className={imgClassName + ''}>
           <BgZoom {...this.props} />
         </div>
-        <div className="overlay d-flex content px-4 px-md-0">{children}</div>
+        <div className="overlay d-flex content px-1 px-md-0">{children}</div>
       </div>
     )
   }

@@ -1,5 +1,6 @@
 import {Link} from 'gatsby'
 import React from 'react'
+import PropTypes from 'prop-types'
 import Hamburger from './hamburger'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Collapse from 'reactstrap/lib/Collapse'
@@ -19,7 +20,9 @@ class Navigation extends React.PureComponent {
   }
   componentDidUpdate(prevProps) {
     if (this.props.location && prevProps.location !== this.props.location) {
+     
       this.setState({isOpen: false})
+
     }
   }
   componentWillUnmount() {
@@ -30,7 +33,7 @@ class Navigation extends React.PureComponent {
     var heightToShow = window.innerHeight - 5
     var windowWidth = window.innerWidth
 
-    if (window.pageYOffset > heightToShow && windowWidth > 768) {
+    if (window.pageYOffset > heightToShow && windowWidth > 992) {
       this.setState({isSticky: true})
     } else {
       this.setState({isSticky: false})
@@ -38,7 +41,7 @@ class Navigation extends React.PureComponent {
   }
 
   toggle = () => {
-    if (window.innerWidth < 768) {
+    if (this.props.innerWidth < 992) {
       this.setState({
         isOpen: !this.state.isOpen,
       })
@@ -47,19 +50,21 @@ class Navigation extends React.PureComponent {
 
   render() {
     const {isOpen, isSticky} = this.state
-    const {innerWidth, lang} = this.props
+    const {innerWidth, lang, location} = this.props
 
     const homelink = lang ? getHomelink(lang) : null
-    const isSm = innerWidth < 768;
+    const isSm = innerWidth < 992;
     console.log({innerWidth})
     return (
       <div className={'sticky_box  ' + ((isSticky && ' sticky') || '')}>
+   
         <div
           className={
             'navigation_container bg-white  ' +
             ((isSticky && ' animated slideInDown') || ' animated ')
           }
         >
+
           <div className={'col-md-10 container px-0 px-md-4    '}>
             <nav
               id="cv_navigation"
@@ -90,7 +95,7 @@ class Navigation extends React.PureComponent {
               {isSm?<div className="navbar-nav d-lg-none  ml-auto mr-2">
                 <div className="d-flex">
                   <Link
-                    to={deprefix(this.props.location.pathname)}
+                    to={deprefix(location.pathname)}
                     className="nav-link px-1"
                     activeClassName="active"
                   >
@@ -99,7 +104,7 @@ class Navigation extends React.PureComponent {
                   </Link>
                   <span className="nav-link px-0"> | </span>
                   <Link
-                    to={prefix('en') + deprefix(this.props.location.pathname)}
+                    to={prefix('en') + deprefix(location.pathname)}
                     className="nav-link px-1 "
                     activeClassName="active"
                   >
@@ -156,7 +161,7 @@ class Navigation extends React.PureComponent {
 
               {!isSm?<div className="d-none d-lg-block  mr-4 ml-lg-auto">
                 <Link
-                  to={homelink+'soittopyynto'}
+                  to={location.pathname.match(/soittopyynto/g) && (homelink+'viesti') ||(homelink+'soittopyynto') }
                   className={
                     'btn btn-secondary btn-sm btn-simple ' 
                   }
@@ -179,7 +184,7 @@ class Navigation extends React.PureComponent {
              {!isSm? <div className="navbar-nav d-none d-lg-block mr-aut mr-4">
                 <div className="d-flex">
                   <Link
-                    to={deprefix(this.props.location.pathname)}
+                    to={deprefix(location.pathname)}
                     className="nav-link px-1"
                     activeClassName="active"
                   >
@@ -187,7 +192,7 @@ class Navigation extends React.PureComponent {
                   </Link>
                   <span className="nav-link px-0"> | </span>
                   <Link
-                    to={prefix('en') + deprefix(this.props.location.pathname)}
+                    to={prefix('en') + deprefix(location.pathname)}
                     className="nav-link px-1"
                     activeClassName="active"
                   >
@@ -202,6 +207,13 @@ class Navigation extends React.PureComponent {
       </div>
     )
   }
+}
+
+
+Navigation.propTypes = {
+  innerWidth: PropTypes.number.required,
+  lang: PropTypes.string.required,
+  location: PropTypes.object.required,
 }
 
 export default Navigation

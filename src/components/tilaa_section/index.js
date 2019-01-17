@@ -7,7 +7,7 @@ const TilaaSection = ({homelink, i18n}) => (
   <div id="tilaa_section" className="container  col-md-10 px-md-5">
     <div className="row">
       <div className="col-lg-6">
-        <div className="col-xl-11 px-0">
+        <div className="col-xl-10 px-0">
           <h5 className="mb-3">
             <strong>
               {' '}
@@ -40,21 +40,8 @@ const TilaaSection = ({homelink, i18n}) => (
           <p>
             <Trans id="tilaa_section_react_teksti" />
           </p>
-        </div>
-      </div>
 
-      <div className="col-md-6 pt-4 wowfadeIn" data-wow-offset="200">
-        <br />
 
-        <Link
-          to={homelink+'soittopyynto'}
-          className="btn btn-secondary px-5"
-        >
-          {' '}
-          <strong><Trans id="btn_yhteydenotto" /></strong>{' '}
-        </Link>
-      </div>
-      <div className="col-md-6">
         <br />
 
         <p className="mb-1">
@@ -74,6 +61,20 @@ const TilaaSection = ({homelink, i18n}) => (
           <p className="mb-0"> Casper.varesmaa@gmail.com </p>
         </div>
       </div>
+        </div>
+
+      <div className="col-md-6 pt-4 wowfadeIn" data-wow-offset="200">
+        <br />
+
+        <Link
+          to={homelink+'soittopyynto'}
+          className="btn btn-secondary px-5"
+        >
+          {' '}
+          <strong><Trans id="btn_yhteydenotto" /></strong>{' '}
+        </Link>
+      </div>
+    
     </div>
   </div>
 )

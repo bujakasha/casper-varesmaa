@@ -5,6 +5,9 @@
   "Puhelin":"Puhelin",
   "Email":"Email",
   
+  "btn_lataa_ansioluettelo":"Lataa ansioluettelo",
+  "btn_tilaa_verkkosivut":"Tarvitsetko verkkosivut",
+
   "btn_ansioluettelo":"Näytä ansioluettelo",
   "btn_yhteys":"Lähetä viesti",
   "btn_yhteydenotto":"Lähetä soittopyyntö",
@@ -27,7 +30,7 @@
   "Näytä enemmän":"Näytä lisää",
   "Näytä vähemmän":"Näytä vähemmän",
   
-
+  "footer_updated":"Tämän sivu päivitettiin viimeksi",
 
   "not_found_otsikko":"Sivua ei löytynyt",
   "not_found_teksti":"Hakemaasi osoitetta ei ole olemassa.",

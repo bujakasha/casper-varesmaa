@@ -13,13 +13,13 @@
   "header_section_apu_otsikko":"Verkkokehittäjä, suunnittelija ja paljon muuta",
   "header_section_apu_otsikko":"Fullstack javascript kehittäjä",
 
-  "header_section_teksti":"Teen upeita verkkosivustoja ja suorituskykyisiä web-sovelluksia. Käytän moderneja teknologioita, jotka mahdollistavat nopean kehittämisen ja skaalautumisen suurille käyttäjämäärille. Ole yhteydessä jos haluat työskennellä kanssani.",
+  "header_section_teksti":"Teen upeita verkkosivuja ja suorituskykyisiä web-sovelluksia. Käytän moderneja teknologioita, jotka mahdollistavat nopean kehittämisen ja skaalautumisen suurille käyttäjämäärille. Ole yhteydessä jos haluat työskennellä kanssani.",
 
 
   "about_otsikko_start":"Lyhyesti",
   "about_otsikko_end":"kuka olen.",
   "about_nyt_otsikko":"Tällä hetkellä",
-  "about_nyt_teksti":"Asun Helsingissä, olen koulutukseltani Merkonomi, mutta ollessani mukana perustamassa yritystä joka tarvitsi verkkosivut löysin kiinnostuksen verkkosivujen suunnittelusta ja koodaamisesta. Nykyään kirjoitan tehokkaita sovelluksia ja suunnittelen saumattomia käyttäjäkokemuksia. Tällä hetkellä etsin uusia mielenkiintoisia projekteja ja työtehtäviä fullstack javascript kehittäjänä",
+  "about_nyt_teksti":"Asun Helsingissä, olen koulutukseltani Merkonomi, mutta ollessani mukana perustamassa yritystä joka tarvitsi verkkosivut löysin kiinnostuksen verkkosivujen suunnittelusta ja koodaamisesta. Nykyään kirjoitan tehokkaita sovelluksia ja suunnittelen saumattomia käyttäjäkokemuksia.",
   
   "about_kehitys_otsikko":"Javascript kehittäjä",
   "about_kehitys_teksti":"Käytän moderneja verkkoteknologioita kuten React, Node ja Webpack, joiden avulla suorituskykyisten verkkosovellusten tekeminen on nopeaa. Minulla on paljon osaamista tietokantaohjatuista verkkopalveluista, kartta sovelluksista ja eri sisällönhallinta järjestelmistä.",
@@ -29,7 +29,7 @@
 
 
   "myt_stack_otsikko":"Fullstack javascript-kehittäjä",
-  "myt_stack_teksti":"Kehitän vaativatkin ideat tuotanto valmiiksi verkkosovellukseksi, jota on helppo kasvattaa suurille käyttäjämäärille. Tässä teknologioita ja palveluita joita käytän.",
+  "myt_stack_teksti":"Kehitän vaativatkin ideat tuotanto valmiiksi verkkosovelluksiksi, jota on helppo kasvattaa suurille käyttäjämäärille. Tässä teknologioita ja palveluita joita käytän.",
  
   "my_works_otsikko":"Muutama referenssi",
   "my_works_teksti":"Tässä verkkosivustoja joiden parissa olen työskennellyt.",

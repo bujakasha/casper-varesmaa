@@ -7,6 +7,7 @@ import {catalogs, langFromPath, getHomelink} from '../../i18n-config'
 import Navigation from '../../components/navigation'
 import Footer from '../../components/footer'
 import Transition from '../../components/Transition'
+import clickAnimation from  '../../components/MouseAnimation'
 
 import 'typeface-nunito-sans'
 
@@ -64,12 +65,22 @@ const Layout = props => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
+/*
+componentDidMount(){
+  // Set delay in milliseconds
+  window.pageExitTime = 1000
+}*/
 
 class LayoutWithProvider extends React.Component {
   state = {
     innerWidth:null
   }
   componentDidMount() {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('click',clickAnimation);
+
+    }
+    
     this.handleResize()
     window.addEventListener('resize', this.handleResize, false)
   }

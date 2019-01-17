@@ -60,15 +60,17 @@ const MyProjects = ({images, children}) => (
       const seahorseImageMobile =
         data.seahorseImageMobile && data.seahorseImageMobile.childImageSharp
 
+
+
       return (
-        <div id="my_projects" className="containercol-md-10offset-md-1">
+        <div id="my_projects"  >
           <div className="col-md-8 offset-md-2">{children}</div>
           <I18n>
             {({i18n}) => {
               return (
                 <>
-                  <div className="containe col-md-12 offsetmd-2">
-                    <div className="row pt-md-4">
+                  <div className="col-md-12">
+                    <div className="row">
                       <ProjektiSwiper
                         swiperData={[
                           {
@@ -82,18 +84,6 @@ const MyProjects = ({images, children}) => (
                             phoneImg: sportteriImageMobile,
                             toimija: 'Sportteri.fi',
                             teksti: i18n._(t`work_sportteri`),
-                          },
-                          {
-                            img: seahorseImage && seahorseImage.fluid,
-                            phoneImg: seahorseImageMobile,
-                            toimija: 'Sea Horse',
-                            teksti: i18n._(t`work_seahorse`),
-                          },
-                          {
-                            img: seahorseImage && seahorseImage.fluid,
-                            phoneImg: seahorseImageMobile,
-                            toimija: 'Sea Horse',
-                            teksti: i18n._(t`work_seahorse`),
                           }
                         ]}
                       />

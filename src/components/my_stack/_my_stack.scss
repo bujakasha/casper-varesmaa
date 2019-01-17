@@ -22,17 +22,18 @@
   filter: grayscale(100%);
     
     -webkit-filter: grayscale(100%);
-    -webkit-transition: .4s;
-    -moz-transition: .4s;
-    transition: .4s;
+    -webkit-transition: .6s;
+    -moz-transition: .6s;
+    transition: .6s;
 }
  
-#my_sta.img_container .img:hover {
-    //filter: grayscale(0%);
-}
+
 
 @media only screen and (min-width : 722px) {
 
+    #my_stack .img_container .img:hover {
+        filter: grayscale(25%);
+    }
    
     #my_stack .img{
       //  min-width: 200px;

@@ -5,7 +5,7 @@ import {Trans} from '@lingui/react'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import Kortti from './valinta_kortti'
 
-class LeavConactInfo extends React.PureComponent {
+class LeavConactInfo extends React.Component {
   state = {
     loadTime: null,
   }

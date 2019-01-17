@@ -16,7 +16,7 @@ import { postForm } from '../../../utils/form_request'
 
 const FORMAT = 'D/M/YYYY'
 
-class SoittopyyntoForm extends React.PureComponent {
+class SoittopyyntoForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {

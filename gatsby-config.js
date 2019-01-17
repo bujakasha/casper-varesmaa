@@ -8,7 +8,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-
+    'gatsby-plugin-page-load-delay',
 /*
     {
      

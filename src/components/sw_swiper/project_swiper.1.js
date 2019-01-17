@@ -127,7 +127,6 @@ export const Projekti = ({img, toimija, phoneImg, teksti, children}) => (
         </div>
       </div>
     </WithOverlay>
-
     <br />
     <div className="w-100 px-3 px-md-0 py-3">
       <h6 className="h5 font-weight-bold"> {toimija}</h6>
@@ -144,15 +143,6 @@ Projekti.propTypes = {
 }
 
 /*
-
-    <WithOverlay
-      imgClassName="projekti-tag border"
-      imgStyle={{maxWidth: '500px'}}
-      className="projekti-img"
-      top
-      img={img}
-    >
-    </WithOverlay>
 
 export const Projekti = ({img, toimija, phoneImg, teksti, children}) => (
     <div>
