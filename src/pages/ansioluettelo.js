@@ -38,7 +38,7 @@ const AnsioluetteloPage = props => {
       <div className="container col-md-10 pt-4">
      
         <div className="row">
-          <div className="col-4 col-md-5 col-lg-4 col-xl-3 d-noned-md-block">
+          <div className="col-4 col-md-5 col-lg-4 col-xl-3 d-none d-print-block d-md-block">
             <BgZoom
               className="profile_image"
               delay={100}
@@ -151,6 +151,9 @@ const ResumeSection = ({ajankohta, otsikko, toimija, teksti}) => {
     <div className="col-12 col-lg-10 py-4">
       <div className="row">
         <div className="col-md-3">
+          <p className="text-muted mb-1 d-print-none">{ajankohta} </p>
+        </div>
+        <div className="col-md-3 d-none d-print-block">
           <p className="text-muted mb-1"><small>{ajankohta}</small> </p>
         </div>
         <div className="col-md">
