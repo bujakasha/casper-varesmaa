@@ -18,9 +18,9 @@ const PhoneInput=(props)=>{
                         }
                         format={
                           (value &&
-                            value.match(/(^\+\(0|^0)/) &&
-                            telPatternFin) ||
-                          telPattern
+                            value.match(/(^\+\(3|^3|^\+)/) &&
+                            telPattern) ||
+                            telPatternFin
                         }
                         id="phone_input"
                         value={value}

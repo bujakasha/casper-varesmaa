@@ -25,10 +25,10 @@ export const postForm = (state, tyyppi) => {
     })
     .then(res => {
       if (res.statusCode === 200) {
-        console.log(res)
+     //   console.log(res)
         return res
       } else {
-        console.log('error soittopyyntö form ', res)
+      console.log('error soittopyyntö form ', res)
         return {err: true, message: res.message, body: res.body}
       }
     })

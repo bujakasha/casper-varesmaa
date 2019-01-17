@@ -58,10 +58,10 @@ const IndexPage = props => {
                       </p>
                     </div>
 
-                    <div className="w-100 py-3 py-md-4"/>
+                    <div className="w-100 py-3 py-md-4 mb-3"/>
 
                     <div>
-                 
+
                       <Link
                       to={props.homelink+'soittopyynto'}
                       title={i18n._(t`btn_title_yhteydenotto`)}
@@ -75,14 +75,14 @@ const IndexPage = props => {
                    
                       <br />
 
-                      <Link
-                        to="/ansioluettelo"
+                      <a
+                        href="/Ansioluettelo-Casper-Väresmaa.pdf"
                         title={i18n._(t`btn_title_ansioluettelo`)}
                         style={props.lang==='fi'&&{minWidth:'270px'}||{}}
                         className="btn btn-outline-light btn-simple text-dark mt-3"
                       >
                        <Trans id="btn_lataa_ansioluettelo" />
-                      </Link>
+                      </a>
                     </div>
 
                     <div className="w-100 py-3 py-md-3" />

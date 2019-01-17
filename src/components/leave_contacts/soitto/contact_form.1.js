@@ -31,11 +31,6 @@ class ContactForm extends React.PureComponent {
 
   sendForm = event => {
     this.setState({loading: true}, () => {
-      console.log({
-        ...this.state,
-        times: null,
-        pvm: dateFnsFormat(this.state.ajankohta, FORMAT, {locale: 'fi'}),
-      })
       postForm(
         {
           ...this.state,

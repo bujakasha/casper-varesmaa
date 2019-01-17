@@ -7,7 +7,7 @@ import '../_leave_contact.scss'
 
 const ViestiView = props => {
   return (
-    <div className="modal-body animated fadeIn">
+    <div className="col-12 py-5">
       <div className="d-flex justify-content-between">
         <h3 className="modal-title font-weight-bold">
           {' '}

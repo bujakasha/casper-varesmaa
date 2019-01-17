@@ -41,7 +41,7 @@ class MessageForm extends React.PureComponent {
   }
 
   onChange = event => {
-    console.log(event.target)
+
     this.setState({
       [event.target.name]: event.target.value,
     })

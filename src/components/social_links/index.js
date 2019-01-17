@@ -15,13 +15,6 @@ const SocialLinks = ({ className}) => (
         transform="shrink-5s"
       />
     </a>
-    <a href="#" title="Facebook Casper" className="btn s_link">
-      <FontAwesomeIcon
-        icon={['fab', 'facebook']}
-        size="2x"
-        transform="shrink-5s"
-      />
-    </a>
     <a
       href="https://www.instagram.com/bujakasha_/"
       title="Instagram Bujakasha_"
@@ -48,3 +41,14 @@ const SocialLinks = ({ className}) => (
 )
 
 export default SocialLinks
+
+
+/*
+  <a href="#" title="Facebook Casper" className="btn s_link">
+      <FontAwesomeIcon
+        icon={['fab', 'facebook']}
+        size="2x"
+        transform="shrink-5s"
+      />
+    </a>
+     */

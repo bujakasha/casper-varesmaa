@@ -59,7 +59,7 @@ module.exports = {
       options: {
         // develop: true, // Enable while using `gatsby develop`
         // tailwind: true, // Enable tailwindcss support
-        whitelist: ['collapse', 'collapsing', /modal/, /DayPicker/, 'fade', 'show', 'navbar-collapse'],
+        whitelist: ['collapse', 'noFocus', 'collapsing', /modal/, /DayPicker/, 'fade', 'show', 'navbar-collapse'],
         whitelistPatternsChildren: [/modal/,/DayPicker/],
          ignore: ['/_sw_swiper.scss','_navigation.scss','_leave_contact.scss'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders

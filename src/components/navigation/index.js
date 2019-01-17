@@ -54,7 +54,7 @@ class Navigation extends React.PureComponent {
 
     const homelink = lang ? getHomelink(lang) : null
     const isSm = innerWidth < 992;
-    console.log({innerWidth})
+
     return (
       <div className={'sticky_box  ' + ((isSticky && ' sticky') || '')}>
    
@@ -72,7 +72,7 @@ class Navigation extends React.PureComponent {
             >
             {isSm? <div className="d-lg-none  mr-md-0 ml-lg-auto">
               <Link
-                  to={homelink+'soittopyynto'}
+                  to={location.pathname.match(/soittopyynto/g) && (homelink+'viesti') ||(homelink+'soittopyynto') }
                   className={
                     'btn btn-secondary btn-sm btn-simple ' 
                   }

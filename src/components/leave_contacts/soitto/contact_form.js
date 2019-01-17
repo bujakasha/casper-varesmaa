@@ -22,7 +22,7 @@ class SoittopyyntoForm extends React.Component {
     this.state = {
       ajankohta: getNextWeekday(),
       tunti: '13:00',
-      puhelin: '+(358)',
+      puhelin: '',
       loading: false,
     }
   }
