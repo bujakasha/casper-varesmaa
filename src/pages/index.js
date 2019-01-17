@@ -147,7 +147,7 @@ const IndexPage = props => {
 export default IndexPage
 export const query = graphql`
   query {
-    headerImage: file(relativePath: {regex: "/sup3.jpg/"}) {
+    headerImage: file(relativePath: {regex: "/kuvat/casper-sup-saimaa.jpg/"}) {
       childImageSharp {
         fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid_withWebp
@@ -155,7 +155,7 @@ export const query = graphql`
       }
     }
 
-    headerImage2: file(relativePath: {regex: "/casper_.jpg/"}) {
+    headerImage2: file(relativePath: {regex: "/kuvat/casper-chill.jpg/"}) {
       childImageSharp {
         fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid_withWebp
@@ -163,7 +163,7 @@ export const query = graphql`
       }
     }
 
-    headerImage3: file(relativePath: {regex: "/casper_katajanokka.jpg/"}) {
+    headerImage3: file(relativePath: {regex: "/kuvat/casper-katajanokka.jpg/"}) {
       childImageSharp {
         fluid(maxWidth: 2000) {
           ...GatsbyImageSharpFluid_withWebp

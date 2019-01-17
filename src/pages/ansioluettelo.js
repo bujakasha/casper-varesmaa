@@ -193,7 +193,7 @@ export const query = graphql`
       }
     }
 
-    profileImage2: file(relativePath: {regex: "/dun.jpg/"}) {
+    profileImage2: file(relativePath: {regex: "/kuvat/casper-chill.jpg/"}) {
       childImageSharp {
         fluid(maxWidth: 1600) {
           ...GatsbyImageSharpFluid_withWebp
