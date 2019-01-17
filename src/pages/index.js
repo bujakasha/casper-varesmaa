@@ -150,7 +150,7 @@ export const query = graphql`
     headerImage: file(relativePath: {regex: "/kuvat/casper-sup-saimaa.jpg/"}) {
       childImageSharp {
         fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFixed_withWebp_noBase64
         }
       }
     }
@@ -158,7 +158,7 @@ export const query = graphql`
     headerImage2: file(relativePath: {regex: "/kuvat/casper-chill.jpg/"}) {
       childImageSharp {
         fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFixed_withWebp_noBase64
         }
       }
     }
@@ -166,7 +166,7 @@ export const query = graphql`
     headerImage3: file(relativePath: {regex: "/kuvat/casper-katajanokka.jpg/"}) {
       childImageSharp {
         fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFixed_withWebp_noBase64
         }
       }
     }

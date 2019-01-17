@@ -188,7 +188,7 @@ export const query = graphql`
     profileImage: file(relativePath: {regex: "/kuvaaa.jpg/"}) {
       childImageSharp {
         fluid(maxWidth: 1600) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFixed_withWebp_noBase64
         }
       }
     }
@@ -196,7 +196,7 @@ export const query = graphql`
     profileImage2: file(relativePath: {regex: "/kuvat/casper-chill.jpg/"}) {
       childImageSharp {
         fluid(maxWidth: 1600) {
-          ...GatsbyImageSharpFluid_withWebp
+          ...GatsbyImageSharpFixed_withWebp_noBase64
         }
       }
     }
