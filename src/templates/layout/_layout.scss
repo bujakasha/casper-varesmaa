@@ -10,13 +10,15 @@
 //position: fixed;
 }
 
+.page_minheight{
+  min-height: calc(100vh - 100px);
+}
+
 
 @media only screen and (min-width : 722px) {
-  .page_minheight{
-    min-height: 100vh;
-  }
+
   .page_minheight.loaded{
-    min-height: 425px;
+   // min-height: 425px;
   }
   .layout_area_top{
     padding-top: 50px;

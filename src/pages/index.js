@@ -76,7 +76,7 @@ const IndexPage = props => {
                       <br />
 
                       <a
-                        href="/Ansioluettelo-Casper-Väresmaa.pdf"
+                        href="/ansioluettelo-casper-varesmaa.pdf"
                         title={i18n._(t`btn_title_ansioluettelo`)}
                         style={props.lang==='fi'&&{minWidth:'270px'}||{}}
                         className="btn btn-outline-light btn-simple text-dark mt-3"
