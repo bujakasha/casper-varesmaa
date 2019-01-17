@@ -56,7 +56,7 @@ class BgZoom extends React.Component {
           fluid={img}
           className={
             ((isLoaded && 'loaded ') || '') +
-            ' bg-img zoom-img   overlay-container ' +
+            ' bg-img zoom-img overlay-container ' +
             ((contain && 'contain ') || '')
           }
         />

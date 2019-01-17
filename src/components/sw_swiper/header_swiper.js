@@ -82,7 +82,7 @@ class SwSwiper extends React.Component {
     }
 
     return (
-      <div className="w-100">
+      <div className="w-100 no-overflow-x">
         <Swiper
           {...params}
           style={{overflow:'hidden'}}

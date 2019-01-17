@@ -79,7 +79,10 @@ class LayoutWithProvider extends React.Component {
   componentDidMount() {
     if (typeof window !== 'undefined') {
       window.addEventListener('click',clickAnimation);
-      this.setState({isMounted:true})
+      
+      setTimeout(() => {
+        this.setState({isMounted:true})
+      },100)
     }
     
     this.handleResize()
