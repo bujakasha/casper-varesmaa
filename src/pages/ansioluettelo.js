@@ -32,12 +32,13 @@ const AnsioluetteloPage = props => {
     <main className="layout_area page_minheight">
      <SeoWithI18n
                 title="ansioluettelo_page_title"
+                titleTemplate=""
                 description="ansioluettelo_page_description"
                 />
       <div className="container col-md-10 pt-4">
      
         <div className="row">
-          <div className="col-md-5 col-lg-4 col-xl-3 d-none d-md-block">
+          <div className="col-4 col-md-5 col-lg-4 col-xl-3 d-noned-md-block">
             <BgZoom
               className="profile_image"
               delay={100}
@@ -49,7 +50,7 @@ const AnsioluetteloPage = props => {
               <h1>
                 <strong>Casper Väresmaa</strong>
               </h1>
-              <h5 className="text-muted">
+              <h5 className="text-muted pl-1">
                 <Trans id="ansioluettelo_page_apuotsikko" />
               </h5>
 
@@ -65,7 +66,7 @@ const AnsioluetteloPage = props => {
                   <p>casper.varesmaa@gmail.com</p>
                 </div>
 
-                <div>
+                <div className="d-none d-print-block">
                   <p className="mb-0">
                     <small>
                       <Trans id="Puhelin" />
@@ -103,8 +104,9 @@ const AnsioluetteloPage = props => {
             : null}
         </div>
       </div>
+      <br/>
 
-      <div className="container col-md-10 pt-4 mt-5">
+      <div className="container col-md-10 pt-4 mt-5 mb-5">
         <div>
           <h4 className="font-weight-bold">
             <Trans id="Kokemus" />
@@ -117,6 +119,9 @@ const AnsioluetteloPage = props => {
             : null}
         </div>
       </div>
+      <br/>
+      <br/>
+
 
       <div className="container col-md-10 pt-4 mt-5">
         <div>
@@ -124,12 +129,14 @@ const AnsioluetteloPage = props => {
             <Trans id="Osaaminen" />
           </h4>
           <hr />
+          <div className="col-12">
           <div className="row">
-            {taidotData && taidotData.length
+          {taidotData && taidotData.length
               ? taidotData.map((item, i) => (
                   <ExprerienceSection key={item.node.id} {...item.node} />
                 ))
               : null}
+          </div>
           </div>
         </div>
       </div>
@@ -144,7 +151,7 @@ const ResumeSection = ({ajankohta, otsikko, toimija, teksti}) => {
     <div className="col-12 col-lg-10 py-4">
       <div className="row">
         <div className="col-md-3">
-          <p className="text-muted">{ajankohta} </p>
+          <p className="text-muted mb-1"><small>{ajankohta}</small> </p>
         </div>
         <div className="col-md">
           <h5 className="font--bold">
@@ -160,7 +167,7 @@ const ResumeSection = ({ajankohta, otsikko, toimija, teksti}) => {
 
 const ExprerienceSection = ({ otsikko, toimija, teksti}) => {
   return (
-    <div className="col-md-6 py-4">
+    <div className="col-md-6 pt-4">
       <div className="row">
         <div className="col-md">
           <h5>

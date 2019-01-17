@@ -5,11 +5,11 @@ import {I18n} from '@lingui/react'
 import {t} from '@lingui/macro'
 
 const SeoComponents = (props) => {
-    const {  title, description } = props;
+    const {  title, description, titleTemplate } = props;
     return (
         <Helmet 
                 title={title||"Verkkosivut"}
-                titleTemplate="%s - Casper Väresmaa"
+                titleTemplate={titleTemplate||"%s - Casper Väresmaa"}
                 meta={[
                 { charset: 'utf-8' },
                 {
@@ -33,7 +33,8 @@ const SeoComponents = (props) => {
 };
 
 SeoComponents.propTypes = {
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    titleTemplate: PropTypes.string,
     description: PropTypes.string,
 };
 
