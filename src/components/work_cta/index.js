@@ -4,7 +4,7 @@ import React from 'react'
 import {Trans} from '@lingui/react'
 
 const Header = ({toggleMessage,homelink}) => (
-  <div id="work_with_me" className="container pt-5 mt-5">
+  <div id="work_with_me" className="container pt-5mt-5">
     <div className="row">
       <div className="col-sm-8 offset-sm-2 text-center">
           <h2 className="h2 font-weight-bold">

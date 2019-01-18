@@ -29,6 +29,10 @@
   "Sulje ikkuna":"Close the window",
 
  
+
+  "gdbr_otsikko":"Disclaimer",
+  "gdbr_teksti":"Form sends your data encrypted trough AWS cloud service, It's only used for direct contacting and is saved to my email account.",
+   
  
   "":""
 

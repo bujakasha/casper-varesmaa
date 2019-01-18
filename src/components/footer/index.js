@@ -55,7 +55,7 @@ const Footer = ({lang}) => {
               <hr className="col-10 col-md-6 d-inline-block" />
             </div>
 
-            <ul className="nav nav-dark  justify-content-center">
+            <ul className="nav nav-dark justify-content-center">
               <li className="nav-item">
                 <Link
                   to={homelink}
@@ -97,7 +97,7 @@ const Footer = ({lang}) => {
               </li>
               <li className="nav-item">
                 <Link
-                  to={homelink + 'faq'}
+                  to={homelink + 'tietoa'}
                   title="Yleisiä kysymyksiä"
                   className="nav-link"
                 >

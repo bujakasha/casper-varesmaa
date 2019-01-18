@@ -64,7 +64,7 @@ const MyProjects = ({images, children}) => (
 
       return (
         <div id="my_projects"  >
-          <div className="col-md-8 offset-md-2">{children}</div>
+          <div className="col-md-6 offset-md-3">{children}</div>
           <I18n>
             {({i18n}) => {
               return (
@@ -76,12 +76,14 @@ const MyProjects = ({images, children}) => (
                           {
                             img: seahorseImage && seahorseImage.fluid,
                             phoneImg: seahorseImageMobile,
+                            href:'http://seahorse.fi/',
                             toimija: 'Sea Horse',
                             teksti: i18n._(t`work_seahorse`),
                           },
                           {
                             img: sportteriImage && sportteriImage.fluid,
                             phoneImg: sportteriImageMobile,
+                            href:'https://sportteri.fi/',
                             toimija: 'Sportteri.fi',
                             teksti: i18n._(t`work_sportteri`),
                           }

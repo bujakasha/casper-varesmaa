@@ -6,7 +6,7 @@ const catalogs = {
   ...require('./tilaa.json'),
   ...require('./modal.json'),
   ...require('./my_works.json'),
-  ...require('./faq.json'),
+  ...require('./tietoa.json'),
 }
 
 exports.default = catalogs

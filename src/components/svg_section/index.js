@@ -31,8 +31,8 @@ const WaveSvg = ({children, id}) => (
   </svg>
 )
 
-const SvgSection = ({children, style}) => (
-  <div className="svg_section w-100">
+const SvgSection = ({children, className, style}) => (
+  <div className={"svg_section w-100 "+(className||'')}>
     <WaveSvg id="Wawetop" />
 
     <div className="inner">{children}</div>

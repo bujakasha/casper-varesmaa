@@ -45,7 +45,7 @@ class BgZoom extends React.Component {
     const {img, className, contain} = this.props
     return (
       <div
-        onClick={this.toggle}
+      //  onClick={this.toggle}
         className={
           className +
           ' zoom-container bg-img px-0 ' +

@@ -5,7 +5,7 @@ import {graphql} from 'gatsby'
 import Header from '../components/header'
 import MyStack from '../components/my_stack'
 import MyProjects from '../components/my_projects'
-
+import SkillsSection from '../components/skills'
 import AboutSection from '../components/about_section'
 import Social from '../components/work_cta'
 
@@ -22,7 +22,7 @@ import {SeoWithI18n} from '../components/seo'
 
                       */
 const IndexPage = props => {
-    const {data} = props
+    const {data, lang} = props
     const headerImage = data.headerImage && data.headerImage.childImageSharp
     const headerImage2 = data.headerImage2 && data.headerImage2.childImageSharp
     const headerImage3 = data.headerImage3 && data.headerImage3.childImageSharp
@@ -44,7 +44,7 @@ const IndexPage = props => {
                 />
               <div className="layout_area page_minheight">
                 <Header isSm={isSm} img={headerImage.fluid} carouselImages={carouselImages}>
-                  <div className="mt-md-5 pt-md-2" >
+                  <div className="mt-md-5 pt-md-" >
                     <h1 className="h1 font-weight-bold">
                       <Trans id="header_section_otsikko" />
                       <br />
@@ -76,7 +76,9 @@ const IndexPage = props => {
                       <br />
 
                       <a
-                        href="/ansioluettelo-casper-varesmaa.pdf"
+                        href={lang==='en'?
+                        "/casper-varesmaa-resume.pdf"
+                        :"/casper-varesmaa-ansioluettelo.pdf"}
                         title={i18n._(t`btn_title_ansioluettelo`)}
                         style={props.lang==='fi'&&{minWidth:'270px'}||{}}
                         className="btn btn-outline-light btn-simple text-dark mt-3"
@@ -91,11 +93,29 @@ const IndexPage = props => {
                   </div>
                 </Header>
               </div>
-              <SvgSection>
+
+           
+              <SvgSection className="padding-large">
                 <AboutSection />
               </SvgSection>
-
               <div className="container col-md-10 my-5" />
+            
+              <div className="layout_area">
+              <SkillsSection/>
+              </div>
+
+              {/*
+              
+                <SvgSection className="padding-large">
+                <AboutSection />
+              </SvgSection>
+              <div className="container col-md-10 my-5" />
+              <div className="container col-md-10 my-5" />
+              <div className="container col-md-10 my-5" />
+              <div className="container col-md-10 my-5" />
+              
+              
+              
               <div className="layout_area">
                 <MyStack isSm={isSm}>
                   <div className="text-center">
@@ -109,8 +129,8 @@ const IndexPage = props => {
                     </p>
                   </div>
                 </MyStack>
-                </div>
-                <div className="w-100 " style={{
+          </div>*/}
+                <div className="w-100 d-none d-md-block " style={{
                   minHeight: '100px'
                   }} />
                 <div className="layout_area">
@@ -121,17 +141,18 @@ const IndexPage = props => {
                   <div className="layout_area mt-5 pt-5 mb-5 text-center">
                     <h3 className="h2 font-weight-bold">
                       <strong>
-                        <Trans id="my_works_otsikko" />
+                      
+                        <Trans id="my_works_teksti" />
                       </strong>
                     </h3>
-                    <p>
-                      <Trans id="my_works_teksti" />
-                    </p>
+               
                   </div>
                 </MyProjects>
-           
+                  
+                  <div className="container col-md-6" style={{padding: '100px 40px'}}>
+                    
+                  </div>
              
-              <div className="w-100" style={{minHeight: '100px'}} />
               <div className="layout_area">
                 <Social homelink={props.homelink} />
               </div>

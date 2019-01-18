@@ -52,7 +52,7 @@ class SwSwiper extends React.Component {
         <BgZoom
           isOpen={index === active}
           controlled={true}
-          className="header_image"
+          className="mage"
           delay={200}
           img={item.fluid}
         />

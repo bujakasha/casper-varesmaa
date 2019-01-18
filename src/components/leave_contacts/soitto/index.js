@@ -6,7 +6,7 @@ import { Link  } from 'gatsby'
 
 const SoittopyyntoView = props => {
   return (
-    <div className="col-12 py-5">
+    <div className="col-12 pt-5">
       <div className="d-flex justify-content-between">
         <h3 className="modal-title font-weight-bold">
           {' '}
@@ -28,6 +28,12 @@ const SoittopyyntoView = props => {
       <div className="">
         <ContactForm homelink={props.homelink} />
       </div>
+
+      <div className="col-md-6 mt-5 pt-5">
+      
+               <p className="mb-1"> <Trans id="gdbr_otsikko" /> </p>
+               <p className="mb-md-0"> <small ><Trans id="gdbr_teksti" /> </small>  </p>
+               </div>
     </div>
   )
 }

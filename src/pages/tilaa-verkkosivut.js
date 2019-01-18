@@ -4,7 +4,6 @@ import AboutSection from '../components/tilaa_section'
 import {graphql} from 'gatsby'
 import {SeoWithI18n} from '../components/seo'
 
-
 const OrgerWebsitePage = props =>{
     return (
       <main className="page_minheight">
@@ -36,6 +35,7 @@ const OrgerWebsitePage = props =>{
 
         <AboutSection homelink={props.homelink} />
         <br />
+   
     
       </main>
     )

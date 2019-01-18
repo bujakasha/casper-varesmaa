@@ -5,6 +5,11 @@
   "viesti_otsikko":"Lähetä viesti",
   "viesti_teksti":"Lähetä viesti ja yhteystietosi, tai voit myös jättää",
 
+  "tilaa_otsikko":"Tehdään jotain mahtavaa",
+  "tilaa_teksti":"",
+
+
+
   "input_ajankohta":"Päivämäärä",
   "input_tunti":"Ajankohta",
   "input_nimi":"Nimi",
@@ -27,7 +32,9 @@
   "valmis_teksti":"Yleensä saat vastauksen vielä samana päivänä",
   "Sulje ikkuna":"Sulje ikkuna",
  
- 
+  "gdbr_otsikko":"Tiedoksi",
+  "gdbr_teksti":"Lomake lähettää syöttämäsi tietosi salattuna AWS pilvipalvelun kautta, tietojasi käytetään ainoastaan suoraan yhteydenottamiseen eikä niitä tallennetta muualle kuin sähköpostilaatikkooni.",
+   
   "":""
 
 }

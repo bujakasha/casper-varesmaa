@@ -84,7 +84,7 @@ class ProjectSwiper extends React.Component {
         : swiperData[0]
 
     return (
-          <div className="w-100 mb-md-5">
+          <div className="w-100  col-md-11offset-md-1px-0 mb-md-5">
             <Swiper
               {...params}
               shouldSwiperUpdate={true}
@@ -112,7 +112,7 @@ class ProjectSwiper extends React.Component {
 
 export default ProjectSwiper
 
-export const Projekti = ({img, toimija, phoneImg, teksti, children}) => (
+export const Projekti = ({img, toimija, href, phoneImg, teksti, children}) => (
     <div>
     <WithOverlay
       imgClassName="projekti-tag border"
@@ -130,7 +130,12 @@ export const Projekti = ({img, toimija, phoneImg, teksti, children}) => (
 
     <br />
     <div className="w-100 px-3 px-md-0 py-3">
-      <h6 className="h5 font-weight-bold"> {toimija}</h6>
+      <h6 className="h5 font-weight-bold"> <a 
+      className="text-dark"
+       href={href}
+       target="_blank"
+       title={`Link to ${toimija}`}
+       >{toimija}</a></h6>
       <p style={{maxWidth: '500px'}}>
      {teksti}
       </p>
@@ -140,6 +145,7 @@ export const Projekti = ({img, toimija, phoneImg, teksti, children}) => (
 Projekti.propTypes = {
   img: PropTypes.object,
   toimija: PropTypes.string,
+  href:PropTypes.string,
   teksti: PropTypes.string,
 }
 

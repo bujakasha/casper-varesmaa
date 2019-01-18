@@ -9,7 +9,7 @@ const SeoComponents = (props) => {
     return (
         <Helmet 
                 title={title||"Verkkosivut"}
-                titleTemplate={titleTemplate||"%s - Casper Väresmaa"}
+                titleTemplate={titleTemplate||"Casper Väresmaa - %s"}
                 meta={[
                 { charset: 'utf-8' },
                 {

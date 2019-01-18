@@ -32,7 +32,6 @@ const AnsioluetteloPage = props => {
     <main className="layout_area page_minheight">
      <SeoWithI18n
                 title="ansioluettelo_page_title"
-                titleTemplate=""
                 description="ansioluettelo_page_description"
                 />
       <div className="container col-md-10 pt-4">
@@ -105,8 +104,9 @@ const AnsioluetteloPage = props => {
         </div>
       </div>
       <br/>
+      <div className="d-none d-print-block w-100 py-5"></div>
 
-      <div className="container col-md-10 pt-4 mt-5 mb-5">
+      <div className="container col-md-10 pt-4 mt-5 mb-5 mt-md-0">
         <div>
           <h4 className="font-weight-bold">
             <Trans id="Kokemus" />
@@ -123,7 +123,7 @@ const AnsioluetteloPage = props => {
       <br/>
 
 
-      <div className="container col-md-10 pt-4 mt-5">
+      <div className="container col-md-10 pt-4 mt-5 pt-md-0 mt-md-0">
         <div>
           <h4 className="font-weight-bold">
             <Trans id="Osaaminen" />
