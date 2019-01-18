@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import {Trans} from '@lingui/react'
 
-const Header = ({toggleMessage,homelink}) => (
+const Header = ({homelink}) => (
   <div id="work_with_me" className="container pt-5mt-5">
     <div className="row">
-      <div className="col-sm-8 offset-sm-2 text-center">
+      <div className="col-sm-8 offset-sm-2 col-md-6 offset-md-3 text-center">
           <h2 className="h2 font-weight-bold">
             <strong>
               <Trans id="work_cta_otsikko" />

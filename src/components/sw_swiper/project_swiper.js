@@ -134,6 +134,7 @@ export const Projekti = ({img, toimija, href, phoneImg, teksti, children}) => (
       className="text-dark"
        href={href}
        target="_blank"
+       rel="noreferrer"
        title={`Link to ${toimija}`}
        >{toimija}</a></h6>
       <p style={{maxWidth: '500px'}}>
