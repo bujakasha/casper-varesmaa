@@ -4,7 +4,7 @@ const autoprefixer = require('autoprefixer')
 module.exports = {
   siteMetadata: {
     title: 'Casper Väresmaa',
-    siteUrl: `https://www.example.com`,
+    siteUrl: `https://caspervaresmaa.fi`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -72,8 +72,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.example.com',
-        sitemap: 'https://www.example.com/sitemap.xml',
+        host: 'https://caspervaresmaa.fi',
+        sitemap: 'https://caspervaresmaa.fi/sitemap.xml',
         env: {
           development: {
             policy: [{ userAgent: '*', disallow: ['/'] }]
@@ -94,7 +94,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'gatsby-starter-default',
-        short_name: 'starter',
+        short_name: 'Casper Varesmaa',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#F7DC0E',
@@ -103,13 +103,6 @@ module.exports = {
       },
     },
 
-    {
-      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
-      options: {
-          analyzerPort: 3000,
-          production: true,
-      },
-  },
      
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
@@ -118,6 +111,15 @@ module.exports = {
 }
 
 /*
+
+
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+      options: {
+          analyzerPort: 3000,
+          production: true,
+      },
+  },
 
    {
       resolve: 'gatsby-plugin-webpack-bundle-analyzer',

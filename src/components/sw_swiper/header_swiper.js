@@ -52,7 +52,7 @@ class SwSwiper extends React.Component {
         <BgZoom
           isOpen={index === active}
           controlled={true}
-          className="mage"
+          className="header_image"
           delay={200}
           img={item.fluid}
         />
@@ -92,7 +92,7 @@ class SwSwiper extends React.Component {
           ref={node => (node ? (this.swiper = node.swiper) : null)}
         >
           {swiperData.map((item, i) =>
-            this.renderCard(item, i, this.swiper && this.swiper.activeIndex)
+            this.renderCard(item, i, this.swiper && this.swiper.activeIndex||0)
           )}
         </Swiper>
         <Control

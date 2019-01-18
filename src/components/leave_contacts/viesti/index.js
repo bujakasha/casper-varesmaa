@@ -27,10 +27,7 @@ const ViestiView = props => {
         <MessageForm homelink={props.homelink}  />
       </div>
       <br />
-      <div className="col-md-6 mt-5 pt-5">
-               <p className="mb-1"> <Trans id="gdbr_otsikko" /> </p>
-               <p className="mb-md-0"> <small ><Trans id="gdbr_teksti" /> </small>  </p>
-               </div>
+
     </div>
   )
 }
@@ -40,3 +37,10 @@ ViestiView.propTypes = {
 }
 
 export default ViestiView
+
+/*
+      <div className="col-md-6 mt-5 pt-5">
+               <p className="mb-1"> <Trans id="gdbr_otsikko" /> </p>
+               <p className="mb-md-0"> <small ><Trans id="gdbr_teksti" /> </small>  </p>
+               </div> */
+               

@@ -42,7 +42,7 @@ const IndexPage = props => {
                 title="etusivu_page_title"
                 description="etusivu_page_description"
                 />
-              <div className="layout_area page_minheight">
+              <div className="layout_area pageminheight">
                 <Header isSm={isSm} img={headerImage.fluid} carouselImages={carouselImages}>
                   <div className="mt-md-5 pt-md-" >
                     <h1 className="h1 font-weight-bold">
@@ -87,7 +87,6 @@ const IndexPage = props => {
                       </a>
                     </div>
 
-                    <div className="w-100 py-3 py-md-3" />
 
                
                   </div>
