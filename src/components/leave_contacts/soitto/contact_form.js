@@ -30,11 +30,7 @@ class SoittopyyntoForm extends React.Component {
 
   sendForm = event => {
     this.setState({loading: true}, () => {
-      postForm(
-        {
-          ...this.state,
-          pvm: dateFnsFormat(this.state.ajankohta, FORMAT, {locale: 'fi'}),
-        },
+      postForm(this.state,
         'Soittopyyntö'
       ).then(res => {
         if (res.err) {
