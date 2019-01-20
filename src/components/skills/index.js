@@ -7,7 +7,7 @@ const SkillsSection = (props) => (
   <div className="container">
 
   <div className="col-md-11 offset-md-1 text-center text-md-left">
-  <div className="col-12 col-md-6 mb-5 ">
+  <div className="col-12 px-0 px-md-3 col-md-6 mb-5 ">
   <h3 className="font-weight-bold"> <Trans id="tech_stack_otsikko"/> </h3>
      
    </div>

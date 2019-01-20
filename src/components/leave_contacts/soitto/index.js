@@ -7,7 +7,7 @@ import { Link  } from 'gatsby'
 const SoittopyyntoView = props => {
   return (
     <div className="col-12 pt-5">
-      <div className="d-flex justify-content-between">
+      <div className="d-flex justify-content-between ">
         <h3 className="modal-title font-weight-bold">
           {' '}
           <Trans id="soittopyynto_otsikko" />{''}
@@ -21,7 +21,7 @@ const SoittopyyntoView = props => {
         <Link
          to={props.homelink + 'viesti'} 
          replace
-         className="text-lowercase">  <Trans id="viesti_otsikko" /></Link>.
+         className="text-lowercase text-dark"> <strong> <Trans id="viesti_otsikko" /></strong></Link>.
       </p>
 
       <br />

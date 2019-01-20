@@ -87,6 +87,9 @@ class SoittopyyntoForm extends React.Component {
           {({i18n}) => (
             <>
          <div className="row">
+
+
+                
                  <DateInput
                   label={i18n._(t`input_ajankohta`)}
                   ajankohta={ajankohta}

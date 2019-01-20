@@ -49,6 +49,7 @@
     "rc-time-picker-date-fns": "^3.2.8",
     "react": "^16.6.3",
     "react-countup": "^4.0.0",
+    "react-datepicker": "^2.0.0",
     "react-day-picker": "^7.2.4",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",

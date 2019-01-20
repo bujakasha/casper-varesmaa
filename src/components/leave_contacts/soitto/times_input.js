@@ -67,32 +67,18 @@ class DateHourInput extends React.PureComponent {
           {label}
         </label>
         <div className="d-flex ">
-
-        <DayPickerInput
-          formatDate={formatDate}
-          parseDate={parseDate}
-          format={FORMAT}
-          value={ajankohta}
-          onDayChange={this.handleDayChange}
-          inputProps={{
-            className: 'date-whole sw-input noFocus radius-right-0' +  ((error && ' is-invalid') || '')
-          }}
-          selectedDay={ajankohta}
-          dayPickerProps={{
-            ...dayInpuLocaleProps(locale),
-            modifiers: modifiers(ajankohta),
-            disabledDays: {
-              daysOfWeek: [5, 6],
-            },
-            selectedDay: ajankohta,
-            month: ajankohta,
-            showWeekNumbers: false,
-            showOutsideDays: true,
-          }}
-          placeholder={`${dateFnsFormat(selectedDay, FORMAT)}`}
-        />
+        <select
+          value={tunti}
+          onChange={this.onTuntiChange}
+          className={'custom-select noFocus noBorder sw-input  radius-left-0'}
+        >
+          
+          <option value={'00:00'}> Huomenna </option>
+          <option value={'00:00'}> Huomenna </option>
+        </select>
  
-       
+
+
         <select
           value={tunti}
           onChange={this.onTuntiChange}

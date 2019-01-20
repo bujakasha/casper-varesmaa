@@ -3,7 +3,7 @@ import {Trans} from '@lingui/react'
 // import './_about_section.scss'
 const AboutSection = () => (
   <div className="layout_area">
-    <div id="about_section" className="container col-md-10 bg-secondary ">
+    <div id="about_section" className="container col-md-10 bg-secondary text-center text-md-left">
       <div className="row">
      
           

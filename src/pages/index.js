@@ -44,8 +44,9 @@ const IndexPage = props => {
                 />
               <div className="layout_area pageminheight">
                 <Header isSm={isSm} img={headerImage.fluid} carouselImages={carouselImages}>
-                  <div className="mt-md-5 pt-md-" >
-                    <h1 className="h1 font-weight-bold">
+                  <div className="mt-md-5 text-center text-md-left" >
+                    {isSm===true&&<img src="/dun.jpg" width="100%" style={{maxWidth:'300px'}} className="mb-4 rounded"/>}
+                    <h1 className="h1 font-weight-bold mt-3">
                       <Trans id="header_section_otsikko" />
                       <br />
                       <strong className="text-primary">Casper Väresmaa</strong>

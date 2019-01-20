@@ -78,14 +78,7 @@ class Navigation extends React.PureComponent {
                   }
                   style={{minWidth: '160px'}}
                 >
-                  <FontAwesomeIcon
-                    icon={['far', 'phone']}
-                    size="1x"
-                    className="mr-2"
-                    style={{fontSize: '1em', 
-                    verticalAlign: '-0.125em',
-                    maxWidth:'14px'}}
-                  />
+
                   <strong>
                     <Trans id="Ota yhteyttä" />{' '}
                   </strong>
@@ -167,14 +160,7 @@ class Navigation extends React.PureComponent {
                   }
                   style={{minWidth: '160px'}}
                 >
-                  <FontAwesomeIcon
-                    icon={['far', 'phone']}
-                    size="1x"
-                    className="mr-2"
-                    style={{fontSize: '1em', 
-                    verticalAlign: '-0.125em',
-                    maxWidth:'14px'}}
-                  />
+
                   <strong>
                     <Trans id="Ota yhteyttä" />{' '}
                   </strong>

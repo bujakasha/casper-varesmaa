@@ -9,7 +9,7 @@ const ControlArrow = ({direction = 'right', onClick, isActive}) => {
       onClick={onClick}
       title={`slide to ${direction}`}
       className={
-        'btn noFocus mt-md-2 sw_control_arr ' +
+        'btn noFocus btn-link mt-md-2 sw_control_arr ' +
         ((isActive && 'active') || 'disabed')
       }
     >
