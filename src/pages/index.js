@@ -3,7 +3,6 @@ import {Link} from 'gatsby'
 import {graphql} from 'gatsby'
 
 import Header from '../components/header'
-import MyStack from '../components/my_stack'
 import MyProjects from '../components/my_projects'
 import SkillsSection from '../components/skills'
 import AboutSection from '../components/about_section'
@@ -25,12 +24,10 @@ const IndexPage = props => {
     const {data, lang} = props
     const headerImage = data.headerImage && data.headerImage.childImageSharp
     const headerImage2 = data.headerImage2 && data.headerImage2.childImageSharp
-    const headerImage3 = data.headerImage3 && data.headerImage3.childImageSharp
 
     const carouselImages = [
       {...headerImage},
-      {...headerImage2},
-      {...headerImage3},
+      {...headerImage2}
     ]
     const isSm = props.innerWidth<768;
     return (
@@ -184,13 +181,7 @@ export const query = graphql`
       }
     }
 
-    headerImage3: file(relativePath: {regex: "/kuvat/casper-katajanokka.jpg/"}) {
-      childImageSharp {
-        fluid(maxWidth: 2000) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
+ 
   }
 `
 
