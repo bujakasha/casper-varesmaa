@@ -13,6 +13,7 @@ import LoadingBtn from '../../loading_btn'
 
 import { getNextWeekday } from '../../../utils/forms'
 import { postForm } from '../../../utils/form_request'
+import { generateDates } from './date_input';
 
 const FORMAT = 'D/M/YYYY'
 
@@ -20,7 +21,7 @@ class SoittopyyntoForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      ajankohta: getNextWeekday(),
+      ajankohta: generateDates()[1],
       tunti: '13:00',
       puhelin: '',
       loading: false,

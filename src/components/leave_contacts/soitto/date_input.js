@@ -1,11 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import DayPickerInput from 'react-day-picker/DayPickerInput'
-import {DateUtils} from 'react-day-picker'
-import dateFnsFormat from 'date-fns/format'
-import dateFnsParse from 'date-fns/parse'
 
-import addMonths from 'date-fns/add_months'
+import dateFnsFormat from 'date-fns/format'
+
+
+import addDays from 'date-fns/add_days'
+import getISOday from 'date-fns/get_iso_day'
+
+
 
 
 import {Trans, I18n} from '@lingui/react'
@@ -15,23 +17,59 @@ import {createTuntiOption} from '../../../utils/forms'
 
 
 
-import 'react-day-picker/lib/style.css'
 
 
-const parseDate = (str, format, locale) => {
-  const parsed = dateFnsParse(str, format, {locale})
-  if (DateUtils.isDate(parsed)) {
-    return parsed
+
+
+export const getWeekDayName=(date)=>{
+  switch(getISOday(date)) {
+    case 1:
+      return 'Maanantai'
+      break;
+    case 2:
+      return 'Tiistai'
+      break;
+    case 3:
+      return 'Keskiviikko'
+      break;
+    case 4:
+      return 'Torstai'
+      break;
+    case 5:
+      return 'Perjantai'
+      break;
+    case 6:
+      return 'Lauantai'
+      break;
+      default:
+      return false
   }
-  return undefined
 }
-const modifiers = activeDay => ({
-  highlighted: new Date(activeDay),
-})
-const formatDate = (date, format, locale) => {
+
+const FORMAT = 'D.M'
+
+export const formatDate = (date, format, locale) => {
   return dateFnsFormat(date, format, {locale})
 }
-const FORMAT = 'D-M-YYYY'
+
+
+export const generateDates = (date=new Date())=>{
+    var daysLength = Array.from(Array(25).keys())
+    var arrayOfDates = [];
+    var currentDate = null;
+
+    daysLength.map((index)=>{
+      currentDate = addDays(date,index);
+      if(getWeekDayName(currentDate)){
+        arrayOfDates.push(`${getWeekDayName(currentDate)} ${formatDate(currentDate,FORMAT,{locale:'fi'})}`) 
+      }
+
+    })
+    return arrayOfDates
+   
+}
+
+
 
 
 class DateHourInput extends React.PureComponent {
@@ -39,6 +77,7 @@ class DateHourInput extends React.PureComponent {
     super(props)
     this.state = {
      // selectedDay: this.props.ajankohta,
+      days:generateDates(),
       times: createTuntiOption(),
       locale: 'fi',
     }
@@ -52,13 +91,14 @@ class DateHourInput extends React.PureComponent {
     this.props.onChange('tunti', event.target.value)
   }
 
-  handleDayChange = (selectedDay, modifiers, dayPickerInput) => {
-    this.props.onChange('ajankohta', selectedDay)
-    this.props.onChange('pvm', selectedDay)
+  handleDayChange = event => {
+    this.props.onChange('ajankohta', event.target.value)
+    this.props.onChange('pvm', event.target.value)
   }
 
+
   render() {
-    const {selectedDay, locale, times} = this.state
+    const {selectedDay, locale,days, times} = this.state
     const {error, ajankohta, label, errorMsg, tunti, outerClassName} = this.props
 
     return (
@@ -68,29 +108,29 @@ class DateHourInput extends React.PureComponent {
         </label>
         <div className="d-flex ">
 
-        <DayPickerInput
-          formatDate={formatDate}
-          parseDate={parseDate}
-          format={FORMAT}
+   
+  
+
+
+        <select
           value={ajankohta}
-          onDayChange={this.handleDayChange}
-          inputProps={{
-            className: 'date-whole sw-input noFocus radius-right-0' +  ((error && ' is-invalid') || '')
-          }}
-          selectedDay={ajankohta}
-          dayPickerProps={{
-            ...dayInpuLocaleProps(locale),
-            modifiers: modifiers(ajankohta),
-            disabledDays: {
-              daysOfWeek: [5, 6],
-            },
-            selectedDay: ajankohta,
-            month: ajankohta,
-            showWeekNumbers: false,
-            showOutsideDays: true,
-          }}
-          placeholder={`${dateFnsFormat(selectedDay, FORMAT)}`}
-        />
+          onChange={this.handleDayChange}
+          className={'custom-select date noFocus noBorder sw-input radius-left-0'}
+        >
+
+        {(days &&
+            days.length &&
+            days.map((day, i) => (
+              <option key={`time-${i}`} value={day}>
+                {day}
+              </option>
+            ))) ||
+            null}   
+         
+          <option value={'milloin tahansa'}> Milloin tahansa </option>
+        </select>
+
+
  
        
         <select
@@ -133,7 +173,35 @@ DateHourInput.propTypes = {
 export default DateHourInput
 
 
+
+
+
+
 /*
+      <DayPickerInput
+          formatDate={formatDate}
+          parseDate={parseDate}
+          format={FORMAT}
+          value={ajankohta}
+          onDayChange={this.handleDayChange}
+          inputProps={{
+            className: 'date-whole sw-input noFocus radius-right-0' +  ((error && ' is-invalid') || '')
+          }}
+          selectedDay={ajankohta}
+          dayPickerProps={{
+            ...dayInpuLocaleProps(locale),
+            modifiers: modifiers(ajankohta),
+            disabledDays: {
+              daysOfWeek: [5, 6],
+            },
+            selectedDay: ajankohta,
+            month: ajankohta,
+            showWeekNumbers: false,
+            showOutsideDays: true,
+          }}
+          placeholder={`${dateFnsFormat(selectedDay, FORMAT)}`}
+        />
+
  <DayPickerInput
           formatDate={formatDate}
           parseDate={parseDate}
