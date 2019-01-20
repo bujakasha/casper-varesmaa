@@ -41,7 +41,7 @@ const IndexPage = props => {
                 />
               <div className="layout_area pageminheight">
                 <Header isSm={isSm} img={headerImage.fluid} carouselImages={carouselImages}>
-                  <div className="mt-md-5 text-center text-md-left" >
+                  <div className="mt-md-5 text-center text-md-left animated fadeIn fast" >
                     {isSm===true&&<img src="/dun.jpg" width="100%" style={{maxWidth:'300px'}} className="mb-4 rounded"/>}
                     <h1 className="h1 font-weight-bold mt-3">
                       <Trans id="header_section_otsikko" />
@@ -74,6 +74,7 @@ const IndexPage = props => {
                       <br />
 
                       <a
+                        target="blank"
                         href={lang==='en'?
                         "/casper-varesmaa-resume.pdf"
                         :"/casper-varesmaa-ansioluettelo.pdf"}
