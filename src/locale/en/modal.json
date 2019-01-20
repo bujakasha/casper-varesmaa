@@ -11,7 +11,7 @@
   "input_nimi_placeholder":"Write your name",
   "input_nimi_error":"Add your name",
 
-  "input_puhelin":"telephone number",
+  "input_puhelin":"Telephone number",
   "input_error":"Add a valid phonenumber",
   "input_viesti":"Message",
   "input_viesti_placeholder":"Write message",
