@@ -56,7 +56,7 @@ Layout.propTypes = {
 
 class LayoutWithProvider extends React.Component {
   state = {
-    innerWidth: (typeof window !== 'undefined' && window.innerWidth) || 300,
+    innerWidth:  null,
   }
   componentDidMount() {
     this.handleResize()

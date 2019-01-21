@@ -45,7 +45,7 @@ module.exports = {
     { 
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        whitelist: ['collapse', 'noFocus', 'collapsing', 'fade', 'show', 'navbar-collapse'],
+         whitelist: ['collapse',/navbar/, 'noFocus', 'navbar-expand', 'collapsing', 'fade', 'show', 'navbar-collapse'],
          ignore: ['/_sw_swiper.scss','_navigation.scss','_leave_contact.scss'], 
       }
     },

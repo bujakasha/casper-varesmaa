@@ -30,7 +30,7 @@ class Navigation extends React.PureComponent {
     var heightToShow = window.innerHeight - 5
     var windowWidth = window.innerWidth
 
-    if (window.pageYOffset > heightToShow && windowWidth > 992) {
+    if (window.pageYOffset > heightToShow && windowWidth && windowWidth > 992) {
       this.setState({isSticky: true})
     } else {
       this.setState({isSticky: false})
@@ -117,7 +117,7 @@ class Navigation extends React.PureComponent {
                 </div>
               ) : null}
 
-              <Collapse isOpen={isOpen} className="" navbar id="cv_navbar">
+              <Collapse isOpen={isOpen} navbar id="cv_navbar">
                 <div className="navbar-nav ">
                   <Link
                     to={homelink}
