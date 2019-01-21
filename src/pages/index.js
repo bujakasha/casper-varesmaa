@@ -47,7 +47,7 @@ const IndexPage = props => {
                         alt="Casper with hoodie"
                         fluid={headerMobile.fluid}
                         width="100%"
-                        style={{minWidth: '300px', maxWidth: '300px'}}
+                        style={{minWidth: '235px', maxWidth: '300px'}}
                         className="mb-4 rounded"
                       />
                     </div>

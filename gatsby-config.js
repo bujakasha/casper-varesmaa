@@ -75,7 +75,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: 'Casper Väresmaa',
-        short_name: 'Casper Väresmaa',
+        short_name: 'Casper',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#F7DC0E',
