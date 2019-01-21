@@ -46,7 +46,7 @@ const Footer = ({lang}) => {
             </div>
           </div>
 
-          <div className="text-center container">
+          <div className="text-center container pb-5">
             <Link
               to={homelink + 'soittopyynto'}
               className="btn btn-outline-dark btn-simple my-4"
@@ -57,8 +57,9 @@ const Footer = ({lang}) => {
               </strong>{' '}
             </Link>
           </div>
+          <div className="footer_padding" />
+
         </div>
-        <div className="footer_padding" />
        
     </div>
   )
