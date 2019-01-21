@@ -23,12 +23,13 @@
   "btn_soittopyynto":"Send kiitoallback request",
   "btn_viesti":"Send a message",
 
-  "valmis_otsikko":"thank you for contacting",
+  "valmis_otsikko":"Thank you for contacting",
   "valmis_teksti":"Usually you will get the answer on the same day",
 
   "Sulje ikkuna":"Close the window",
 
  
+  "Palaa etusivulle":"Back to homepage",
 
   "gdbr_otsikko":"Disclaimer",
   "gdbr_teksti":"Form sends your data encrypted trough AWS cloud service, It's only used for direct contacting and is saved to my email account.",
