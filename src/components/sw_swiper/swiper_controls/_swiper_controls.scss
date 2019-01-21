@@ -1,24 +1,17 @@
 
 .sw_controls .numbers{
   min-height: 0px;
-//  background-color: #858585;
-//  padding-bottom: 20px;
   height: 35px;
-  //margin-top:-35px;
   z-index: 80;
 
 }
-.sw_controls{
- // max-width: 300px;
-}
+
 .sw_controls .numbers .num{
   font-weight: 600;
   font-size: 1em;
   opacity: .9;
   padding-right: 5px;
   padding-left: 5px;
-  //color: white;
-
   -webkit-transition: all 300ms;
   -moz-transition: all 300ms;
   -o-transition: all 300ms;
@@ -37,15 +30,10 @@
   opacity: 1;
   line-height: .3em;
 
- // padding-right: 10px;
-//  padding-left: 10px;
-
 }
 
 .sw_control_arr{
   opacity: .8;
- // margin-bottom: -50px;
-// color: rgb(69, 69, 69);
   -webkit-transition: all 300ms;
   -moz-transition: all 300ms;
   -o-transition: all 300ms;

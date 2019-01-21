@@ -8,24 +8,14 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
-
-
     {
       resolve: `gatsby-plugin-layout`,
       options: {
         component: require.resolve(`./src/templates/layout/index.js`),
       },
     },
-    
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    `gatsby-transformer-excel`,
 
+    `gatsby-transformer-excel`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -33,7 +23,6 @@ module.exports = {
         path: `${__dirname}/src/data`,
       },
     },
-    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -41,7 +30,6 @@ module.exports = {
         path: `${__dirname}/static/`,
       },
     },
-    
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -57,16 +45,11 @@ module.exports = {
     { 
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        // develop: true, // Enable while using `gatsby develop`
-        // tailwind: true, // Enable tailwindcss support
-        whitelist: ['collapse', 'noFocus', 'collapsing', /modal/, /DayPicker/, 'fade', 'show', 'navbar-collapse'],
-        whitelistPatternsChildren: [/modal/,/DayPicker/],
-         ignore: ['/_sw_swiper.scss','_navigation.scss','_leave_contact.scss'], // Ignore files/folders
-        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+        whitelist: ['collapse', 'noFocus', 'collapsing', 'fade', 'show', 'navbar-collapse'],
+         ignore: ['/_sw_swiper.scss','_navigation.scss','_leave_contact.scss'], 
       }
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify`,
     `gatsby-plugin-sitemap`,
 
     {
@@ -80,52 +63,28 @@ module.exports = {
           },
           production: {
             policy: [{ userAgent: '*', allow: ['/'] }]
-            // policy: [{ userAgent: '*', allow: '/' }]
           }
         }
         
       }
     },
 
-
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'Casper Varesmaa',
+        name: 'Casper Väresmaa',
+        short_name: 'Casper Väresmaa',
         start_url: '/',
         background_color: '#ffffff',
         theme_color: '#F7DC0E',
         display: 'minimal-ui',
-        icon: 'static/favicon-2562.png', // This path is relative to the root of the site.
+        icon: 'static/favicon-2562.png', 
       },
     },
 
      
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
+
   ],
 }
-
-/*
-
-
-    {
-      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
-      options: {
-          analyzerPort: 3000,
-          production: true,
-      },
-  },
-
-   {
-      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
-      options: {
-          analyzerPort: 3000,
-          production: true,
-      },
-  },
-  */

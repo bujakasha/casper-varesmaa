@@ -4,7 +4,7 @@ const catalogs = {
   ...require('./etusivu.json'),
   ...require('./seo.json'),
   ...require('./tilaa.json'),
-  ...require('./modal.json'),
+  ...require('./contact_form.json'),
   ...require('./my_works.json'),
   ...require('./tietoa.json'),
 }

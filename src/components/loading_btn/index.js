@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types'
 import React from 'react'
-import './_loading_btn.scss'
+import PropTypes from 'prop-types'
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import './_loading_btn.scss'
 
 const LoadingBtn = props => {
   const {label, onClick, type, className, isLoading} = props

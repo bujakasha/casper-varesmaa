@@ -1,8 +1,9 @@
 import React from 'react'
-import BgZoom from '../bg_zoom'
-import './_sw_swiper.scss'
+import PropTypes from 'prop-types'
 import Swiper from 'react-id-swiper'
+import BgZoom from '../zoom_img'
 import Control from './swiper_controls'
+import './_sw_swiper.scss'
 
 class SwSwiper extends React.Component {
   constructor(props) {
@@ -48,8 +49,9 @@ class SwSwiper extends React.Component {
 
   renderCard = (item, index, active) => {
     return (
-      <div key={index}>
+      <div key={item.fluid.src}>
         <BgZoom
+          alt={item.alt}
           isOpen={index === active}
           controlled={true}
           className="header_image"
@@ -65,7 +67,7 @@ class SwSwiper extends React.Component {
 
     const params = {
       on: {
-        slideChange: (item) => {
+        slideChange: item => {
           this.setState({
             updateCount: this.state.updateCount + 1,
           })
@@ -76,7 +78,7 @@ class SwSwiper extends React.Component {
       ),
 
       autoplay: {
-        delay: (this.state.updateCount >= 3 && 10000) || 5000,
+        delay: (this.state.updateCount >= 2 && 10000) || 5000,
         disableOnInteraction: true,
       },
     }
@@ -85,14 +87,18 @@ class SwSwiper extends React.Component {
       <div className="w-100 no-overflow-x">
         <Swiper
           {...params}
-          style={{overflow:'hidden'}}
-          rebuildOnUpdate={(this.state.updateCount === 3 && true) || false}
+          style={{overflow: 'hidden'}}
+          rebuildOnUpdate={(this.state.updateCount === 2 && true) || false}
           shouldSwiperUpdate={true}
           component={this.swiperContainer}
           ref={node => (node ? (this.swiper = node.swiper) : null)}
         >
           {swiperData.map((item, i) =>
-            this.renderCard(item, i, this.swiper && this.swiper.activeIndex||0)
+            this.renderCard(
+              item,
+              i,
+              (this.swiper && this.swiper.activeIndex) || 0
+            )
           )}
         </Swiper>
         <Control
@@ -105,6 +111,11 @@ class SwSwiper extends React.Component {
       </div>
     )
   }
+}
+
+SwSwiper.propTypes = {
+  swiperData: PropTypes.array.isRequired,
+  delay: PropTypes.number,
 }
 
 export default SwSwiper

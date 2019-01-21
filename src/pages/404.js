@@ -1,8 +1,9 @@
 import React from 'react'
 import {Trans} from '@lingui/react'
-
+import SeoComponent from '../components/seo_component'
 const NotFoundPage = props => (
   <main>
+    <SeoComponent title="404" />
     <div className="container col-md-10 pt-5 pl-md-5 ">
       <h1 className="font-weight-bold">
         {' '}

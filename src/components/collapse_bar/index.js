@@ -37,9 +37,8 @@ const CollapseBar = props => {
 CollapseBar.propTypes = {
   title: PropTypes.string.isRequired,
   isOpen: PropTypes.bool,
-  children: PropTypes.oneOf([PropTypes.array,PropTypes.obj]),
+  children: PropTypes.oneOf([PropTypes.array, PropTypes.obj]),
   toggle: PropTypes.func,
 }
-
 
 export default CollapseBar

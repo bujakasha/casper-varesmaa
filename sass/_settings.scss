@@ -7,48 +7,15 @@ $theme-colors: (
   primary: #53A548,
   secondary: #FFDD00
 );
-/*5cc72a
-  primary: #53A548,
 
-$theme-colors: (
-  dark: #232323,
-  light: #d0d0d0,
-  primary: #28a745,
-  secondary: #FFDE07
-);
-
-*/
-
-
-/*
-
-$alert-padding-y:                   .75rem !default;
-$alert-padding-x:                   1.25rem !default;
-$alert-margin-bottom:               1rem !default;
-$alert-border-radius:               $border-radius !default;
-$alert-link-font-weight:            $font-weight-bold !default;
-$alert-border-width:                $border-width !default;
-
-$alert-bg-level:                    -10 !default;
-$alert-border-level:                -9 !default;
-$alert-color-level:                 6 !default;
-
-
-
-*/
 $alert-border-radius:               5px;
-
-//$link-color:                rgb(69, 138, 60);
 $link-color:                rgb(72, 142, 63);
-
 $font-weight-bold:            900 !default;
-
 $input-border-radius: 0px;
 $input-border-radius-sm: 0px;
 
 $font-family-sans-serif: 'Nunito Sans', "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:      'Nunito Sans', Georgia, "Times New Roman", Times, serif !default;
-//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   'Nunito Sans', Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
@@ -59,21 +26,6 @@ $navbar-light-hover-color: rgba(#000, .7);
 $navbar-light-active-color: rgba(#212529, .9);
 
 
-$modal-inner-padding:               1rem !default;
-
-$modal-dialog-margin:               .5rem !default;
-$modal-dialog-margin-y-sm-up:       1.75rem !default;
 
 
-// $modal-content-border-color:        rgba($black, .2) !default;
-$modal-content-border-radius:      0px;
-//$modal-content-box-shadow-xs:       0 .25rem .5rem rgba($black, .5) !default;
-// $modal-content-box-shadow-sm-up:    0 .5rem 1rem rgba($black, .5) !default;
-
-$modal-backdrop-bg:                 rgb(67, 64, 42) ;
-$modal-backdrop-opacity:            .6;
-$modal-inner-padding:              2rem;
-
-
-$modal-transition:                  transform .3s ease-out !default;
 

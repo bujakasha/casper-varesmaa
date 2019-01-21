@@ -1,59 +1,26 @@
 {
 
-  "etusivu_page_title":"Suorituskykyiset verkkosivut",
+  "etusivu_page_title":"Javascript developer",
   "etusivu_page_description":"Hei olen Casper, teen verkkosivuja ja tehokkaita React.js sovelluksia",
 
-
   "header_section_otsikko":"Hei! olen",
-  "header_section_apu_otsikko":"Verkkokehitys, React.js sovellukset ja paljon muuta",
-  "header_section_apu_otsikko":"Fullstack javascript developer",
-  "header_section_apu_otsikko":"Verkkokehitys, Suunnittelu ja Valokuvaus",
-  "header_section_apu_otsikko":"Verkkokehittäjä, suunnittelija ja Valokuvaaja",
-  "header_section_apu_otsikko":"Fullstack javascript kehittäjä",
-  "header_section_apu_otsikko":"Verkkokehittäjä, suunnittelija ja paljon muuta",
-  "header_section_apu_otsikko":"Fullstack javascript kehittäjä",
-
-  "header_section_teksti":"Teen verkkosivuja ja suorituskykyisiä web-sovelluksia. Käytän moderneja teknologioita kuten React, Node ja Webpack, jotka mahdollistavat nopean kehittämisen ja skaalautumisen suurille käyttäjämäärille. Ole yhteydessä jos haluat työskennellä kanssani.",
   "header_section_teksti":"Teen verkkosivuja ja suorituskykyisiä web-sovelluksia. Käytän moderneja teknologioita, jotka mahdollistavat nopean kehittämisen ja skaalautumisen suurille käyttäjämäärille. Ota yhteyttä jos haluat työskennellä kanssani. ",
 
-  "about_otsikko_start":"Lyhyesti",
-  "about_otsikko_end":"kuka olen.",
   "about_nyt_otsikko":"Tällä hetkellä",
-  "about_nyt_teksti":"Asun Helsingissä, olen koulutukseltani Merkonomi, ollessani mukana perustamassa startupia joka tarvitsi verkkosivut löysin kiinnostuksen verkkosivujen suunnittelusta ja koodaamisesta. Nykyään kirjoitan tehokkaita web-sovelluksia ja suunnittelen saumattomia käyttäjäkokemuksia.",
-  "about_nyt_teksti":"Asun Helsingissä, olen koulutukseltani Yo-Merkonomi. Kiinnostuin koodaamisesta ja web-suunnittelusta, kun olin perustamassa startupia, joka tarvitsi verkkosivut. Nykyään kirjoitan tehokkaita web-sovelluksia ja suunnittelen saumattomia käyttäjäkokemuksia. Etsin rentoa ja luovaa ympäristöä, jossa pääsen ylittämään omat ja asiakkaiden odotukset.  Vapaa-ajalla nautin lumilautailusta, valokuvaamisesta ja hyvästä seurasta.",
-
-
+  "about_nyt_teksti":"Asun Helsingissä, olen koulutukseltani Yo-Merkonomi. Kiinnostuin koodaamisesta ja web-suunnittelusta, kun olin perustamassa startupia, joka tarvitsi verkkosivut. Nykyään kirjoitan tehokkaita web-sovelluksia ja suunnittelen saumattomia käyttäjäkokemuksia. Etsin mielenkiintoisia ja luovia projekteja, joissa pääsen ylittämään omat ja asiakkaiden odotukset.  Vapaa-ajalla nautin lumilautailusta, valokuvaamisesta ja hyvästä seurasta.",
 
   "about_kehitys_otsikko":"Javascript kehittäjä",
-  "about_kehitys_teksti":"Käytän moderneja verkkoteknologioita kuten React, Node ja Webpack, joiden avulla suorituskykyisten verkkosovellusten tekeminen on nopeaa. Minulla on paljon osaamista tietokantaohjatuista verkkopalveluista, kartta sovelluksista ja eri sisällönhallinta järjestelmistä.",
-  "about_kehitys_teksti":"Käytän moderneja verkkoteknologioita kuten React, NodeJS ja Express, joiden avulla vaativienkin verkkosovellusten tekeminen on nopeaa. Minulla on vahva osaaminen on rajapintaohjatuista verkkopalveluista, kartta sovelluksista, staattisista JAMstack sivuista ja eri sisällönhallinta järjestelmistä.",
+  "about_kehitys_teksti":"Käytän moderneja verkkoteknologioita kuten React, NodeJS ja Express, joiden avulla vaativatkin verkkosovellukset voidaan tehdä nopeasti. Minulla on osaamista rajapintaohjatuista verkkopalveluista, kartta sovelluksista, staattisista JAMstack sivuista ja eri sisällönhallinta järjestelmistä.",
 
 
   "tech_stack_otsikko":"Teknologioita ja palveluita joita käytän.",
-
   "Web Kartat":"Web Kartat",
   "Kuvat & Web Grafiikka":"Kuvat & Web Grafiikka",
 
-
-
-  "myt_stack_otsikko":"Fullstack javascript-kehittäjä",
-  "myt_stack_teksti":"Kehitän vaativatkin ideasi tuotanto valmiiksi verkkosovellukseksi, jota on helppo kasvattaa suurille käyttäjämäärille. Tässä teknologioita ja palveluita joita käytän.",
- 
-  "my_works_otsikko":"Muutama sivusto",
   "my_works_teksti":"Sivustoja joiden parissa olen työskennellyt.",
 
-
-  "work_cta_otsikko":"Kiinnostuitko",
-  "work_cta_teksti":"Etsin tällä hetkellä töitä front-end tai fullstack javascript kehittäjänä. Toimin joko osana tiimiä tai itsenäisenä kehittäjänä. Tavoitat minut parhaiten sähköpostilla tai jättämällä soittopyynnön.",
-
-  "work_cta_verkkosivut_otsikko":"Tilaa verkkosivut kustannustehokkaasti",
-  "work_cta_verkkosivut_teksti":"Teen upeita verkkosivuja, joissa riittää tehoa. Tuotan yksilölliset verkkosivut kustannustehokkaasti, asiakkaan tarpeiden mukaan. Kaikki sivuni ovat hakukoneystävällisiä, helppoja päivittää ja ne skaalautuvat suurille käyttäjämäärille.",
-
- 
-  "tilaa_section_otsikko_highlighted":"sekunnissa",
-  "tilaa_section_otsikko":"Sivu latautui",
-  "tilaa_section_teksti":"Tämän sivun ylläpito ei maksa mittään ja se on saatavilla salamanopeasti ympärimaailmaa.",
-
+  "hire_me_title":"Kiinnostuitko",
+  "hire_me_text":"Etsin tällä hetkellä töitä front-end tai fullstack javascript kehittäjänä. Toimin joko osana tiimiä tai itsenäisenä kehittäjänä. Tavoitat minut parhaiten sähköpostilla tai jättämällä soittopyynnön.",
 
 
   "":""

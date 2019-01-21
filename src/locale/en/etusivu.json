@@ -1,18 +1,15 @@
 {
 
-  "etusivu_page_title":"High performance websites",
-  "etusivu_page_description":"Hi I'am Casper and I make stunning websites and performant React.js applications",
-
+  "etusivu_page_title":"Javascript developer",
+  "etusivu_page_description":"Hi I'am Casper and I make stunning websites and performant React.js applications. ",
 
 
   "header_section_otsikko":"Hello, I am",
   "header_section_apu_otsikko":"Developer, designer and more",
   "header_section_teksti":"I make stunning websites and performant web applications. I design and code using modern technologies that enable rapid development and scalability for large audiences. Please be in touch if you want to work with me.",
 
-  "about_otsikko_start":"Briefly",
-  "about_otsikko_end":"about me.",
-  "about_nyt_otsikko":"Currently",
-  "about_nyt_teksti":"I live in Helsinki. My passion for coding and web design started when I was setting up a status company that needed a website. Nowadays I write powerful web apps and design seamless user experiences. I’m looking for informal and creative environment where I can exceed mine and customers' expectations. In my free time, I enjoy snowboarding, photography and good company.",
+  "about_nyt_otsikko":"About me",
+  "about_nyt_teksti":" I started web design and coding when I was setting up a startup company that needed website. Nowadays I write powerful web apps and design seamless user experiences. I’m looking for informal and creative environment where I can exceed mine and customer's expectations. I am laid back guy and in my free time I enjoy snowboarding, photography and good company.",
   "about_kehitys_otsikko":"Javascript developer",
   "about_kehitys_teksti":"I use modern web technologies such as React, Node and Webpack to make scalable web applications fast and flexible. I have a lot of knowledge of database-driven web services, map applications and content management systems.",
 
@@ -22,18 +19,12 @@
   "Web Kartat":"Web maps",
   "Kuvat & Web Grafiikka":"Images & Web design",
 
-  
-  "myt_stack_otsikko":"Fullstack javascript-developer",
-  "myt_stack_teksti":"Here are libraries, technologies and services, that I use daily, I choose best technologies for every project.",
-  "myt_stack_teksti":"I make high performance web applications by utilizing open source libraries and the most advanced web services.",
-  "my_works_otsikko":"My works",
-  "my_works_teksti":"Here are a few websites that I have been working on.",
+
+  "my_works_teksti":"Here are a few sites that I have been working.",
 
 
-  "work_cta_otsikko":"Work with me",
-  "work_cta_teksti":"I'm currently looking for a full-time job as a javascript developer. You can reach me best by email or by leaving a callback request.",
-  "work_cta_verkkosivut_otsikko":"Websites cost-effectively",
-  "work_cta_verkkosivut_teksti":"I make elegant and efficient websites for businesses and individuals. I produce customized web pages cost-effectively, according to the customer's needs. All my pages are easy to update and scalable for large numbers of users.",
+  "hire_me_title":"Work with me",
+  "hire_me_text":"I'm currently looking for a full-time job as a javascript developer. You can reach me best by email or by leaving a callback request.",
 
  
  

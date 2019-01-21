@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import './_input.scss'
 
-
 export const Textarea = props => {
   const {
     label,
@@ -56,6 +55,5 @@ Textarea.propTypes = {
   placeholder: PropTypes.string,
   outerClassName: PropTypes.string,
 }
-
 
 export default Textarea
