@@ -14,12 +14,11 @@ const Footer = ({lang}) => {
 
       <div className="inner">
         <div className="container px-md-5 text-center py-4 col-xl-10">
-          <div className="d-xlflex">
-            <div>
+          <div>
               <StaticQuery
                 query={graphql`
                   query {
-                    profileImage: file(relativePath: {regex: "/kuvaaa.jpg/"}) {
+                    profileImage: file(relativePath: {regex: "/kuvat/casper-katajanokka-square.jpg/"}) {
                       childImageSharp {
                         fixed(width: 120) {
                           ...GatsbyImageSharpFixed_withWebp_noBase64
@@ -60,16 +59,7 @@ const Footer = ({lang}) => {
           </div>
         </div>
         <div className="footer_padding" />
-        <div className="w-100 text-center">
-          <p className="mb-0 pb-3">
-            <small>
-              {' '}
-              <Trans id="footer_updated" /> 20.4.2019.{' '}
-            </small>
-            <small />
-          </p>
-        </div>
-      </div>
+       
     </div>
   )
 }

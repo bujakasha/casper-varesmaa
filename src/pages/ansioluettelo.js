@@ -10,7 +10,7 @@ import BgZoom from '../components/zoom_img'
 
 const AnsioluetteloPage = props => {
   const profileImage =
-    props.data.profileImage2 && props.data.profileImage2.childImageSharp
+    props.data.profileImage && props.data.profileImage.childImageSharp
   const activeLang = langFromPath(props.location.pathname)
   const koulutusData =
     (activeLang && activeLang === 'en' && props.data.cvEnKoulutus.edges) ||
@@ -188,15 +188,9 @@ const ExprerienceSection = ({otsikko, toimija, teksti}) => {
 
 export const query = graphql`
   query {
-    profileImage: file(relativePath: {regex: "/kuvaaa.jpg/"}) {
-      childImageSharp {
-        fluid(maxWidth: 1600) {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
-        }
-      }
-    }
 
-    profileImage2: file(relativePath: {regex: "/kuvat/casper-chill.jpg/"}) {
+
+    profileImage: file(relativePath: {regex: "/kuvat/casper-chill.jpg/"}) {
       childImageSharp {
         fluid(maxWidth: 1600) {
           ...GatsbyImageSharpFluid_withWebp_noBase64

@@ -41,6 +41,7 @@ typings/
 
 trash/
 
+.npmrc
 
 
 # Optional npm cache directory
