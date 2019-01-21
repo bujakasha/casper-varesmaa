@@ -9,7 +9,7 @@ import './_navigation.scss'
 
 class Navigation extends React.PureComponent {
   state = {
-    isOpen: true,
+    isOpen: false,
     isSticky: false,
   }
 
