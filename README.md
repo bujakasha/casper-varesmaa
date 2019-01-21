@@ -34,7 +34,7 @@ $ gatsby develop
 ### Disclamer
 
 This repo is intended for agencies and technically skilled clients.
-All the pictures inside repository are property of Casper Väresmaa and copy and reuse of imagesis prohibited.
+All the pictures inside repository are property of Casper Väresmaa and copy and reuse of these images is strictly prohibited.
 
 
 
