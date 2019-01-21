@@ -46,7 +46,7 @@ const IndexPage = props => {
                       <Img
                         alt="Casper with hoodie"
                         fluid={headerMobile.fluid}
-                        style={{minWidth: '200px',width:'90vw', maxWidth: '350px'}}
+                        style={{minWidth: '200px',width:'90vw', maxWidth: '300px'}}
                         className="mb-4 rounded"
                         
                       />
