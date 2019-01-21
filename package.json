@@ -50,7 +50,6 @@
     "Casper Väresmaa",
     "Bujakasha"
   ],
-  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
