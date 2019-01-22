@@ -18,6 +18,19 @@
     padding: 10px 20px;
 }
 
+#cv_navbar .nav-link{
+    border-bottom: solid 2px transparent;
+
+    -webkit-transition: all 250ms;
+    -moz-transition: all 250ms;
+    -o-transition: all 250ms;
+    transition: all 250ms;
+   }
+
+   #cv_navbar .nav-link:hover{
+        color: #232323
+   }
+
 
   @media only screen and (max-width : 992px) {
 
@@ -38,6 +51,20 @@
   }
 
 @media only screen and (min-width : 992px) {
+/*
+    #cv_navbar .nav-link:hover{
+        border-bottom: solid 2.5px #FFDD00 !important;
+       }
+        #cv_navbar .nav-link.active{
+            border-bottom: solid 2.5px #FFDD00;
+    
+        }
+    
+       #cv_navbar .navbar-nav:hover .nav-link.active{
+        border-bottom: solid 3px transparent
+       }*/
+    
+    
 
     .navigation_offset{
         width: 100%;
@@ -47,8 +74,8 @@
         position: absolute;
       
     }
+    
 
- 
     .sticky_box{
         top:20px;
         width: 100%;

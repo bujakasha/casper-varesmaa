@@ -100,9 +100,9 @@ const AnsioluetteloPage = props => {
               </div>
             </div>
             <br />
-            <div className="d-none d-print-block w-100 py-5" />
+           {activeLang && activeLang === 'en'&&<div className="d-none d-print-block w-100 py-5" />}
 
-            <div className="container col-md-10 pt-4 mt-5 mb-5 mt-md-0">
+            <div className="container col-md-10 pt-5 my-5 mt-md-0">
               <div>
                 <h4 className="font-weight-bold">
                   <Trans id="Kokemus" />
@@ -115,10 +115,11 @@ const AnsioluetteloPage = props => {
                   : null}
               </div>
             </div>
-            <br />
-            <br />
-
-            <div className="container col-md-10 pt-4 mt-5 pt-md-0 mt-md-0">
+     
+        
+                    <br/>
+                    <br/>
+            <div className="container col-md-10 pt-5 mt-5 pt-md-0 mt-md-0">
               <div>
                 <h4 className="font-weight-bold">
                   <Trans id="Osaaminen" />

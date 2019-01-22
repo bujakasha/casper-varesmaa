@@ -19,7 +19,7 @@ My site is build with gatsby.js blazing fast static site generator, that allows 
 
 ### Start locally
 
-startting this repo locally requires [Node.js](https://nodejs.org/) , [Gatsby.js](https://gatsbyjs.org/) and [FontAwesomePro](https://fontawesome.com/)  to run.
+startting this repo locally requires [Node.js](https://nodejs.org/), [Gatsby.js](https://gatsbyjs.org/) and [FontAwesomePro](https://fontawesome.com/)  to run.
 
 if you don't have fontAwesome pro just remove all the icon imports from /fontAwesome/library.js
 

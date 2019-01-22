@@ -18,7 +18,7 @@ class Navigation extends React.PureComponent {
     window.addEventListener('scroll', this.handleScroll, false)
   }
   componentDidUpdate(prevProps) {
-    if (this.props.location && prevProps.location !== this.props.location) {
+    if (this.props.location && prevProps.location !== this.props.location&&this.props.innerWidth < 992) {
       this.setState({isOpen: false})
     }
   }
