@@ -61,15 +61,7 @@ const AnsioluetteloPage = props => {
                         <p>casper.varesmaa@gmail.com</p>
                       </div>
 
-                      <div className="d-none d-print-block">
-                        <p className="mb-0">
-                          <small>
-                            <Trans id="Puhelin" />
-                          </small>
-                        </p>
-                        <p>+358 4535 35813</p>
-                      </div>
-
+                     
                       <div>
                         <p className="mb-0">
                           <small>
