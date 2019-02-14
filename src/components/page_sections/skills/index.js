@@ -18,7 +18,7 @@ const SkillsSection = () => (
         />
         <Section
           title="Back-end"
-          teksti="NodeJS, PHP, NGINX, Apache, Express, Serverless, MongoDB, PostgreSQL, MySQL"
+          teksti="NodeJS, PHP, NGINX, Apache, Express, Serverless, MongoDB, MySQL"
         />
         <Section
           title="CMS"

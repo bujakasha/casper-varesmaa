@@ -8,7 +8,7 @@ This is my personal website that i created for reqruitters and new clients.
 
 [Live site](https://caspervaresmaa.fi/) 
 
-My site is build with gatsby.js blazing fast static site generator, that allows you to get most out of JAMstack. I use bootstrap because it has great grid system. I also use purgecss on build so that all unused bootstrap css get whipped away.
+My site is build with gatsby.js static site generator, thath is new way of making fast and secure static websites. I use bootstrap because it has great grid system. I also use purgecss on build so that all unused bootstrap css gets whipped away.
 
 
 
