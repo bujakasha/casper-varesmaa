@@ -143,14 +143,7 @@ class Navigation extends React.PureComponent {
                   >
                     <Trans id="tilaa_page_link" />
                   </Link>
-                  <Link
-                    to={homelink + 'tietoa'}
-                    className="nav-item nav-link"
-                    onClick={this.toggle}
-                    activeClassName="active"
-                  >
-                    <Trans id="faq_page_link" />
-                  </Link>
+                
                 </div>
               </Collapse>
 
@@ -209,3 +202,16 @@ Navigation.propTypes = {
 }
 
 export default Navigation
+
+
+/*
+  <Link
+                    to={homelink + 'tietoa'}
+                    className="nav-item nav-link"
+                    onClick={this.toggle}
+                    activeClassName="active"
+                  >
+                    <Trans id="faq_page_link" />
+                  </Link>
+                  
+                  */

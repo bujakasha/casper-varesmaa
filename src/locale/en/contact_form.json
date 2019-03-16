@@ -20,7 +20,7 @@
   "input_email_placeholder":"Email address ",
   "input_email_error":"Add a valid email",
 
-  "btn_soittopyynto":"Send kiitoallback request",
+  "btn_soittopyynto":"Send callback request",
   "btn_viesti":"Send a message",
 
   "valmis_otsikko":"Thank you for contacting",
